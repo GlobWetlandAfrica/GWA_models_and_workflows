@@ -1,0 +1,175 @@
+{
+    "values": {
+        "inputs": {
+            "inputimage2": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 180.0, 
+                            "x": 257.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputimage2", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input Image 1"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "inputimage1": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 117.0, 
+                            "x": 254.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputimage1", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input Image 2"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "sun_tool", 
+        "name": "MAD/MAF", 
+        "algs": {
+            "OTBDIMENSIONALITYREDUCTIONMAF_1": {
+                "values": {
+                    "name": "OTBDIMENSIONALITYREDUCTIONMAF_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 359.0, 
+                            "x": 451.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "-nbcomp": 0.0, 
+                        "-normalize": true, 
+                        "-method": 0, 
+                        "-in": {
+                            "values": {
+                                "alg": "OTBMULTIVARIATEALTERATIONDETECTOR_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:dimensionalityreductionmaf", 
+                    "description": "DimensionalityReduction (maf)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBMULTIVARIATEALTERATIONDETECTOR_1": {
+                "values": {
+                    "name": "OTBMULTIVARIATEALTERATIONDETECTOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 261.0, 
+                            "x": 442.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "-in1": {
+                            "values": {
+                                "name": "inputimage1"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-in2": {
+                            "values": {
+                                "name": "inputimage2"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-ram": 512.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:multivariatealterationdetector", 
+                    "description": "Multivariate alteration detector"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBSPLITIMAGE_1": {
+                "values": {
+                    "name": "OTBSPLITIMAGE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "-out": {
+                            "values": {
+                                "description": "Change Map", 
+                                "pos": {
+                                    "values": {
+                                        "y": 517.0, 
+                                        "x": 668.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 472.0, 
+                            "x": 468.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-ram": 512.0, 
+                        "-in": {
+                            "values": {
+                                "alg": "OTBDIMENSIONALITYREDUCTIONMAF_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:splitimage", 
+                    "description": "Split Image"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

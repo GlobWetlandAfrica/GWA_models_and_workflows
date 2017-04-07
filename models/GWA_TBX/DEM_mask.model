@@ -1,0 +1,161 @@
+{
+    "values": {
+        "inputs": {
+            "srtm1arcsecondscene": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "srtm1arcsecondscene", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "SRTM 1 arc-second scene"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "layerstack": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 163.0, 
+                            "x": 341.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "layerstack", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Layer stack"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Mangrove Mapping", 
+        "name": "DEM: mask", 
+        "algs": {
+            "SAGARECLASSIFYGRIDVALUES_1": {
+                "values": {
+                    "name": "SAGARECLASSIFYGRIDVALUES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 160.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "SOPERATOR": 0, 
+                        "OLD": 0.0, 
+                        "MIN": 0.0, 
+                        "MAX": 1.0, 
+                        "ROPERATOR": 0, 
+                        "TOPERATOR": 2, 
+                        "OTHEROPT       ": true, 
+                        "NODATAOPT      ": true, 
+                        "RNEW": 2.0, 
+                        "RETAB": "-1000,40,1,40,10000,0", 
+                        "OTHERS": 0.0, 
+                        "NEW": 1.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "srtm1arcsecondscene"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "NODATA": 0.0, 
+                        "METHOD": 2
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:reclassifygridvalues", 
+                    "description": "Reclassify values"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBSUPERIMPOSESENSOR_1": {
+                "values": {
+                    "name": "OTBSUPERIMPOSESENSOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "-out": {
+                            "values": {
+                                "description": "DEM<40m", 
+                                "pos": {
+                                    "values": {
+                                        "y": 345.0, 
+                                        "x": 155.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 257.0, 
+                            "x": 124.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "-interpolator": 0, 
+                        "-inm": {
+                            "values": {
+                                "alg": "SAGARECLASSIFYGRIDVALUES_1", 
+                                "output": "RESULT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "-ram": 128.0, 
+                        "-interpolator.bco.radius": 2.0, 
+                        "-lms": 4.0, 
+                        "-inr": {
+                            "values": {
+                                "name": "layerstack"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-elev.default": 0.0, 
+                        "-mode": 0
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:superimposesensor", 
+                    "description": "Superimpose sensor"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

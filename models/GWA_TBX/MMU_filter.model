@@ -1,0 +1,193 @@
+{
+    "values": {
+        "inputs": {
+            "RASTERLAYER_INPUT": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_INPUT", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "INPUT"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "NUMBER_MMU": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 340.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_MMU", 
+                            "min": 2, 
+                            "default": 2, 
+                            "max": 1000, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "optional": false, 
+                            "description": "MMU"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Mangrove Mapping", 
+        "name": "MMU Filter", 
+        "algs": {
+            "GDALOGRSIEVE_1": {
+                "values": {
+                    "name": "GDALOGRSIEVE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 160.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "THRESHOLD": {
+                            "values": {
+                                "name": "NUMBER_MMU"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INPUT": {
+                            "values": {
+                                "name": "RASTERLAYER_INPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "CONNECTIONS": 0
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:sieve", 
+                    "description": "Sieve"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASSR.MAPCALCULATOR_2": {
+                "values": {
+                    "name": "GRASSR.MAPCALCULATOR_2", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "outfile": {
+                            "values": {
+                                "description": "OUTPUT", 
+                                "pos": {
+                                    "values": {
+                                        "y": 348.0, 
+                                        "x": 400.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 303.0, 
+                            "x": 200.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "fmap": null, 
+                        "emap": null, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "dmap": null, 
+                        "cmap": null, 
+                        "bmap": {
+                            "values": {
+                                "alg": "GRASSR.MAPCALCULATOR_1", 
+                                "output": "outfile"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "amap": {
+                            "values": {
+                                "alg": "GDALOGRSIEVE_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "formula": "if((A==255 && B==1),0,A)", 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:r.mapcalculator", 
+                    "description": "r.mapcalculator - Calculate new raster map from a r.mapcalc expression."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASSR.MAPCALCULATOR_1": {
+                "values": {
+                    "name": "GRASSR.MAPCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 219.0, 
+                            "x": 406.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "fmap": null, 
+                        "emap": null, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "dmap": null, 
+                        "cmap": null, 
+                        "bmap": null, 
+                        "amap": {
+                            "values": {
+                                "name": "RASTERLAYER_INPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "formula": "if(isnull(A),1,0)", 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:r.mapcalculator", 
+                    "description": "r.mapcalculator - Calculate new raster map from a r.mapcalc expression."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

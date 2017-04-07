@@ -1,0 +1,191 @@
+{
+    "values": {
+        "inputs": {
+            "inputimage": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 104.0, 
+                            "x": 149.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputimage", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input image"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "radius": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 380.0, 
+                            "x": 364.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "radius", 
+                            "min": 2, 
+                            "default": 11, 
+                            "max": 50, 
+                            "value": 11, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "optional": false, 
+                            "description": "Radius"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "sun_tool", 
+        "name": "pca texture", 
+        "algs": {
+            "OTBHARALICKTEXTUREEXTRACTION_1": {
+                "values": {
+                    "name": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "-out": {
+                            "values": {
+                                "description": "Output texture features", 
+                                "pos": {
+                                    "values": {
+                                        "y": 544.0, 
+                                        "x": 333.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 462.0, 
+                            "x": 228.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-parameters.nbbin": 8.0, 
+                        "-parameters.max": 255.0, 
+                        "-in": {
+                            "values": {
+                                "alg": "OTBRESCALEIMAGE_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "-parameters.yoff": 1.0, 
+                        "-channel": 1.0, 
+                        "-parameters.xoff": 1.0, 
+                        "-ram": 512.0, 
+                        "-parameters.min": 0.0, 
+                        "-texture": 0, 
+                        "-parameters.yrad": {
+                            "values": {
+                                "name": "radius"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-parameters.xrad": {
+                            "values": {
+                                "name": "radius"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:haralicktextureextraction", 
+                    "description": "Haralick Texture Extraction"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBRESCALEIMAGE_1": {
+                "values": {
+                    "name": "OTBRESCALEIMAGE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 309.0, 
+                            "x": 180.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-outmax": 255.0, 
+                        "-ram": 512.0, 
+                        "-outmin": 0.0, 
+                        "-in": {
+                            "values": {
+                                "alg": "OTBDIMENSIONALITYREDUCTIONPCA_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:rescaleimage", 
+                    "description": "Rescale Image"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBDIMENSIONALITYREDUCTIONPCA_1": {
+                "values": {
+                    "name": "OTBDIMENSIONALITYREDUCTIONPCA_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 200.0, 
+                            "x": 150.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-nbcomp": 1.0, 
+                        "-normalize": true, 
+                        "-method": 0, 
+                        "-in": {
+                            "values": {
+                                "name": "inputimage"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:dimensionalityreductionpca", 
+                    "description": "DimensionalityReduction (pca)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

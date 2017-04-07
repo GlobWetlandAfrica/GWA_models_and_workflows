@@ -1,0 +1,191 @@
+{
+    "values": {
+        "inputs": {
+            "formula": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 111.0, 
+                            "x": 392.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "formula", 
+                            "default": "if(A>XX||A<-XX,1,0)", 
+                            "value": "if(A>XX||A<-XX,1,0)", 
+                            "multiline": false, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Formula"
+                        }, 
+                        "class": "processing.core.parameters.ParameterString"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "madmafcomponentwithmostchangeinformation": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 59.0, 
+                            "x": 168.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "madmafcomponentwithmostchangeinformation", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "MAD/MAF component with most change information"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "sun_tool", 
+        "name": "change mask", 
+        "algs": {
+            "GRASSR.NEIGHBORS_1": {
+                "values": {
+                    "name": "GRASSR.NEIGHBORS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 275.0, 
+                            "x": 227.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "-a": false, 
+                        "-c": false, 
+                        "weight": "", 
+                        "input": {
+                            "values": {
+                                "alg": "GRASSR.MAPCALCULATOR_1", 
+                                "output": "outfile"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null, 
+                        "method": 2, 
+                        "size": 3.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:r.neighbors", 
+                    "description": "r.neighbors - Makes each cell category value a function of the category values assigned to the cells around it"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASSR.MAPCALCULATOR_2": {
+                "values": {
+                    "name": "GRASSR.MAPCALCULATOR_2", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "outfile": {
+                            "values": {
+                                "description": "Change mask", 
+                                "pos": {
+                                    "values": {
+                                        "y": 400.0, 
+                                        "x": 443.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 355.0, 
+                            "x": 243.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "fmap": null, 
+                        "emap": null, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "dmap": null, 
+                        "cmap": null, 
+                        "bmap": null, 
+                        "amap": {
+                            "values": {
+                                "alg": "GRASSR.NEIGHBORS_1", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "formula": "if(A==0,null(),A)", 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:r.mapcalculator", 
+                    "description": "r.mapcalculator - change mask."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASSR.MAPCALCULATOR_1": {
+                "values": {
+                    "name": "GRASSR.MAPCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 187.0, 
+                            "x": 207.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "fmap": null, 
+                        "emap": null, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "dmap": null, 
+                        "cmap": null, 
+                        "bmap": null, 
+                        "amap": {
+                            "values": {
+                                "name": "madmafcomponentwithmostchangeinformation"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "formula": {
+                            "values": {
+                                "name": "formula"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:r.mapcalculator", 
+                    "description": "r.mapcalculator - Calculate new raster map from a r.mapcalc expression."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
