@@ -1,5 +1,5 @@
 .NAME:Wetland Inventory
-.GROUP:PG#1:Wetland Inventory
+.GROUP:Wetland Inventory
 .ALGORITHM:script:wimodule01
 .PARAMETERS:{"sensor": 1}
 .MODE:Normal

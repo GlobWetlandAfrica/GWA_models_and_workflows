@@ -1,5 +1,5 @@
-.NAME:1:Mangrove Extent
-.GROUP:PG#6:Mangrove Mapping
+.NAME:Mangrove Mapping: Extent
+.GROUP:GW-A #06: Mangrove Mapping
 .ALGORITHM:snap:subset
 .PARAMETERS:{"sourceBands": "", "copyMetadata": true, "subSamplingY": 1, "geoRegion": null, "subSamplingX": 1}
 .MODE:Normal
@@ -19,7 +19,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Spatial extent: Select the extent of the AOI (AOI file) </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Bands: Choose the &quot;Amplitude_XX&quot; band for processing. </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Leave pixel sub-sampling steps equal to 1</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Output Image: Define the output directory and image name (or save as temporary file). </span></p></body></html>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Output Image: Define the output directory and image name (or save as temporary file).</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:snap:applyorbitfile
 .PARAMETERS:{"polyDegree": 3, "orbitType": 0, "continueOnFail": false}
@@ -225,7 +225,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Output of classification: layer created in the previous step. </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Reclassified classification: Define the output directory and classification name (or save as temporary file).</span></p></body></html>
 !INSTRUCTIONS
-.ALGORITHM:modeler:wetlands_mmu_filter
+.ALGORITHM:modeler:mmu_filter
 .PARAMETERS:{"NUMBER_MMU": 2}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">

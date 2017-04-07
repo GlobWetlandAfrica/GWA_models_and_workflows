@@ -1,5 +1,5 @@
 .NAME:Water Cycle Regime
-.GROUP:PG#3:Water Cycle Regime
+.GROUP:Water Cycle Regime
 .ALGORITHM:script:wcrmodule01
 .PARAMETERS:{"sensor": 1}
 .MODE:Normal
