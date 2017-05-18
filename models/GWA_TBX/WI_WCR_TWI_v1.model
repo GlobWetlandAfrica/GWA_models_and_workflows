@@ -48,7 +48,7 @@
                             "exported": null, 
                             "hidden": false, 
                             "optional": false, 
-                            "description": "DEM"
+                            "description": "Digital Elevation Model (DEM)"
                         }, 
                         "class": "processing.core.parameters.ParameterRaster"
                     }
@@ -60,35 +60,6 @@
         "group": "Wetland Inventory / Water Cycle Regime", 
         "name": "Topographic Wetness Index", 
         "algs": {
-            "SCRIPTWIWCRTWIBINARYMASK_1": {
-                "values": {
-                    "name": "SCRIPTWIWCRTWIBINARYMASK_1", 
-                    "paramsFolded": true, 
-                    "outputs": {}, 
-                    "outputsFolded": true, 
-                    "pos": {
-                        "values": {
-                            "y": 636.0, 
-                            "x": 285.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "dependencies": [], 
-                    "params": {
-                        "path_TWI": {
-                            "values": {
-                                "alg": "SAGASAGAWETNESSINDEX_1", 
-                                "output": "TWI"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }
-                    }, 
-                    "active": true, 
-                    "consoleName": "script:wiwcrtwibinarymask", 
-                    "description": "WI WCR TWIBinaryMask"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
             "SAGASAGAWETNESSINDEX_1": {
                 "values": {
                     "name": "SAGASAGAWETNESSINDEX_1", 
@@ -108,6 +79,7 @@
                             "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 469.0, 
@@ -115,7 +87,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "SLOPE_TYPE": 0, 
@@ -143,6 +114,7 @@
                     "name": "SAGAFILLSINKS_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 385.0, 
@@ -150,7 +122,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "MINSLOPE": 0.01, 
@@ -168,11 +139,41 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
+            "SCRIPTCREATETWIBINARYMASK_1": {
+                "values": {
+                    "name": "SCRIPTCREATETWIBINARYMASK_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 640.0, 
+                            "x": 317.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "path_TWI": {
+                            "values": {
+                                "alg": "SAGASAGAWETNESSINDEX_1", 
+                                "output": "TWI"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "script:createtwibinarymask", 
+                    "description": "Create TWI binary mask"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
             "GDALOGRTRANSLATE_1": {
                 "values": {
                     "name": "GDALOGRTRANSLATE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 193.0, 
@@ -180,7 +181,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -217,14 +217,14 @@
                     "name": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 299.0, 
-                            "x": 350.0
+                            "y": 251.0, 
+                            "x": 433.0
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
