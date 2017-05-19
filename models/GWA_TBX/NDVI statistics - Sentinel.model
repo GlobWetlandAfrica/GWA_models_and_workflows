@@ -52,56 +52,6 @@
                     }
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
-            }, 
-            "expression": {
-                "values": {
-                    "pos": {
-                        "values": {
-                            "y": 42.0, 
-                            "x": 462.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "param": {
-                        "values": {
-                            "isAdvanced": false, 
-                            "name": "expression", 
-                            "default": "((im1b7-im1b3)/(im1b7+im1b3)+(im2b7-im2b3)/(im2b7+im2b3))/2", 
-                            "value": "((im1b7-im1b3)/(im1b7+im1b3)+(im2b7-im2b3)/(im2b7+im2b3))/2", 
-                            "multiline": false, 
-                            "hidden": false, 
-                            "optional": false, 
-                            "description": "NDVI mean"
-                        }, 
-                        "class": "processing.core.parameters.ParameterString"
-                    }
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
-            }, 
-            "ndvidifference": {
-                "values": {
-                    "pos": {
-                        "values": {
-                            "y": 207.0, 
-                            "x": 436.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "param": {
-                        "values": {
-                            "isAdvanced": false, 
-                            "name": "ndvidifference", 
-                            "default": "(im1b7-im1b3)/(im1b7+im1b3)-(im2b7-im2b3)/(im2b7+im2b3)", 
-                            "value": "(im1b7-im1b3)/(im1b7+im1b3)-(im2b7-im2b3)/(im2b7+im2b3)", 
-                            "multiline": false, 
-                            "hidden": false, 
-                            "optional": false, 
-                            "description": "NDVI difference"
-                        }, 
-                        "class": "processing.core.parameters.ParameterString"
-                    }
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "helpContent": {}, 
@@ -113,6 +63,7 @@
                     "name": "OTBBANDMATH_2", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 115.0, 
@@ -120,7 +71,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-ram": 512.0, 
@@ -138,12 +88,7 @@
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
                             }
                         ], 
-                        "-exp": {
-                            "values": {
-                                "name": "expression"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                        }
+                        "-exp": "((im1b7-im1b3)/(im1b7+im1b3)+(im2b7-im2b3)/(im2b7+im2b3))*500"
                     }, 
                     "active": true, 
                     "consoleName": "otb:bandmath", 
@@ -161,8 +106,8 @@
                                 "description": "NDVI statistics", 
                                 "pos": {
                                     "values": {
-                                        "y": 283.0, 
-                                        "x": 770.0
+                                        "y": 245.0, 
+                                        "x": 808.0
                                     }, 
                                     "class": "point"
                                 }
@@ -170,6 +115,7 @@
                             "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 156.0, 
@@ -177,7 +123,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT": [
@@ -196,7 +141,7 @@
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                             }
                         ], 
-                        "RTYPE": 5, 
+                        "RTYPE": 1, 
                         "PCT": false, 
                         "SEPARATE": true
                     }, 
@@ -211,14 +156,14 @@
                     "name": "OTBBANDMATH_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 270.0, 
-                            "x": 416.0
+                            "y": 220.0, 
+                            "x": 415.0
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-ram": 512.0, 
@@ -236,12 +181,7 @@
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
                             }
                         ], 
-                        "-exp": {
-                            "values": {
-                                "name": "ndvidifference"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                        }
+                        "-exp": "((im1b7-im1b3)/(im1b7+im1b3)-(im2b7-im2b3)/(im2b7+im2b3))*1000"
                     }, 
                     "active": true, 
                     "consoleName": "otb:bandmath", 

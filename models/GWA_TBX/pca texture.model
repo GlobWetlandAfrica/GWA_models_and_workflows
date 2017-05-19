@@ -63,22 +63,7 @@
                 "values": {
                     "name": "OTBHARALICKTEXTUREEXTRACTION_1", 
                     "paramsFolded": true, 
-                    "outputs": {
-                        "-out": {
-                            "values": {
-                                "description": "Output texture features", 
-                                "pos": {
-                                    "values": {
-                                        "y": 544.0, 
-                                        "x": 333.0
-                                    }, 
-                                    "class": "point"
-                                }
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
-                        }
-                    }, 
-                    "outputsFolded": true, 
+                    "outputs": {}, 
                     "pos": {
                         "values": {
                             "y": 462.0, 
@@ -86,6 +71,7 @@
                         }, 
                         "class": "point"
                     }, 
+                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-parameters.nbbin": 8.0, 
@@ -122,12 +108,294 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
+            "GDALOGRRASTERCALCULATOR_4": {
+                "values": {
+                    "name": "GDALOGRRASTERCALCULATOR_4", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 694.0, 
+                            "x": 520.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "5", 
+                        "RTYPE": 1, 
+                        "EXTRA": null, 
+                        "INPUT_A": {
+                            "values": {
+                                "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
+                        "INPUT_B": null, 
+                        "INPUT_C": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRRASTERCALCULATOR_1": {
+                "values": {
+                    "name": "GDALOGRRASTERCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 487.0150000000001, 
+                            "x": 508.98
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "1", 
+                        "RTYPE": 1, 
+                        "EXTRA": null, 
+                        "INPUT_A": {
+                            "values": {
+                                "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
+                        "INPUT_B": null, 
+                        "INPUT_C": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "OTBDIMENSIONALITYREDUCTIONPCA_1": {
+                "values": {
+                    "name": "OTBDIMENSIONALITYREDUCTIONPCA_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 200.0, 
+                            "x": 150.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "-nbcomp": 1.0, 
+                        "-normalize": true, 
+                        "-method": 0, 
+                        "-in": {
+                            "values": {
+                                "name": "inputimage"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "otb:dimensionalityreductionpca", 
+                    "description": "DimensionalityReduction (pca)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRRASTERCALCULATOR_3": {
+                "values": {
+                    "name": "GDALOGRRASTERCALCULATOR_3", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 632.0, 
+                            "x": 514.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "4", 
+                        "RTYPE": 1, 
+                        "EXTRA": null, 
+                        "INPUT_A": {
+                            "values": {
+                                "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
+                        "INPUT_B": null, 
+                        "INPUT_C": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRRASTERCALCULATOR_2": {
+                "values": {
+                    "name": "GDALOGRRASTERCALCULATOR_2", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 563.0, 
+                            "x": 509.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "2", 
+                        "RTYPE": 1, 
+                        "EXTRA": null, 
+                        "INPUT_A": {
+                            "values": {
+                                "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                                "output": "-out"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
+                        "INPUT_B": null, 
+                        "INPUT_C": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRMERGE_1": {
+                "values": {
+                    "name": "GDALOGRMERGE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Texture features", 
+                                "pos": {
+                                    "values": {
+                                        "y": 944.1831250000005, 
+                                        "x": 934.2825
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 870.2425000000004, 
+                            "x": 757.4350000000001
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": [
+                            {
+                                "values": {
+                                    "alg": "GDALOGRRASTERCALCULATOR_4", 
+                                    "output": "OUTPUT"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            }, 
+                            {
+                                "values": {
+                                    "alg": "GDALOGRRASTERCALCULATOR_1", 
+                                    "output": "OUTPUT"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            }, 
+                            {
+                                "values": {
+                                    "alg": "GDALOGRRASTERCALCULATOR_3", 
+                                    "output": "OUTPUT"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            }, 
+                            {
+                                "values": {
+                                    "alg": "GDALOGRRASTERCALCULATOR_2", 
+                                    "output": "OUTPUT"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            }, 
+                            {
+                                "values": {
+                                    "alg": "GDALOGRRASTERCALCULATOR_5", 
+                                    "output": "OUTPUT"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            }
+                        ], 
+                        "RTYPE": 1, 
+                        "PCT": false, 
+                        "SEPARATE": true
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:merge", 
+                    "description": "Merge"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
             "OTBRESCALEIMAGE_1": {
                 "values": {
                     "name": "OTBRESCALEIMAGE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
-                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 309.0, 
@@ -135,6 +403,7 @@
                         }, 
                         "class": "point"
                     }, 
+                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-outmax": 255.0, 
@@ -154,34 +423,47 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
-            "OTBDIMENSIONALITYREDUCTIONPCA_1": {
+            "GDALOGRRASTERCALCULATOR_5": {
                 "values": {
-                    "name": "OTBDIMENSIONALITYREDUCTIONPCA_1", 
+                    "name": "GDALOGRRASTERCALCULATOR_5", 
                     "paramsFolded": true, 
                     "outputs": {}, 
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 200.0, 
-                            "x": 150.0
+                            "y": 767.0, 
+                            "x": 520.0
                         }, 
                         "class": "point"
                     }, 
                     "dependencies": [], 
                     "params": {
-                        "-nbcomp": 1.0, 
-                        "-normalize": true, 
-                        "-method": 0, 
-                        "-in": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "8", 
+                        "RTYPE": 1, 
+                        "EXTRA": null, 
+                        "INPUT_A": {
                             "values": {
-                                "name": "inputimage"
+                                "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
+                                "output": "-out"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                        }
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1", 
+                        "INPUT_B": null, 
+                        "INPUT_C": null
                     }, 
                     "active": true, 
-                    "consoleName": "otb:dimensionalityreductionpca", 
-                    "description": "DimensionalityReduction (pca)"
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }
