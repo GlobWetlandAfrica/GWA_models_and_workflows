@@ -20,7 +20,7 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-style:italic;"><br /></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:exportsentinel2data
-.PARAMETERS:{"out_res": 0, "allVISNIR": false, "minDataCov": 0, "B10": false, "cloudMask": false, "B11": true, "maxCldCov": 100, "B4": true, "B5": true, "B6": true, "B7": true, "B12": true, "B1": false, "B2": true, "B3": true, "B8A": true, "B8": true, "B9": false, "granules": ""}
+.PARAMETERS:{"out_res": 0, "allVISNIR": false, "B10": false, "bands_param": "", "B11": true, "B4": true, "B5": true, "B6": true, "B7": true, "B12": true, "B1": false, "B2": true, "B3": true, "B8A": true, "B8": true, "B9": false, "granules": ""}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -43,7 +43,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-style:italic;">Note: This tool can also be used in &quot;Batch&quot; mode. Change the bottom dropdown menu from &quot;Normal&quot; to &quot;Batch&quot; for use in batch mode.</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:gdalogr:cliprasterbyextent
-.PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "307430.0,345290.0,1522840.0,1550990.0", "RTYPE": 1, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
+.PARAMETERS:{"ZLEVEL": 6, "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -109,3 +109,4 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Folder to save the stack of Indices: Use the ... button to navigate to the folder where you want to save the indices.</span></p></body></html>
 !INSTRUCTIONS
+
