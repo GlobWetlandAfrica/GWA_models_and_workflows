@@ -1,5 +1,23 @@
 .NAME:Water Cycle Regime
 .GROUP:PG#3:Water Cycle Regime
+.ALGORITHM:script:fmasklandsat
+.PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
+.MODE:Normal
+.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p></body></html>
+!INSTRUCTIONS
+.ALGORITHM:script:fmasksentinel2
+.PARAMETERS:{"cloudbufferdistance": 150, "verbose": true, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "greensnowthreshold": 0.1, "mincloudsize": 0, "cloudprobthreshold": 20}
+.MODE:Normal
+.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p></body></html>
+!INSTRUCTIONS
 .ALGORITHM:script:waterandwetnessindices
 .PARAMETERS:{"startDate": "", "endDate": "", "extentCoords": null, "WCRonly": 1, "AOItype": 0, "tileID": "", "maxCloudCover": 100, "sensor": 0}
 .MODE:Normal
@@ -94,7 +112,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:9pt;">Specify the path to the output folder in which the TWI and TWI binary mask should be stored.</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:r:waterdetection
-.PARAMETERS:{"Tile_size_in_meter": 1800, "End_Date": "", "Plot_probabilities": false, "Minimum_water_threshold": 450, "Minimum_mapping_unit ": 3, "Minimum_number_of_valid_pixels ": 0.4, "Start_Date": ""}
+.PARAMETERS:{"Minimum_water_probability": 45, "Tile_size_in_meter": 1800, "End_Date": "", "Plot_water_probability": false, "Minimum_mapping_unit ": 3, "Plot_certainty_indicator": false, "Minimum_AOI_coverage ": 40, "Start_Date": ""}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -139,7 +157,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:9pt;">If this option is activated, the water and wetness probabiliy maps of each scene will be saved as a .tif file to the output directory. </span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:watercycleregimeclassfication
-.PARAMETERS:{"startDate": "", "endDate": "", "exportSeasonalFrequencies": false}
+.PARAMETERS:{"summer": true, "endDate": "", "winter": true, "startDate": "", "spring": true, "exportSeasonalFrequencies": false, "fall": true}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
