@@ -1,7 +1,7 @@
 .NAME:Wetland habitat status mapping (general)
 .GROUP:PG#2:Wetland Habitat Mapping
 .ALGORITHM:gdalogr:merge
-.PARAMETERS:{"RTYPE": 5, "PCT": false, "SEPARATE": true}
+.PARAMETERS:{"RTYPE": 1, "PCT": false, "SEPARATE": true}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -10,7 +10,6 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">The first step combines all input imagery used for the classification into one single raster stack. If you are using only one raster dataset as input you can skip this step. </span></p>
 <p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Settings: </span></p>
 <p style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Input Layers: Select each of the raster data set you will use for the classification. e.g. reflectance bands, spectral indices. Imagery from multiple dates can also be added.</span></p>
-<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Layer stack: If you are stacking rasters that are already in a raster stack (i.e. stacking stacks), then select the &quot;Layer stack&quot; option. </span></p>
 <p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Output raster type: Generally you should try work with integer values, as these are lighter on memory and can improve general performance. If you've followed the pre-processing steps for generating surface reflectance and spectral indices the datasets should already be in 'Signed Integer' form (Int16). Choose &quot;Int16&quot; as the &quot;Output raster type&quot; to keep the data in this format. Otherwise choose &quot;Float32&quot;.</span></p>
 <p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Merged: </span><a name="OLE_LINK56"></a><span style=" font-family:'Arial'; font-size:9pt;">D</span><span style=" font-family:'Arial'; font-size:9pt;">efine the output directory and image name. The output image name should be called 01_Stack_[‘enter name’].tif</span></p></body></html>
 !INSTRUCTIONS
