@@ -55,7 +55,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "MAD/MAF", 
         "algs": {
             "OTBDIMENSIONALITYREDUCTIONMAF_1": {
@@ -63,6 +63,7 @@
                     "name": "OTBDIMENSIONALITYREDUCTIONMAF_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 359.0, 
@@ -70,7 +71,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-nbcomp": 0.0, 
@@ -95,6 +95,7 @@
                     "name": "OTBMULTIVARIATEALTERATIONDETECTOR_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 261.0, 
@@ -102,7 +103,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-in1": {

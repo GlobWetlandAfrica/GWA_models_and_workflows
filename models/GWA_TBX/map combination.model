@@ -55,7 +55,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "map combination", 
         "algs": {
             "SAGARECLASSIFYGRIDVALUES_1": {
@@ -73,17 +73,17 @@
                     }, 
                     "dependencies": [], 
                     "params": {
+                        "RNEW": 2.0, 
                         "SOPERATOR": 0, 
                         "OLD": 0.0, 
                         "MIN": 0.0, 
                         "MAX": 1.0, 
                         "ROPERATOR": 0, 
                         "TOPERATOR": 0, 
-                        "OTHEROPT       ": false, 
-                        "OTHERS": 0.0, 
                         "NODATAOPT      ": true, 
-                        "RNEW": 2.0, 
+                        "OTHEROPT       ": false, 
                         "RETAB": "0,0,0,0,0,0,0,0,0", 
+                        "OTHERS": 0.0, 
                         "NEW": 0.0, 
                         "INPUT": {
                             "values": {
@@ -136,11 +136,11 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "1", 
-                        "EXTRA": null, 
                         "RTYPE": 1, 
                         "BAND_D": "1", 
                         "NO_DATA": null, 
                         "BAND_E": "1", 
+                        "INPUT_C": null, 
                         "FORMULA": "(A==0)*B+(A!=0)*A", 
                         "INPUT_A": {
                             "values": {
@@ -155,7 +155,7 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
                         }, 
-                        "INPUT_C": null
+                        "EXTRA": null
                     }, 
                     "active": true, 
                     "consoleName": "gdalogr:rastercalculator", 
