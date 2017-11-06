@@ -55,7 +55,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "change mask", 
         "algs": {
             "GDALOGRRASTERCALCULATOR_1": {
@@ -80,20 +80,20 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "1", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
-                        "INPUT_A": {
-                            "values": {
-                                "name": "madmafcomponentwithmostchangeinformation"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                        }, 
+                        "RTYPE": 1, 
                         "BAND_D": "1", 
                         "NO_DATA": null, 
                         "BAND_E": "1", 
                         "FORMULA": {
                             "values": {
                                 "name": "formula"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INPUT_A": {
+                            "values": {
+                                "name": "madmafcomponentwithmostchangeinformation"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
                         }, 
@@ -121,8 +121,7 @@
                     }, 
                     "dependencies": [], 
                     "params": {
-                        "size": 3.0, 
-                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
+                        "-a": false, 
                         "-c": false, 
                         "weight": "", 
                         "input": {
@@ -132,9 +131,10 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 0.0, 
                         "GRASS_REGION_PARAMETER": null, 
                         "method": 2, 
-                        "-a": false
+                        "size": 3.0
                     }, 
                     "active": true, 
                     "consoleName": "grass7:r.neighbors", 
@@ -178,11 +178,11 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "1", 
-                        "EXTRA": null, 
                         "RTYPE": 1, 
                         "BAND_D": "1", 
                         "NO_DATA": "0", 
                         "BAND_E": "1", 
+                        "INPUT_C": null, 
                         "FORMULA": "A*1", 
                         "INPUT_A": {
                             "values": {
@@ -192,7 +192,7 @@
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
                         "INPUT_B": null, 
-                        "INPUT_C": null
+                        "EXTRA": null
                     }, 
                     "active": true, 
                     "consoleName": "gdalogr:rastercalculator", 

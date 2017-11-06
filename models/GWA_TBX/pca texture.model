@@ -56,7 +56,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "pca texture", 
         "algs": {
             "OTBHARALICKTEXTUREEXTRACTION_1": {
@@ -64,6 +64,7 @@
                     "name": "OTBHARALICKTEXTUREEXTRACTION_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 462.0, 
@@ -71,7 +72,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-parameters.nbbin": 8.0, 
@@ -130,8 +130,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "5", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
@@ -139,10 +143,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": null, 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1000", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 
@@ -174,8 +174,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "1", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
@@ -183,10 +187,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": null, 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1000", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 
@@ -201,6 +201,7 @@
                     "name": "OTBDIMENSIONALITYREDUCTIONPCA_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 200.0, 
@@ -208,7 +209,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-nbcomp": 1.0, 
@@ -249,8 +249,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "4", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
@@ -258,10 +262,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": null, 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1000", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 
@@ -293,8 +293,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "2", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1000", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
@@ -302,10 +306,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": null, 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1000", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 
@@ -396,6 +396,7 @@
                     "name": "OTBRESCALEIMAGE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 309.0, 
@@ -403,7 +404,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "-outmax": 255.0, 
@@ -445,8 +445,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "8", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": null, 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "OTBHARALICKTEXTUREEXTRACTION_1", 
@@ -454,10 +458,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": null, 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 

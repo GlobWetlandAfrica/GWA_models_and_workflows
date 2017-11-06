@@ -109,7 +109,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "feature extraction", 
         "algs": {
             "GDALOGRRASTERIZE_8": {
@@ -117,6 +117,7 @@
                     "name": "GDALOGRRASTERIZE_8", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 867.126025, 
@@ -124,7 +125,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -170,6 +170,7 @@
                     "name": "GDALOGRRASTERIZE_9", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 541.8906374999999, 
@@ -177,7 +178,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -223,6 +223,7 @@
                     "name": "GDALOGRRASTERIZE_6", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 623.6125624999997, 
@@ -230,7 +231,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -276,6 +276,7 @@
                     "name": "GDALOGRRASTERIZE_7", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 946.9831437500003, 
@@ -283,7 +284,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -329,6 +329,7 @@
                     "name": "GDALOGRRASTERIZE_4", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 375.1704374999998, 
@@ -336,7 +337,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -382,6 +382,7 @@
                     "name": "GDALOGRRASTERIZE_5", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 440.679625, 
@@ -389,7 +390,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -435,6 +435,7 @@
                     "name": "GDALOGRRASTERIZE_2", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 478.827, 
@@ -442,7 +443,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -488,6 +488,7 @@
                     "name": "GDALOGRRASTERIZE_3", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 701.86566875, 
@@ -495,7 +496,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -541,6 +541,7 @@
                     "name": "GDALOGRRASTERIZE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 410.21187499999996, 
@@ -548,7 +549,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -594,6 +594,7 @@
                     "name": "SAGAPOLYGONSHAPEINDICES_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 259.0, 
@@ -601,7 +602,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "SHAPES": {
@@ -623,6 +623,7 @@
                     "name": "GDALOGRMERGE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 667.6313749999999, 
@@ -630,7 +631,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT": [
@@ -741,6 +741,7 @@
                             "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 1117.0, 
@@ -748,7 +749,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT": [
@@ -782,6 +782,7 @@
                     "name": "GDALOGRMERGE_2", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 662.0, 
@@ -789,7 +790,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT": [
@@ -865,6 +865,7 @@
                     "name": "GDALOGRRASTERIZE_14", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 680.3489999999999, 
@@ -872,7 +873,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -918,6 +918,7 @@
                     "name": "GDALOGRRASTERIZE_15", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 740.2896249999999, 
@@ -925,7 +926,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -971,6 +971,7 @@
                     "name": "GDALOGRRASTERIZE_16", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 811.7625, 
@@ -978,7 +979,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1024,6 +1024,7 @@
                     "name": "GDALOGRRASTERIZE_17", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 872.4472500000002, 
@@ -1031,7 +1032,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1077,6 +1077,7 @@
                     "name": "GDALOGRRASTERIZE_10", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 795.5266999999999, 
@@ -1084,7 +1085,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1130,6 +1130,7 @@
                     "name": "GDALOGRRASTERIZE_11", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 503.67300624999996, 
@@ -1137,7 +1138,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1183,6 +1183,7 @@
                     "name": "GDALOGRRASTERIZE_12", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 567.245625, 
@@ -1190,7 +1191,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1236,6 +1236,7 @@
                     "name": "GDALOGRRASTERIZE_13", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 625.3981249999999, 
@@ -1243,7 +1244,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1289,6 +1289,7 @@
                     "name": "GDALOGRRASTERIZE_18", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 924.7082500000001, 
@@ -1296,7 +1297,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1342,6 +1342,7 @@
                     "name": "GDALOGRRASTERIZE_19", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 312.7107874999997, 
@@ -1349,7 +1350,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -1395,6 +1395,7 @@
                     "name": "GDALOGRPOLYGONIZE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 122.0, 
@@ -1402,7 +1403,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT": {
@@ -1424,6 +1424,7 @@
                     "name": "QGISZONALSTATISTICS_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
                             "y": 259.0, 
@@ -1431,7 +1432,6 @@
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "INPUT_RASTER": {

@@ -56,7 +56,7 @@
             }
         }, 
         "helpContent": {}, 
-        "group": "sun_tool", 
+        "group": "Wetland Habitat Mapping", 
         "name": "water mask", 
         "algs": {
             "SAGARECLASSIFYGRIDVALUES_1": {
@@ -74,6 +74,7 @@
                     }, 
                     "dependencies": [], 
                     "params": {
+                        "RNEW": 2.0, 
                         "SOPERATOR": 0, 
                         "OLD": {
                             "values": {
@@ -85,9 +86,8 @@
                         "MAX": 1.0, 
                         "ROPERATOR": 0, 
                         "TOPERATOR": 0, 
-                        "OTHEROPT       ": true, 
                         "NODATAOPT      ": false, 
-                        "RNEW": 2.0, 
+                        "OTHEROPT       ": true, 
                         "RETAB": "0,0,0,0,0,0,0,0,0", 
                         "OTHERS": 0.0, 
                         "NEW": 1.0, 
@@ -142,8 +142,12 @@
                         "BAND_B": "1", 
                         "BAND_C": "1", 
                         "BAND_A": "1", 
-                        "RTYPE": 1, 
                         "EXTRA": null, 
+                        "RTYPE": 1, 
+                        "BAND_D": "1", 
+                        "NO_DATA": "0", 
+                        "BAND_E": "1", 
+                        "FORMULA": "A*1", 
                         "INPUT_A": {
                             "values": {
                                 "alg": "SAGARECLASSIFYGRIDVALUES_1", 
@@ -151,10 +155,6 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "BAND_D": "1", 
-                        "NO_DATA": "0", 
-                        "BAND_E": "1", 
-                        "FORMULA": "A*1", 
                         "INPUT_B": null, 
                         "INPUT_C": null
                     }, 
