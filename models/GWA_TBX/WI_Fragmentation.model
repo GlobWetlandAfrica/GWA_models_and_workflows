@@ -1,0 +1,129 @@
+{
+    "values": {
+        "inputs": {
+            "inputraster": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 64.0, 
+                            "x": 212.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputraster", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input Raster"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Wetland Inventory / Water Cycle Regime", 
+        "name": "Wetland Fragmentation", 
+        "algs": {
+            "SAGAFRAGMENTATIONSTANDARD_1": {
+                "values": {
+                    "name": "SAGAFRAGMENTATIONSTANDARD_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "CONNECTIVITY": {
+                            "values": {
+                                "description": "Connectivity", 
+                                "pos": {
+                                    "values": {
+                                        "y": 220.0, 
+                                        "x": 491.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "FRAGMENTATION": {
+                            "values": {
+                                "description": "Fragmentation", 
+                                "pos": {
+                                    "values": {
+                                        "y": 250.0, 
+                                        "x": 491.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "FRAGSTATS": {
+                            "values": {
+                                "description": "Summary", 
+                                "pos": {
+                                    "values": {
+                                        "y": 280.0, 
+                                        "x": 491.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "DENSITY": {
+                            "values": {
+                                "description": "Density", 
+                                "pos": {
+                                    "values": {
+                                        "y": 310.0, 
+                                        "x": 491.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 175.0, 
+                            "x": 291.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "WEIGHT": 1.1, 
+                        "DENSITY_INT": 99.0, 
+                        "AGGREGATION": 0, 
+                        "CLASSES": {
+                            "values": {
+                                "name": "inputraster"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "NEIGHBORHOOD_MIN": 1.0, 
+                        "NEIGHBORHOOD_MAX": 3.0, 
+                        "DIAGONAL": true, 
+                        "DENSITY_MIN": 10.0, 
+                        "BORDER": true, 
+                        "CLASS": 1.0, 
+                        "CIRCULAR": 0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:fragmentationstandard", 
+                    "description": "Fragmentation (standard)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
