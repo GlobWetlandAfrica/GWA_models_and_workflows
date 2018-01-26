@@ -1,0 +1,293 @@
+{
+    "values": {
+        "inputs": {
+            "b8a": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "b8a", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "B8A"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "aoi": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 560.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "aoi", 
+                            "shapetype": [
+                                -1
+                            ], 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "AOI"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "b11": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 340.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "b11", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "B11"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Mangrove Mapping", 
+        "name": "MM: S2 NDII", 
+        "algs": {
+            "GDALOGRWARPREPROJECT_1": {
+                "values": {
+                    "name": "GDALOGRWARPREPROJECT_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Output Image", 
+                                "pos": {
+                                    "values": {
+                                        "y": 503.0, 
+                                        "x": 216.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 415.0, 
+                            "x": 148.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "ZLEVEL": 6.0, 
+                        "DEST_SRS": "EPSG:4326", 
+                        "BIGTIFF": 0, 
+                        "COMPRESS": 4, 
+                        "RTYPE": 5, 
+                        "TR": 0.0, 
+                        "NO_DATA": null, 
+                        "TILED": false, 
+                        "SOURCE_SRS": "", 
+                        "JPEGCOMPRESSION": 75.0, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "GDALOGRRASTERCALCULATOR_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "TFW": false, 
+                        "METHOD": 0, 
+                        "PREDICTOR": 1.0, 
+                        "EXTRA": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:warpreproject", 
+                    "description": "Warp (reproject)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRCLIPRASTERBYMASKLAYER_1": {
+                "values": {
+                    "name": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 204.0, 
+                            "x": 138.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "ZLEVEL": 6.0, 
+                        "CROP_TO_CUTLINE": true, 
+                        "RTYPE": 5, 
+                        "BIGTIFF": 0, 
+                        "ALPHA_BAND": false, 
+                        "EXTRA": null, 
+                        "MASK": {
+                            "values": {
+                                "name": "aoi"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "COMPRESS": 4, 
+                        "KEEP_RESOLUTION": false, 
+                        "TILED": false, 
+                        "JPEGCOMPRESSION": 75.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "b8a"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "TFW": false, 
+                        "NO_DATA": null, 
+                        "PREDICTOR": 1.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:cliprasterbymasklayer", 
+                    "description": "Clip raster by mask layer 8A"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRCLIPRASTERBYMASKLAYER_2": {
+                "values": {
+                    "name": "GDALOGRCLIPRASTERBYMASKLAYER_2", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 209.0, 
+                            "x": 426.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "ZLEVEL": 6.0, 
+                        "CROP_TO_CUTLINE": true, 
+                        "RTYPE": 5, 
+                        "BIGTIFF": 0, 
+                        "ALPHA_BAND": false, 
+                        "EXTRA": null, 
+                        "MASK": {
+                            "values": {
+                                "name": "aoi"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "COMPRESS": 4, 
+                        "KEEP_RESOLUTION": false, 
+                        "TILED": false, 
+                        "JPEGCOMPRESSION": 75.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "b11"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "TFW": false, 
+                        "NO_DATA": null, 
+                        "PREDICTOR": 1.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:cliprasterbymasklayer", 
+                    "description": "Clip raster by mask layer 11"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRRASTERCALCULATOR_1": {
+                "values": {
+                    "name": "GDALOGRRASTERCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 321.0, 
+                            "x": 139.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT_F": null, 
+                        "BAND_F": "1", 
+                        "INPUT_D": null, 
+                        "INPUT_E": null, 
+                        "BAND_B": "1", 
+                        "BAND_C": "1", 
+                        "BAND_A": "1", 
+                        "RTYPE": 5, 
+                        "EXTRA": null, 
+                        "BAND_D": "1", 
+                        "NO_DATA": "-99", 
+                        "BAND_E": "1", 
+                        "FORMULA": "(A-B)/(A+B)", 
+                        "INPUT_A": {
+                            "values": {
+                                "alg": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "INPUT_B": {
+                            "values": {
+                                "alg": "GDALOGRCLIPRASTERBYMASKLAYER_2", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "INPUT_C": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
