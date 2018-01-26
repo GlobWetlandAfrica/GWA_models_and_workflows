@@ -1,0 +1,202 @@
+{
+    "values": {
+        "inputs": {
+            "input": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "input", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "mmupixels": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 340.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "mmupixels", 
+                            "min": null, 
+                            "default": 6, 
+                            "max": null, 
+                            "value": 6, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "optional": false, 
+                            "description": "MMU (pixels)"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Mangrove Mapping", 
+        "name": "MM: MMU filter, cleaning", 
+        "algs": {
+            "SAGARECLASSIFYGRIDVALUES_1": {
+                "values": {
+                    "name": "SAGARECLASSIFYGRIDVALUES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 136.0, 
+                            "x": 134.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "RNEW": 2.0, 
+                        "SOPERATOR": 0, 
+                        "OLD": 0.0, 
+                        "MIN": 0.0, 
+                        "MAX": 1.0, 
+                        "ROPERATOR": 0, 
+                        "TOPERATOR": 0, 
+                        "NODATAOPT      ": true, 
+                        "OTHEROPT       ": true, 
+                        "RETAB": "-1,1,3,1,2,1,2,3,2,3,10,3", 
+                        "OTHERS": 0.0, 
+                        "NEW": 1.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "input"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "NODATA": 0.0, 
+                        "METHOD": 2
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:reclassifygridvalues", 
+                    "description": "Reclassify values"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRSIEVE_1": {
+                "values": {
+                    "name": "GDALOGRSIEVE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 208.0, 
+                            "x": 342.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "THRESHOLD": {
+                            "values": {
+                                "name": "mmupixels"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "SAGARECLASSIFYGRIDVALUES_1", 
+                                "output": "RESULT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "CONNECTIONS": 0
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:sieve", 
+                    "description": "Sieve"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRTRANSLATE_1": {
+                "values": {
+                    "name": "GDALOGRTRANSLATE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Output classification", 
+                                "pos": {
+                                    "values": {
+                                        "y": 392.0, 
+                                        "x": 545.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 304.0, 
+                            "x": 344.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "ZLEVEL": 6.0, 
+                        "PROJWIN": null, 
+                        "RTYPE": 0, 
+                        "BIGTIFF": 0, 
+                        "OUTSIZE_PERC": true, 
+                        "SDS": false, 
+                        "COMPRESS": 0, 
+                        "OUTSIZE": 100.0, 
+                        "NO_DATA": null, 
+                        "SRS": "", 
+                        "TILED": false, 
+                        "JPEGCOMPRESSION": 75.0, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "GDALOGRSIEVE_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "TFW": false, 
+                        "PREDICTOR": 1.0, 
+                        "EXPAND": 0, 
+                        "EXTRA": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:translate", 
+                    "description": "Translate (convert format)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
