@@ -60,55 +60,6 @@
         "group": "Wetland Inventory / Water Cycle Regime", 
         "name": "Topographic Wetness Index", 
         "algs": {
-            "SAGASAGAWETNESSINDEX_1": {
-                "values": {
-                    "name": "SAGASAGAWETNESSINDEX_1", 
-                    "paramsFolded": true, 
-                    "outputs": {
-                        "TWI": {
-                            "values": {
-                                "description": "TWI", 
-                                "pos": {
-                                    "values": {
-                                        "y": 557.0, 
-                                        "x": 497.0
-                                    }, 
-                                    "class": "point"
-                                }
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
-                        }
-                    }, 
-                    "outputsFolded": true, 
-                    "pos": {
-                        "values": {
-                            "y": 469.0, 
-                            "x": 353.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "dependencies": [], 
-                    "params": {
-                        "SLOPE_TYPE": 0, 
-                        "AREA_TYPE": 2, 
-                        "DEM": {
-                            "values": {
-                                "alg": "SAGAFILLSINKS_1", 
-                                "output": "RESULT"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }, 
-                        "SUCTION": 10.0, 
-                        "SLOPE_WEIGHT": 10.0, 
-                        "SLOPE_MIN": 10.0, 
-                        "SLOPE_OFF": 10.0
-                    }, 
-                    "active": true, 
-                    "consoleName": "saga:sagawetnessindex", 
-                    "description": "Saga wetness index"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
             "SAGAFILLSINKS_1": {
                 "values": {
                     "name": "SAGAFILLSINKS_1", 
@@ -117,8 +68,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 385.0, 
-                            "x": 350.0
+                            "y": 400.0, 
+                            "x": 305.0
                         }, 
                         "class": "point"
                     }, 
@@ -127,7 +78,7 @@
                         "MINSLOPE": 0.01, 
                         "DEM": {
                             "values": {
-                                "alg": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
+                                "alg": "SAGACLIPGRIDWITHPOLYGON_1", 
                                 "output": "OUTPUT"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
@@ -136,35 +87,6 @@
                     "active": true, 
                     "consoleName": "saga:fillsinks", 
                     "description": "Fill sinks"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
-            "SCRIPTCREATETWIBINARYMASK_1": {
-                "values": {
-                    "name": "SCRIPTCREATETWIBINARYMASK_1", 
-                    "paramsFolded": true, 
-                    "outputs": {}, 
-                    "outputsFolded": true, 
-                    "pos": {
-                        "values": {
-                            "y": 640.0, 
-                            "x": 317.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "dependencies": [], 
-                    "params": {
-                        "path_TWI": {
-                            "values": {
-                                "alg": "SAGASAGAWETNESSINDEX_1", 
-                                "output": "TWI"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }
-                    }, 
-                    "active": true, 
-                    "consoleName": "script:createtwibinarymask", 
-                    "description": "Create TWI binary mask"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
@@ -212,51 +134,115 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
-            "GDALOGRCLIPRASTERBYMASKLAYER_1": {
+            "SCRIPTCREATETWIBINARYMASK_1": {
                 "values": {
-                    "name": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
+                    "name": "SCRIPTCREATETWIBINARYMASK_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 251.0, 
-                            "x": 433.0
+                            "y": 660.0, 
+                            "x": 245.0
                         }, 
                         "class": "point"
                     }, 
                     "dependencies": [], 
                     "params": {
-                        "ZLEVEL": 6.0, 
-                        "CROP_TO_CUTLINE": false, 
-                        "RTYPE": 5, 
-                        "BIGTIFF": 0, 
-                        "ALPHA_BAND": false, 
-                        "EXTRA": null, 
-                        "MASK": {
+                        "path_TWI": {
+                            "values": {
+                                "alg": "SAGASAGAWETNESSINDEX_1", 
+                                "output": "TWI"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "script:createtwibinarymask", 
+                    "description": "Create TWI binary mask"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGACLIPGRIDWITHPOLYGON_1": {
+                "values": {
+                    "name": "SAGACLIPGRIDWITHPOLYGON_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 269.0, 
+                            "x": 434.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "name": "dem2"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "POLYGONS": {
                             "values": {
                                 "name": "shapefilewithaoi"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                        }, 
-                        "COMPRESS": 4, 
-                        "KEEP_RESOLUTION": true, 
-                        "TILED": false, 
-                        "JPEGCOMPRESSION": 75.0, 
-                        "INPUT": {
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:clipgridwithpolygon", 
+                    "description": "Clip raster with polygon"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGASAGAWETNESSINDEX_1": {
+                "values": {
+                    "name": "SAGASAGAWETNESSINDEX_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "TWI": {
                             "values": {
-                                "alg": "GDALOGRTRANSLATE_1", 
-                                "output": "OUTPUT"
+                                "description": "TWI", 
+                                "pos": {
+                                    "values": {
+                                        "y": 606.0, 
+                                        "x": 479.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 521.0, 
+                            "x": 269.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "SLOPE_TYPE": 0, 
+                        "AREA_TYPE": 2, 
+                        "DEM": {
+                            "values": {
+                                "alg": "SAGAFILLSINKS_1", 
+                                "output": "RESULT"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "TFW": false, 
-                        "NO_DATA": null, 
-                        "PREDICTOR": 1.0
+                        "SUCTION": 10.0, 
+                        "SLOPE_WEIGHT": 10.0, 
+                        "SLOPE_MIN": 10.0, 
+                        "SLOPE_OFF": 10.0
                     }, 
                     "active": true, 
-                    "consoleName": "gdalogr:cliprasterbymasklayer", 
-                    "description": "Clip raster by mask layer"
+                    "consoleName": "saga:sagawetnessindex", 
+                    "description": "Saga wetness index"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }
