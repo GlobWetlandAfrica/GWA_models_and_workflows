@@ -228,7 +228,7 @@
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
-                        "CROP_TO_CUTLINE": false, 
+                        "CROP_TO_CUTLINE": true, 
                         "RTYPE": 5, 
                         "BIGTIFF": 0, 
                         "ALPHA_BAND": false, 
