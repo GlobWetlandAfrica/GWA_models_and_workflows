@@ -21,7 +21,7 @@
                             "value": null, 
                             "exported": null, 
                             "hidden": false, 
-                            "optional": true, 
+                            "optional": false, 
                             "description": "shapefile with AOI"
                         }, 
                         "class": "processing.core.parameters.ParameterVector"
