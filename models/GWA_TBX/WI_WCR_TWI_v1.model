@@ -21,8 +21,8 @@
                             "value": null, 
                             "exported": null, 
                             "hidden": false, 
-                            "optional": true, 
-                            "description": "shapefile with AOI"
+                            "optional": false, 
+                            "description": "Shapefile with AOI"
                         }, 
                         "class": "processing.core.parameters.ParameterVector"
                     }
@@ -78,7 +78,7 @@
                         "MINSLOPE": 0.01, 
                         "DEM": {
                             "values": {
-                                "alg": "SAGACLIPGRIDWITHPOLYGON_1", 
+                                "alg": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
                                 "output": "OUTPUT"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
@@ -171,8 +171,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 269.0, 
-                            "x": 434.0
+                            "y": 270.0, 
+                            "x": 538.0
                         }, 
                         "class": "point"
                     }, 
@@ -204,11 +204,11 @@
                     "outputs": {
                         "TWI": {
                             "values": {
-                                "description": "TWI", 
+                                "description": "Output file (TWI)", 
                                 "pos": {
                                     "values": {
-                                        "y": 606.0, 
-                                        "x": 479.0
+                                        "y": 566.0, 
+                                        "x": 469.0
                                     }, 
                                     "class": "point"
                                 }
@@ -243,6 +243,53 @@
                     "active": true, 
                     "consoleName": "saga:sagawetnessindex", 
                     "description": "Saga wetness index"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRCLIPRASTERBYMASKLAYER_1": {
+                "values": {
+                    "name": "GDALOGRCLIPRASTERBYMASKLAYER_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 292.0, 
+                            "x": 212.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "ZLEVEL": 6.0, 
+                        "CROP_TO_CUTLINE": true, 
+                        "RTYPE": 5, 
+                        "BIGTIFF": 0, 
+                        "ALPHA_BAND": false, 
+                        "EXTRA": null, 
+                        "MASK": {
+                            "values": {
+                                "name": "shapefilewithaoi"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "COMPRESS": 4, 
+                        "KEEP_RESOLUTION": true, 
+                        "TILED": false, 
+                        "JPEGCOMPRESSION": 75.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "dem2"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "TFW": false, 
+                        "NO_DATA": null, 
+                        "PREDICTOR": 1.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:cliprasterbymasklayer", 
+                    "description": "Clip raster by mask layer"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }
