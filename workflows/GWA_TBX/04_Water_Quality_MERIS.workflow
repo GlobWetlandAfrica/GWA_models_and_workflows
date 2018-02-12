@@ -1,7 +1,7 @@
 .NAME:Water_Quality_Assessement_MERIS
 .GROUP:PG#4:Water Quality
 .ALGORITHM:script:pg04waterqualityparameterssubsetting
-.PARAMETERS:{}
+.PARAMETERS:{"dontsubset": false}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -9,10 +9,12 @@ p, li { white-space: pre-wrap; }
 </style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:11pt; font-weight:600;">Step 1: Subset input data to AOI</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Select for </span><span style=" font-size:10pt; font-weight:600;">Input vector</span><span style=" font-size:10pt;"> a shapefile or any other vector delineating your area of interest (AOI).</span></p></body></html>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Select for </span><span style=" font-size:10pt; font-weight:600;">Input vector</span><span style=" font-size:10pt;"> a shapefile or any other vector delineating your area of interest (AOI).</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">In case your data is already subsetted to a specific lake or area and you don't want to use a the subsetting, check the &quot;Don't subset products&quot; checkbox. In this case you don't need to select or provide any shapefile, just click on Run.</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:pg04waterqualityparameterscoastcolourl1p
-.PARAMETERS:{"CloudBufferWidth": 2, "CloudScreeningAmbiguous": 1.4, "Calibration": false, "Equalization": true, "GlintCloudThresholdAddition": 0.1, "CloudScreeningSure": 1.8, "Smile": true, "IgnoreSeaIceClim": false, "Icol": false}
+.PARAMETERS:{"CloudBufferWidth": 2, "CloudScreeningAmbiguous": 1.4, "Calibration": 0, "Equalization": 1, "OutputCloudProbabilityFeatureValue": 0, "GlintCloudThresholdAddition": 0.1, "CloudScreeningSure": 1.8, "Smile": 1, "IgnoreSeaIceClim": 0, "Icol": 0}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -128,7 +130,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">(e.g. WGS84)</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:pg04waterqualityworkflowgraphprocessorv5
-.PARAMETERS:{"mem": 1}
+.PARAMETERS:{}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -142,14 +144,12 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; font-weight:600;">Input: </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Select multiple MERIS Level 1 FR or RR products in N1 format</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Set available </span><span style=" font-size:8pt; font-weight:600;">RAM</span><span style=" font-size:8pt;"> (GB) available for processing.</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;"> </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; font-weight:600;">Output folder:</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Select a folder to save all output files. The output comprises water quality indicators in BEAM-DIMAP format (layer stack).</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:pg04waterqualityworkflowsnapl3binning
-.PARAMETERS:{"binning_type": 2, "end_date_string": "2008/12/31", "start_date_string": "2008/01/01", "mem": 1, "res": 0.6, "interval": 10, "datepref": "BCM", "outpref": "MER_FRS_", "sensor": 1}
+.PARAMETERS:{"binning_type": 1, "end_date_string": "2008/12/31", "start_date_string": "2008/01/01", "res": 1.2, "interval": 10, "datepref": "BCM", "outpref": "MER_FRS_", "sensor": 1}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -165,7 +165,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Select folder with level 2 data (output step 10)</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; font-weight:600;">Select sensor: </span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Select the sensor of the used L2 products (output step 8). You can select between MERIS and OLCI L2 products.</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Select the sensor of the used L2 products (output step 8). You can select between MERIS and OLCI L2 products. For this workflow you will select MERIS as we want to create L3 from MERIS L2 data.</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; font-weight:600;">Set start/end date:</span><span style=" font-size:8pt;"> </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">This defines the start end end of the binning period. When using binning type &quot;period&quot; it will start at the exact date and ends after the end date. For binning type &quot;monthly&quot; only the month of the given start end end dates will be used. Complete month will be binned. For binning type &quot;date to date monthly&quot; the start date defines the day of the monthly period. It will end at the same day of the set end month. The format has to be YYYY/MM/DD</span></p>
@@ -177,8 +177,6 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Here you can select wether you like to bin based on a defined period in number of days, based on month or based on month starting from a specific data (e.g. 12.01-12.02, 12.02-12.03, etc.).</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Define </span><span style=" font-size:8pt; font-weight:600;">spatial resolution</span><span style=" font-size:8pt;"> for aggregation. Should be higher than input resolution to avoid moiré effect.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Set available </span><span style=" font-size:8pt; font-weight:600;">RAM</span><span style=" font-size:8pt;"> (GB) available for processing.</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt; font-weight:600;">Output prefix: </span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Define a prefix for the output filename. The rest of the filename is variable based on the binned period.</span></p>

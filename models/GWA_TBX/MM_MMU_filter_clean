@@ -57,21 +57,63 @@
         }, 
         "helpContent": {}, 
         "group": "Mangrove Mapping", 
-        "name": "MM: MMU Filter", 
+        "name": "MM: MMU filter, cleaning", 
         "algs": {
+            "SAGARECLASSIFYGRIDVALUES_1": {
+                "values": {
+                    "name": "SAGARECLASSIFYGRIDVALUES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 136.0, 
+                            "x": 134.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "RNEW": 2.0, 
+                        "SOPERATOR": 0, 
+                        "OLD": 0.0, 
+                        "MIN": 0.0, 
+                        "MAX": 1.0, 
+                        "ROPERATOR": 0, 
+                        "TOPERATOR": 0, 
+                        "NODATAOPT      ": true, 
+                        "OTHEROPT       ": true, 
+                        "RETAB": "-1,1,3,1,2,1,2,3,2,3,10,3", 
+                        "OTHERS": 0.0, 
+                        "NEW": 1.0, 
+                        "INPUT": {
+                            "values": {
+                                "name": "input"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "NODATA": 0.0, 
+                        "METHOD": 2
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:reclassifygridvalues", 
+                    "description": "Reclassify values"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
             "GDALOGRSIEVE_1": {
                 "values": {
                     "name": "GDALOGRSIEVE_1", 
                     "paramsFolded": true, 
                     "outputs": {}, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 160.0, 
-                            "x": 120.0
+                            "y": 208.0, 
+                            "x": 342.0
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "THRESHOLD": {
@@ -82,9 +124,10 @@
                         }, 
                         "INPUT": {
                             "values": {
-                                "name": "input"
+                                "alg": "SAGARECLASSIFYGRIDVALUES_1", 
+                                "output": "RESULT"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
                         "CONNECTIONS": 0
                     }, 
@@ -104,8 +147,8 @@
                                 "description": "Output classification", 
                                 "pos": {
                                     "values": {
-                                        "y": 305.0, 
-                                        "x": 540.0
+                                        "y": 392.0, 
+                                        "x": 545.0
                                     }, 
                                     "class": "point"
                                 }
@@ -113,14 +156,14 @@
                             "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
+                    "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 260.0, 
-                            "x": 340.0
+                            "y": 304.0, 
+                            "x": 344.0
                         }, 
                         "class": "point"
                     }, 
-                    "outputsFolded": true, 
                     "dependencies": [], 
                     "params": {
                         "ZLEVEL": 6.0, 
@@ -129,7 +172,7 @@
                         "BIGTIFF": 0, 
                         "OUTSIZE_PERC": true, 
                         "SDS": false, 
-                        "COMPRESS": 4, 
+                        "COMPRESS": 0, 
                         "OUTSIZE": 100.0, 
                         "NO_DATA": null, 
                         "SRS": "", 

@@ -62,8 +62,8 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-style:italic;">Note: This tool can also be used in &quot;Batch&quot; mode. Change the bottom dropdown menu from &quot;Normal&quot; to &quot;Batch&quot; for use in batch mode.</span></p></body></html>
 !INSTRUCTIONS
-.ALGORITHM:script:landsat8indices
-.PARAMETERS:{}
+.ALGORITHM:script:vegetationandwaterindiceswhm
+.PARAMETERS:{"sat": 1}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">

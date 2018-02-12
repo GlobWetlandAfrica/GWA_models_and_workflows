@@ -84,7 +84,7 @@
         }, 
         "helpContent": {}, 
         "group": "Mangrove Mapping", 
-        "name": "MM: S-2: Moisture index", 
+        "name": "MM: S2 NDII", 
         "algs": {
             "GDALOGRWARPREPROJECT_1": {
                 "values": {
@@ -260,10 +260,10 @@
                         "BAND_C": "1", 
                         "BAND_A": "1", 
                         "RTYPE": 5, 
+                        "EXTRA": null, 
                         "BAND_D": "1", 
                         "NO_DATA": "-99", 
                         "BAND_E": "1", 
-                        "INPUT_C": null, 
                         "FORMULA": "(A-B)/(A+B)", 
                         "INPUT_A": {
                             "values": {
@@ -279,7 +279,7 @@
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
-                        "EXTRA": null
+                        "INPUT_C": null
                     }, 
                     "active": true, 
                     "consoleName": "gdalogr:rastercalculator", 

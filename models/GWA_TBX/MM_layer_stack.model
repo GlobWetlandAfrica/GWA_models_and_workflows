@@ -1,6 +1,32 @@
 {
     "values": {
         "inputs": {
+            "moistureindex": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 119.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "moistureindex", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input layer 1"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
             "radar2": {
                 "values": {
                     "pos": {
@@ -20,7 +46,7 @@
                             "exported": null, 
                             "hidden": false, 
                             "optional": false, 
-                            "description": "Input layer 1"
+                            "description": "Input layer 2"
                         }, 
                         "class": "processing.core.parameters.ParameterRaster"
                     }
@@ -46,7 +72,59 @@
                             "exported": null, 
                             "hidden": false, 
                             "optional": false, 
-                            "description": "Input layer 2"
+                            "description": "Input layer 3"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "inputlayer4": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 776.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputlayer4", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input layer 4"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "inputlayer5": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 129.0, 
+                            "x": 770.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "inputlayer5", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input layer 5"
                         }, 
                         "class": "processing.core.parameters.ParameterRaster"
                     }
@@ -57,8 +135,8 @@
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 60.0, 
-                            "x": 780.0
+                            "y": 254.0, 
+                            "x": 514.0
                         }, 
                         "class": "point"
                     }, 
@@ -67,42 +145,16 @@
                             "isAdvanced": false, 
                             "name": "aoi", 
                             "shapetype": [
-                                -1
+                                2
                             ], 
                             "default": null, 
                             "value": null, 
                             "exported": null, 
                             "hidden": false, 
-                            "optional": false, 
+                            "optional": true, 
                             "description": "AOI"
                         }, 
                         "class": "processing.core.parameters.ParameterVector"
-                    }
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
-            }, 
-            "moistureindex": {
-                "values": {
-                    "pos": {
-                        "values": {
-                            "y": 60.0, 
-                            "x": 119.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "param": {
-                        "values": {
-                            "isAdvanced": false, 
-                            "name": "moistureindex", 
-                            "showSublayersDialog": true, 
-                            "default": null, 
-                            "value": null, 
-                            "exported": null, 
-                            "hidden": false, 
-                            "optional": false, 
-                            "description": "Input layer 3"
-                        }, 
-                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
@@ -130,6 +182,12 @@
                         "INPUT": [
                             {
                                 "values": {
+                                    "name": "moistureindex"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            }, 
+                            {
+                                "values": {
                                     "name": "radar2"
                                 }, 
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
@@ -142,7 +200,13 @@
                             }, 
                             {
                                 "values": {
-                                    "name": "moistureindex"
+                                    "name": "inputlayer4"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            }, 
+                            {
+                                "values": {
+                                    "name": "inputlayer5"
                                 }, 
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
                             }
