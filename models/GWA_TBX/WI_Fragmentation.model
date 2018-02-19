@@ -32,6 +32,37 @@
         "group": "Wetland Inventory / Water Cycle Regime", 
         "name": "Wetland Fragmentation", 
         "algs": {
+            "SAGACHANGEGRIDVALUES_1": {
+                "values": {
+                    "name": "SAGACHANGEGRIDVALUES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 203.0, 
+                            "x": 234.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "_RESAMPLING": 3, 
+                        "LOOKUP": "0,10,0,10,1000,1", 
+                        "GRID_IN": {
+                            "values": {
+                                "name": "inputraster"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "METHOD": 2
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:changegridvalues", 
+                    "description": "Reclassify values (simple)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
             "SAGAFRAGMENTATIONSTANDARD_1": {
                 "values": {
                     "name": "SAGAFRAGMENTATIONSTANDARD_1", 
@@ -42,8 +73,8 @@
                                 "description": "Connectivity", 
                                 "pos": {
                                     "values": {
-                                        "y": 220.0, 
-                                        "x": 491.0
+                                        "y": 381.0, 
+                                        "x": 425.0
                                     }, 
                                     "class": "point"
                                 }
@@ -55,8 +86,8 @@
                                 "description": "Fragmentation", 
                                 "pos": {
                                     "values": {
-                                        "y": 250.0, 
-                                        "x": 491.0
+                                        "y": 411.0, 
+                                        "x": 425.0
                                     }, 
                                     "class": "point"
                                 }
@@ -68,8 +99,8 @@
                                 "description": "Summary", 
                                 "pos": {
                                     "values": {
-                                        "y": 280.0, 
-                                        "x": 491.0
+                                        "y": 441.0, 
+                                        "x": 425.0
                                     }, 
                                     "class": "point"
                                 }
@@ -81,8 +112,8 @@
                                 "description": "Density", 
                                 "pos": {
                                     "values": {
-                                        "y": 310.0, 
-                                        "x": 491.0
+                                        "y": 471.0, 
+                                        "x": 425.0
                                     }, 
                                     "class": "point"
                                 }
@@ -93,26 +124,28 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 175.0, 
-                            "x": 291.0
+                            "y": 336.0, 
+                            "x": 225.0
                         }, 
                         "class": "point"
                     }, 
                     "dependencies": [], 
                     "params": {
+                        "_RESAMPLING": 3, 
                         "WEIGHT": 1.1, 
                         "DENSITY_INT": 99.0, 
+                        "DIAGONAL": true, 
+                        "DENSITY_MIN": 10.0, 
                         "AGGREGATION": 0, 
                         "CLASSES": {
                             "values": {
-                                "name": "inputraster"
+                                "alg": "SAGACHANGEGRIDVALUES_1", 
+                                "output": "GRID_OUT"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
                         "NEIGHBORHOOD_MIN": 1.0, 
                         "NEIGHBORHOOD_MAX": 3.0, 
-                        "DIAGONAL": true, 
-                        "DENSITY_MIN": 10.0, 
                         "BORDER": true, 
                         "CLASS": 1.0, 
                         "CIRCULAR": 0
