@@ -1,5 +1,5 @@
-.NAME:Inundation Regime
-.GROUP:PG#3:Inundation Regime
+.NAME:Water Cycle Regime
+.GROUP:PG#3:Water Cycle Regime
 .ALGORITHM:script:fmasklandsat
 .PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
 .MODE:Normal
