@@ -1,0 +1,172 @@
+{
+    "values": {
+        "inputs": {
+            "landcovermap": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 58.0, 
+                            "x": 408.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "landcovermap", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Land cover map"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "regionpolygons": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 58.0, 
+                            "x": 127.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "regionpolygons", 
+                            "shapetype": [
+                                2
+                            ], 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Region polygons"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "SDG 6.6.1 reporting", 
+        "name": "Land cover area statistics", 
+        "algs": {
+            "GRASSR.REPORT_1": {
+                "values": {
+                    "name": "GRASSR.REPORT_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "html": {
+                            "values": {
+                                "description": "Report as HTML", 
+                                "pos": {
+                                    "values": {
+                                        "y": 346.0, 
+                                        "x": 386.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "rawoutput": {
+                            "values": {
+                                "description": "Report as text", 
+                                "pos": {
+                                    "values": {
+                                        "y": 376.0, 
+                                        "x": 386.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 301.0, 
+                            "x": 186.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-e": true, 
+                        "map": [ 
+                            {
+                                "values": {
+                                    "alg": "GRASSV.TO.RAST.ATTRIBUTE_1", 
+                                    "output": "output"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                            },
+                            {
+                                "values": {
+                                    "name": "landcovermap"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            }
+                        ], 
+                        "-f": true, 
+                        "-n": true, 
+                        "-h": true, 
+                        "null_value": "*", 
+                        "units": 2, 
+                        "GRASS_REGION_PARAMETER": null, 
+                        "nsteps": 255.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:r.report", 
+                    "description": "r.report - Reports statistics for raster layers."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASSV.TO.RAST.ATTRIBUTE_1": {
+                "values": {
+                    "name": "GRASSV.TO.RAST.ATTRIBUTE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 182.0, 
+                            "x": 115.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "use": 0, 
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": -1.0, 
+                        "GRASS_REGION_CELLSIZE_PARAMETER": 20.0, 
+                        "attribute_column": "aoi_id", 
+                        "input": {
+                            "values": {
+                                "name": "regionpolygons"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null, 
+                        "GRASS_MIN_AREA_PARAMETER": 0.0001
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:v.to.rast.attribute", 
+                    "description": "v.to.rast.attribute - Converts (rasterize) a vector layer into a raster layer."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
