@@ -31,8 +31,8 @@
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 99.0, 
-                            "x": 814.0
+                            "y": 55.0, 
+                            "x": 676.0
                         }, 
                         "class": "point"
                     }, 
@@ -80,6 +80,33 @@
                     }
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "minimumcontributionthresholdforwatershedseparation": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 88.0, 
+                            "x": 955.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "minimumcontributionthresholdforwatershedseparation", 
+                            "min": 1, 
+                            "default": 10000, 
+                            "max": null, 
+                            "value": 10000, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "optional": false, 
+                            "description": "Minimum contribution threshold for watershed separation"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "helpContent": {}, 
@@ -91,13 +118,26 @@
                     "name": "TAUDEMSTREAMREACHANDWATERSHED_1", 
                     "paramsFolded": true, 
                     "outputs": {
-                        "-net": {
+                        "-w": {
                             "values": {
-                                "description": "Stream Reach vector", 
+                                "description": "Watershed grid", 
                                 "pos": {
                                     "values": {
-                                        "y": 604.0, 
-                                        "x": 641.0
+                                        "y": 568.0, 
+                                        "x": 818.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "-net": {
+                            "values": {
+                                "description": "Stream reach vector", 
+                                "pos": {
+                                    "values": {
+                                        "y": 690.0, 
+                                        "x": 789.0
                                     }, 
                                     "class": "point"
                                 }
@@ -155,36 +195,6 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
-            "GDALOGRPOLYGONIZE_1": {
-                "values": {
-                    "name": "GDALOGRPOLYGONIZE_1", 
-                    "paramsFolded": true, 
-                    "outputs": {}, 
-                    "outputsFolded": true, 
-                    "pos": {
-                        "values": {
-                            "y": 644.0, 
-                            "x": 548.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "dependencies": [], 
-                    "params": {
-                        "INPUT": {
-                            "values": {
-                                "alg": "TAUDEMSTREAMREACHANDWATERSHED_1", 
-                                "output": "-w"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }, 
-                        "FIELD": "DN"
-                    }, 
-                    "active": true, 
-                    "consoleName": "gdalogr:polygonize", 
-                    "description": "Polygonize (raster to vector)"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
             "TAUDEMSTREAMDEFINITIONBYTHRESHOLD_1": {
                 "values": {
                     "name": "TAUDEMSTREAMDEFINITIONBYTHRESHOLD_1", 
@@ -208,56 +218,16 @@
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
                         "-mask": null, 
-                        "-thresh": 10000.0
+                        "-thresh": {
+                            "values": {
+                                "name": "minimumcontributionthresholdforwatershedseparation"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
                     }, 
                     "active": true, 
                     "consoleName": "taudem:streamdefinitionbythreshold", 
                     "description": "Stream Definition By Threshold"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
-            "QGISDISSOLVE_1": {
-                "values": {
-                    "name": "QGISDISSOLVE_1", 
-                    "paramsFolded": true, 
-                    "outputs": {
-                        "OUTPUT": {
-                            "values": {
-                                "description": "Watershed vector", 
-                                "pos": {
-                                    "values": {
-                                        "y": 835.0, 
-                                        "x": 764.0
-                                    }, 
-                                    "class": "point"
-                                }
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
-                        }
-                    }, 
-                    "outputsFolded": true, 
-                    "pos": {
-                        "values": {
-                            "y": 790.0, 
-                            "x": 564.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "dependencies": [], 
-                    "params": {
-                        "INPUT": {
-                            "values": {
-                                "alg": "GDALOGRPOLYGONIZE_1", 
-                                "output": "OUTPUT"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }, 
-                        "DISSOLVE_ALL": false, 
-                        "FIELD": "DN"
-                    }, 
-                    "active": true, 
-                    "consoleName": "qgis:dissolve", 
-                    "description": "Dissolve"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 

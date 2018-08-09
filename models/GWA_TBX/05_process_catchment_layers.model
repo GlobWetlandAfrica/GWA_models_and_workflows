@@ -1,30 +1,28 @@
 {
     "values": {
         "inputs": {
-            "watershedlayer": {
+            "catchmentlayer": {
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 143.0, 
-                            "x": 661.0
+                            "y": 62.0, 
+                            "x": 719.0
                         }, 
                         "class": "point"
                     }, 
                     "param": {
                         "values": {
                             "isAdvanced": false, 
-                            "name": "watershedlayer", 
-                            "shapetype": [
-                                2
-                            ], 
+                            "name": "catchmentlayer", 
+                            "showSublayersDialog": true, 
                             "default": null, 
                             "value": null, 
                             "exported": null, 
                             "hidden": false, 
                             "optional": false, 
-                            "description": "Catchment layer"
+                            "description": "Watershed grid"
                         }, 
-                        "class": "processing.core.parameters.ParameterVector"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
@@ -33,8 +31,8 @@
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 133.0, 
-                            "x": 370.0
+                            "y": 63.0, 
+                            "x": 368.0
                         }, 
                         "class": "point"
                     }, 
@@ -61,8 +59,8 @@
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 131.0, 
-                            "x": 944.0
+                            "y": 72.0, 
+                            "x": 970.0
                         }, 
                         "class": "point"
                     }, 
@@ -96,8 +94,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 312.0, 
-                            "x": 523.0
+                            "y": 488.0, 
+                            "x": 323.0
                         }, 
                         "class": "point"
                     }, 
@@ -111,9 +109,10 @@
                         }, 
                         "catchmentVector": {
                             "values": {
-                                "name": "watershedlayer"
+                                "alg": "QGISDISSOLVE_1", 
+                                "output": "OUTPUT"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }
                     }, 
                     "active": true, 
@@ -130,8 +129,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 547.0, 
-                            "x": 992.0
+                            "y": 459.0, 
+                            "x": 1000.0
                         }, 
                         "class": "point"
                     }, 
@@ -148,9 +147,10 @@
                         "GLOBAL_EXTENT": false, 
                         "INPUT_VECTOR": {
                             "values": {
-                                "name": "watershedlayer"
+                                "alg": "QGISDISSOLVE_1", 
+                                "output": "OUTPUT"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }
                     }, 
                     "active": true, 
@@ -255,9 +255,10 @@
                     "params": {
                         "INPUT": {
                             "values": {
-                                "name": "watershedlayer"
+                                "alg": "QGISDISSOLVE_1", 
+                                "output": "OUTPUT"
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
                         "TARGET_CRS": "EPSG:4326"
                     }, 
@@ -308,6 +309,66 @@
                     "active": true, 
                     "consoleName": "qgis:reprojectlayer", 
                     "description": "Reproject layer"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISDISSOLVE_1": {
+                "values": {
+                    "name": "QGISDISSOLVE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 288.0, 
+                            "x": 703.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "GDALOGRPOLYGONIZE_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "DISSOLVE_ALL": false, 
+                        "FIELD": "DN"
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:dissolve", 
+                    "description": "Dissolve"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRPOLYGONIZE_1": {
+                "values": {
+                    "name": "GDALOGRPOLYGONIZE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 198.0, 
+                            "x": 717.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "name": "catchmentlayer"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "FIELD": "DN"
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:polygonize", 
+                    "description": "Polygonize (raster to vector)"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
