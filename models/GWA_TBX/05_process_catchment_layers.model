@@ -1,6 +1,32 @@
 {
     "values": {
         "inputs": {
+            "digitalelevationmodel": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 72.0, 
+                            "x": 970.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "digitalelevationmodel", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Digital Elevation Model"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
             "catchmentlayer": {
                 "values": {
                     "pos": {
@@ -54,32 +80,6 @@
                     }
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
-            }, 
-            "digitalelevationmodel": {
-                "values": {
-                    "pos": {
-                        "values": {
-                            "y": 72.0, 
-                            "x": 970.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "param": {
-                        "values": {
-                            "isAdvanced": false, 
-                            "name": "digitalelevationmodel", 
-                            "showSublayersDialog": true, 
-                            "default": null, 
-                            "value": null, 
-                            "exported": null, 
-                            "hidden": false, 
-                            "optional": false, 
-                            "description": "Digital Elevation Model"
-                        }, 
-                        "class": "processing.core.parameters.ParameterRaster"
-                    }
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "helpContent": {}, 
@@ -129,8 +129,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 459.0, 
-                            "x": 1000.0
+                            "y": 323.0, 
+                            "x": 1146.0
                         }, 
                         "class": "point"
                     }, 
@@ -169,8 +169,8 @@
                                 "description": "Catchment centroids", 
                                 "pos": {
                                     "values": {
-                                        "y": 947.0, 
-                                        "x": 815.0
+                                        "y": 750.0, 
+                                        "x": 1130.0
                                     }, 
                                     "class": "point"
                                 }
@@ -181,8 +181,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 836.0, 
-                            "x": 724.0
+                            "y": 659.0, 
+                            "x": 1126.0
                         }, 
                         "class": "point"
                     }, 
@@ -211,8 +211,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 720.0, 
-                            "x": 1089.0
+                            "y": 439.0, 
+                            "x": 741.0
                         }, 
                         "class": "point"
                     }, 
@@ -222,8 +222,8 @@
                         "NEW_FIELD": true, 
                         "INPUT_LAYER": {
                             "values": {
-                                "alg": "QGISZONALSTATISTICS_1", 
-                                "output": "OUTPUT_LAYER"
+                                "alg": "QGISDISSOLVE_1", 
+                                "output": "OUTPUT"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
@@ -246,8 +246,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 468.0, 
-                            "x": 668.0
+                            "y": 433.0, 
+                            "x": 1147.0
                         }, 
                         "class": "point"
                     }, 
@@ -255,8 +255,8 @@
                     "params": {
                         "INPUT": {
                             "values": {
-                                "alg": "QGISDISSOLVE_1", 
-                                "output": "OUTPUT"
+                                "alg": "QGISZONALSTATISTICS_1", 
+                                "output": "OUTPUT_LAYER"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }, 
@@ -278,8 +278,8 @@
                                 "description": "Catchment layer with mean DEM and area", 
                                 "pos": {
                                     "values": {
-                                        "y": 952.0, 
-                                        "x": 1416.0
+                                        "y": 619.0, 
+                                        "x": 742.0
                                     }, 
                                     "class": "point"
                                 }
@@ -290,8 +290,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 825.0, 
-                            "x": 1282.0
+                            "y": 530.0, 
+                            "x": 757.0
                         }, 
                         "class": "point"
                     }, 
@@ -380,8 +380,8 @@
                     "outputsFolded": true, 
                     "pos": {
                         "values": {
-                            "y": 681.0, 
-                            "x": 693.0
+                            "y": 540.0, 
+                            "x": 1142.0
                         }, 
                         "class": "point"
                     }, 
