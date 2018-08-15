@@ -1,6 +1,6 @@
 .NAME:Wetland time-series analysis
 .GROUP:Wetland Indicators
-.ALGORITHM:grass:r.series
+.ALGORITHM:grass7:r.series
 .PARAMETERS:{"GRASS_REGION_PARAMETER": null, "range": "-10000000000,10000000000", "-n": false, "GRASS_REGION_CELLSIZE_PARAMETER": 0, "method": 2}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
@@ -28,7 +28,7 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p></body></html>
 !INSTRUCTIONS
-.ALGORITHM:grass:r.neighbors
+.ALGORITHM:grass7:r.neighbors
 .PARAMETERS:{"GRASS_REGION_CELLSIZE_PARAMETER": 0, "-c": false, "-a": false, "GRASS_REGION_PARAMETER": null, "method": 0, "size": 3}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">

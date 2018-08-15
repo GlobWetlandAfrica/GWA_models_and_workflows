@@ -1,7 +1,7 @@
 .NAME:Wetland area statistics
 .GROUP:Wetland Indicators
-.ALGORITHM:grass:r.report
-.PARAMETERS:{"-e": true, "-f": true, "-n": true, "-h": true, "GRASS_REGION_PARAMETER": null, "-N": true, "units": 2, "null": "*", "nsteps": 255}
+.ALGORITHM:grass7:r.report
+.PARAMETERS:{"-e": true, "-f": true, "-n": true, "-h": true, "GRASS_REGION_PARAMETER": null, "units": 2, "null_value": "*", "nsteps": 255}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">

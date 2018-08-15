@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">In the next and final step of this workflow the result of the segmentation will be intersected by the vectorised classification. In this way the new segments are combined into the original classification and a manual editing is possible using the segments created.  </span></p></body></html>
 !INSTRUCTIONS
-.ALGORITHM:grass:v.overlay
+.ALGORITHM:grass7:v.overlay
 .PARAMETERS:{"GRASS_SNAP_TOLERANCE_PARAMETER": -1, "GRASS_MIN_AREA_PARAMETER": 0, "atype": 0, "GRASS_OUTPUT_TYPE_PARAMETER": 0, "-t": false, "operator": 0, "GRASS_REGION_PARAMETER": null}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">

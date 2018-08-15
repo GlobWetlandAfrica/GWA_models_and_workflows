@@ -171,7 +171,7 @@
                         "method": 0
                     }, 
                     "active": true, 
-                    "consoleName": "grass:r.series", 
+                    "consoleName": "grass7:r.series", 
                     "description": "r.series band2"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
@@ -235,7 +235,7 @@
                         "method": 0
                     }, 
                     "active": true, 
-                    "consoleName": "grass:r.series", 
+                    "consoleName": "grass7:r.series", 
                     "description": "r.series band1"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
