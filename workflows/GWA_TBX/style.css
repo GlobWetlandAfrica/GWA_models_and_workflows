@@ -1,0 +1,19 @@
+* {
+    font-family: "Arial";
+}
+
+p, li {
+        font-size: 11pt;
+}
+
+h1 {
+    color: #3B5238;
+}
+
+h2 {
+    color: #97C199;
+}
+
+h3 {
+    color: blue;
+}
