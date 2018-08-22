@@ -17,7 +17,7 @@ Recent advancements in remote sensing technology and image processing methods ha
 ## Theoretical background
 Considerable change occurs in mangrove phenology throughout the year, especially as the dry season progresses. Seasonal changes in optical spectra may improve the identification of different species and/or structural types. A second aspect that may have an influence on mangrove characterisation is the difference between high and low tide. At high tide, the background signal of water is expected to have a greater influence on the overall spectral response compared to low tide conditions, especially so for lower elevation or less dense areas of mangrove. Therefore, **best results are obtained when including imagery in the analysis that captured both seasonal and tidal differences**.
 <center><img src="images/mangroves_timeseries_evolution.png" alt="mangroves_timeseries_evolution"></center>
-In this workflow we use the **Random Forests classifier**. Random Forests  is an ensemble learning algorithm for classification that operates by constructing many decision trees during model training and outputting the class that receives the most ‘votes’ from the entire group of decision trees, i.e. the mode occurrence. Random Forests was chosen as the classifier due to a number of appealing characteristics that lend to robust exploratory analysis; it is amongst the most accurate machine learning algorithms, it runs efficiently on large datasets, it can handle a large amount of input variables, it is robust against model over fitting, it requires less model tuning compared to other machine learning approaches (e.g.Support Vector Machine).
+In this workflow we use the **Random Forest classifier**. Random Forest  is an ensemble learning algorithm for classification that operates by constructing many decision trees during model training and outputting the class that receives the most ‘votes’ from the entire group of decision trees, i.e. the mode occurrence. Random Forests was chosen as the classifier due to a number of appealing characteristics that lend to robust exploratory analysis; it is amongst the most accurate machine learning algorithms, it runs efficiently on large datasets, it can handle a large amount of input variables, it is robust against model over fitting, it requires less model tuning compared to other machine learning approaches (e.g.Support Vector Machine).
 
 ## Data preparation
 Before running this workflow you should use the **__Sentinel-2 Pre-processing workflow__** (loacated in the *I/O* group) for each image in the Sentinel-2 time-series to be used in the classification.
@@ -49,7 +49,7 @@ Nothing relevant.
 .MODE:Normal
 .INSTRUCTIONS:# Classify mangrove types
 
-This step performs Random Forests classification by relating the input imagery to associated training data. To focus the classification on mangroves only, the mangrove extent mask from the *Mangrove Inventory* workflow is used to mask out all area that are not mangroves.
+This step performs Random Forest classification by relating the input imagery to associated training data. To focus the classification on mangroves only, the mangrove extent mask from the *Mangrove Inventory* workflow is used to mask out all area that are not mangroves.
 
 A Shapefile (.shp) with vector polygon or point training data for each class is required to proceed in this workflow.
 
