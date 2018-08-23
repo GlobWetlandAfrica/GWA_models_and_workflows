@@ -1,4 +1,4 @@
-.NAME:2 - Mangrove Characterisation
+.NAME:2 - Mangrove characterisation
 .GROUP:PG#6: Mangrove Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
@@ -20,11 +20,11 @@ Considerable change occurs in mangrove phenology throughout the year, especially
 In this workflow we use the **Random Forest classifier**. Random Forest  is an ensemble learning algorithm for classification that operates by constructing many decision trees during model training and outputting the class that receives the most ‘votes’ from the entire group of decision trees, i.e. the mode occurrence. Random Forests was chosen as the classifier due to a number of appealing characteristics that lend to robust exploratory analysis; it is amongst the most accurate machine learning algorithms, it runs efficiently on large datasets, it can handle a large amount of input variables, it is robust against model over fitting, it requires less model tuning compared to other machine learning approaches (e.g.Support Vector Machine).
 
 ## Data preparation
-Before running this workflow you should use the **__Sentinel-2 Pre-processing workflow__** (loacated in the *I/O* group) for each image in the Sentinel-2 time-series to be used in the classification.
+Before running this workflow you should use the **__Sentinel-2 Pre-processing workflow__** (loacated in the *I/O* group) for each image in the Sentinel-2 time-series to be used in the classification. You should also create a a vector polygon or point shapefile (.shp) with the **training data**. It should contain multiple training samples for each wetland class to be classified and the projection of this file must be identical to that of the Sentinel-2 time-series images.
+
 
 ## References and futher reading
-* Breiman, L. Machine Learning (2001) 45: 5. https://doi.org/10.1023/A:1010933404324
-* GlobWetland-Africa, Algorithm Theoretical Basis Document, chapter 4.7
+* Breiman, L. Machine Learning (2001) 45: 5. [https://doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324)
 !INSTRUCTIONS
 .ALGORITHM:gdalogr:merge
 .PARAMETERS:{"RTYPE": 1, "NODATA": -9999, "PCT": false, "SEPARATE": true}
@@ -40,9 +40,6 @@ The first step combines all input imagery used for the classification into 1 sin
 **Output raster type**: Generally you should try work with integer values, as these are lighter on memory and can improve general performance. If you've followed the pre-processing steps for generating surface reflectance and spectral indices the datasets should already be in 'Signed Integer' form (Int16). Choose "Int16" as the "Output raster type" to keep the data in this format. Otherwise choose "Float32".
 
 **Merged**: Define the output directory and image name. The output image name should be called *01_Stack_[‘enter name’].tif*
-
-##Notes
-Nothing relevant.
 !INSTRUCTIONS
 .ALGORITHM:r:randomforestclass
 .PARAMETERS:{"Number_of_Cores_for_Processing ": 2, "Class_ID_Field": "", "Number_of_Trees ": 150}
