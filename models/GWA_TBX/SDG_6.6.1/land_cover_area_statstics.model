@@ -20,7 +20,7 @@
                             "exported": null, 
                             "hidden": false, 
                             "optional": false, 
-                            "description": "Land cover map"
+                            "description": "Classification map"
                         }, 
                         "class": "processing.core.parameters.ParameterRaster"
                     }
@@ -65,25 +65,12 @@
                     "name": "GRASSR.REPORT_1", 
                     "paramsFolded": true, 
                     "outputs": {
-                        "html": {
+                        "rawoutput": {
                             "values": {
-                                "description": "Report as HTML", 
+                                "description": "Output statistics file", 
                                 "pos": {
                                     "values": {
                                         "y": 346.0, 
-                                        "x": 386.0
-                                    }, 
-                                    "class": "point"
-                                }
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
-                        }, 
-                        "rawoutput": {
-                            "values": {
-                                "description": "Report as text", 
-                                "pos": {
-                                    "values": {
-                                        "y": 376.0, 
                                         "x": 386.0
                                     }, 
                                     "class": "point"
@@ -103,7 +90,7 @@
                     "dependencies": [], 
                     "params": {
                         "-e": true, 
-                        "map": [ 
+                        "map": [
                             {
                                 "values": {
                                     "alg": "GRASSV.TO.RAST.ATTRIBUTE_1", 
@@ -116,7 +103,7 @@
                                     "name": "landcovermap"
                                 }, 
                                 "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
-                            }
+                            } 
                         ], 
                         "-f": true, 
                         "-n": true, 
