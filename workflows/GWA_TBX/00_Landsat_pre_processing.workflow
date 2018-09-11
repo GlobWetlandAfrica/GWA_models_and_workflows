@@ -84,27 +84,28 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-style:italic;">Note: This tool can also be used in &quot;Batch&quot; mode. Change the bottom dropdown menu from &quot;Normal&quot; to &quot;Batch&quot; for use in batch mode.</span></p></body></html>
 !INSTRUCTIONS
-.ALGORITHM:script:vegetationandwaterindiceswhm
-.PARAMETERS:{"sat": 1}
+.ALGORITHM:script:vegetationandwaterindices
+.PARAMETERS:{"sensor": 1}
 .MODE:Normal
-.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head><meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">This step calculates 7 spectral indices which are useful for land cover classification.</span><span style=" font-size:8pt;"> </span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">The 8 indices that are calculated are:</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 1: NDVI</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 2: NDWI 1</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 3: NDWI 2</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 4: DVW</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 5: Tasselled Cap Brightness</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 6: Tasselled Cap Greenness</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 7: Tasselled Cap Wetness</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Input Reflectance Stack: Input the Landsat image stack.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Folder to save the stack of Indices: Use the ... button to navigate to the folder where you want to save the indices.</span></p></body></html>
+.INSTRUCTIONS:# Calculate vegetation and water indices
+
+This tool calculates 6 spectral indices which are useful for wetland habitat mapping using Landsat imagery.
+
+* Layer 1: NDVI using Landsat bands 4 and 3
+* Layer 2: mNDWI using Landsat bands 2 and 5
+* Layer 3: DVW (NDVI-NDWI) using Landsat bands 4 and 3 as well as 2 and 4
+* Layer 4: Tasseled Cap Brightness index
+* Layer 5: Tasseled Cap Greenness index
+* Layer 6: Tasseled Cap Wetness index
+
+## Settings
+
+**Direory containing imagery**: Select the folder that contains pre-processed Landsat images.
+
+**Sensor**: Select Landsat.
+
+**Output directory**: Use the ... button to navigate to the folder where you want to save the output.
+Subfolder named by index will be automatically created for each index.
 !INSTRUCTIONS
 .ALGORITHM:script:waterandwetnessindices
 .PARAMETERS:{"end_date": "", "AOI_type": 0, "extent_coordinates": null, "calculate_wetness_indices": 0, "tile_ID": "", "sensor": 0, "start_date": ""}
