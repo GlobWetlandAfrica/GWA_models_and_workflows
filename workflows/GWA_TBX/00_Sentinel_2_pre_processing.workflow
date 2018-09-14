@@ -1,5 +1,25 @@
 .NAME:Sentinel-2 Pre-processing
 .GROUP:I/O
+.ALGORITHM:workflowtools:workflowinstructions
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
+<br>
+# Sentinel-2 pre-processing
+<br><br>
+<br>
+<left><img src="images/S2.jpeg" alt="Sentinel-2" width=200></left>
+<br><br>
+
+## Objective of workflow
+This workflow is used to extract usable imagery from the downloaded Sentinel 2 data. Steps include extracting relevant bands, resampling to a consistent pixel resolution, cloud masking, clipping the data to a specific study area, atmospheric correction, and spectral index calculation.
+
+## Workflow dependencies
+This workflow should be run prior to starting the Wetland Inventory and Mangroves Characterization workflows.
+
+### Note
+*If multiple images need to be processed users may take note of the individual processing steps and run them in batch mode separately and in sequence.*
+!INSTRUCTIONS
 .ALGORITHM:script:unzipsentinel2data
 .PARAMETERS:{}
 .MODE:Normal
@@ -43,7 +63,7 @@ p, li { white-space: pre-wrap; }
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-style:italic;">Note: This tool can also be used in &quot;Batch&quot; mode. Change the bottom dropdown menu from &quot;Normal&quot; to &quot;Batch&quot; for use in batch mode.</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:fmasksentinel2
-.PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20}
+.PARAMETERS:{"cloudbufferdistance": 150, "verbose": true, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "greensnowthreshold": 0.1, "mincloudsize": 0, "cloudprobthreshold": 20}
 .MODE:Normal
 .INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <html><head><meta name="qrichtext" content="1" /><style type="text/css">
@@ -181,4 +201,37 @@ p, li { white-space: pre-wrap; }
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;"><br /></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;"><br /></p></body></html>
+!INSTRUCTIONS
+.ALGORITHM:workflowtools:workflowinstructions
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:# H1 Header
+## H2
+### H3
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
+
+1. First ordered list item
+2. Another item
+    * Unordered sub-list.
+1. Actual numbers don't matter, just that it's a number
+    1. Ordered sub-list
+4. And another item.
+
+
+## More markdown
+
+For more markdown features visit [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 !INSTRUCTIONS

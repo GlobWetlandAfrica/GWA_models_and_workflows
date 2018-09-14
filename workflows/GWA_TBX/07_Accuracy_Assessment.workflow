@@ -1,34 +1,44 @@
-.NAME:Accuracy Assessment
+.NAME:2 - Accuracy Assessment
 .GROUP:Validation Tools
+.ALGORITHM:workflowtools:workflowinstructions
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
+<br>
+# Accuracy Assessment
+<br><br>
+
+
+## Objective of the workflow
+This tool is used to estimate the accuracy and area statistics, including 95% confidence intervals, for a thematic classification map.
+
+
+## Theoretical background
+The concept of accuracy is central to all geographic data, and validation is now seen as an essential component of all major remote sensing projects. The accuracy assessment approach uses a standard error matrix, reporting User’s and Producer’s accuracy for each class and Overall map accuracy. Confidence intervals (95%) for all accuracy statistics are equally estimated using post-stratification equations outlined by Ollofson et al. (2013). The latter has the added advantage of deriving complimentary unbiased area estimates with confidence intervals for each class. In this way, the uncertainty revealed in the error matrix is used to adjust the mapped area and provide statistically sound area measures of land cover for both Simple Random and Stratified Random sampling designs.
+
+
+## References and futher reading
+* P. Olofsson, G.M. Foody, S.V. Stehman, C.E. Woodcock: Making better use of accuracy data in land change studies: Estimating accuracy and area and quantifying uncertainty using stratified estimation. Remote Sensing of Environment, 129 (2013), pp. 122-131
+!INSTRUCTIONS
 .ALGORITHM:r:weightedaccuracy
 .PARAMETERS:{}
 .MODE:Normal
-.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head><meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:7.5pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">This tool is used to estimate the accuracy and area statistics, including 95% confidence intervals, for classified maps.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">The validation sample is weighed by the class area proportions, meaning the resulting statistics are unbiased and statistically sound for both Simple Random and Stratified Random sampling designs. See references below for further details.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Classified Map: enter the classified map here. </span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">NOTE: Values in this raster that are not classified values should be explicitly assigned a &quot;No Data&quot; value.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Validation Sample: Choose a point vector file with labelled reference information for each class.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Validation Label Field: Choose the attribute from the point vector file that contains the reference labels for each class.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Unweighted Error Matrix: This gives a standard unweighted error matrix.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Area Weighted Error matrix: This gives unbiased accuracy statistics by weighting the error matrix using area proportions.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">Unbiased Area Estimates: This gives unbiased area estimates for each class. The mapped area statistics are also included for comparison.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:8pt;">References:</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; color:#505050;">D.H. Card</span><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; font-weight:600; color:#505050;">Using map category marginal frequencies to improve estimates of thematic map accuracy</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; color:#737373;">Photogrammetric Engineering and Remote Sensing, 49 (1982), pp. 431-439</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; color:#505050;">P. Olofsson, G.M. Foody, S.V. Stehman, C.E. Woodcock</span><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; font-weight:600; color:#505050;">Making better use of accuracy data in land change studies: Estimating accuracy and area and quantifying uncertainty using stratified estimation</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif'; font-size:8pt; color:#737373;">Remote Sensing of Environment, 129 (2013), pp. 122-131</span></p></body></html>
+.INSTRUCTIONS:# Accuracy assessment
+
+This tool is used to estimate the accuracy and area statistics, including 95% confidence intervals, for classified maps. The input validation sample is weighed by the class area proportions, meaning the resulting statistics are unbiased and statistically sound for both Simple Random and Stratified Random sampling designs.
+
+## Settings
+
+**Classified Map**: enter the classified map here.
+NOTE: Values in this raster that are not classified values should be explicitly assigned a "No Data" value.
+
+**Validation Sample**: Choose a point vector file with labelled reference information for each class.
+
+**Validation Label Field**: Choose the attribute from the point vector file that contains the reference labels for each class.
+
+**Unweighted Error Matrix**: Specify the name and locaction for the reporting file of the standard unweighted error matrix (*.csv).
+
+**Area Weighted Error matrix**: Specify the name and locaction for the reporting file of the accuracy statistics by weighting the error matrix using area proportions (*.csv).
+
+**Unbiased Area Estimates**: Specify the name and locaction for the reporting file of the unbiased area estimates for each class (*.csv). NOTE: The mapped area statistics are also included for comparison.
 !INSTRUCTIONS

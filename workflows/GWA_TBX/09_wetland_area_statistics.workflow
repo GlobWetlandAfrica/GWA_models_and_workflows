@@ -1,36 +1,70 @@
 .NAME:Wetland area statistics
 .GROUP:Wetland Indicators
-.ALGORITHM:grass:r.report
-.PARAMETERS:{"-e": true, "-f": true, "-n": true, "-h": true, "GRASS_REGION_PARAMETER": null, "units": 1, "null_value": "*", "nsteps": 255}
+.ALGORITHM:workflowtools:workflowinstructions
+.PARAMETERS:{}
 .MODE:Normal
-.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head><meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:7.5pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:11pt; font-weight:600;">Report area statistics for wetland map</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:11pt; font-weight:600;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">This tool calculates the area present in each of the categories of a user-selected land cover map. The result will be a list summarizing the areal coverage of each class and the sum of the total mapped area (covered either by entire raster or predefined extent).</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; font-weight:600;">Note: skip this step and use next step if you wish to constrain the wetland area statistics to a defined region.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:8pt;"><br /></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; text-decoration: underline;">SETTINGS:</span><span style=" font-family:'Arial'; font-size:8pt; text-decoration: underline;"> </span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Select the input classification under &quot;Raster layer(s) to report on.</span><span style=" font-family:'Arial'; font-size:8pt;"> </span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Specify the desired output units:<br />mi: miles<br />me: meters<br />k: kilometers<br />a: acres<br />h: hectares<br />c: cell counts<br />p: percent cover</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Optional: Spatial subsetting of the image can be done by using Region extent.</span><span style=" font-family:'Arial'; font-size:8pt;"> </span><span style=" font-family:'Arial'; font-size:9pt;">Specify name and output location for the output report file (*.html and *.txt).</span></p></body></html>
+.INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
+<br>
+# Wetland area statistics
+<br><br>
+
+## Objective of the workflow
+This workflow calculates the area present in each of the categories of a user-selected land cover map. The result will be a list summarizing the areal coverage of each class and the sum of the total mapped area (covered either by entire raster or predefined extent).
+
+The workflow have two steps. The first step returns the area statistics for a full image, while the second step should be used if the wetland area statistics should be constrained to a defined region.
+
+<center><img src="images/AreaStat.jpg" alt="Area Statistics - Example"></center>
+!INSTRUCTIONS
+.ALGORITHM:grass:r.report
+.PARAMETERS:{"-e": true, "-f": true, "-n": true, "-h": true, "GRASS_REGION_PARAMETER": null, "-N": true, "units": 1, "null": "*", "nsteps": 255}
+.MODE:Normal
+.INSTRUCTIONS:# Area statistics for full image
+
+This step calculates the area present in each of the categories of a user-selected land cover map.
+
+The statistics is provided for the full image or a regtangular subset (optional).  To constrain the statistics to a irregular sub-region (e.g. a watershed or district boundary) proceed to step 2.
+
+## Settings
+
+**Raster layer(s) to report on**: Select the input classification
+
+**Units**: Specify the desired output units i.e.:
+mi: miles
+me: meters
+k: kilometers
+a: acres
+h: hectares
+c: cell counts
+p: percent cover
+
+**Character representing no data cell value**: Leave as deafult
+
+**Number of fp subranges to collect stats from**: Leave as default
+
+**GRASS region extent**: Can be used to constrain the statistics to a specific rectangular subset using a defined layer extent or by drawing on QGIS canvas.
+
+**Report**: Specify the name and location of the output statistics file (*.html)
+
+**Report (raw output)**: Specify the name and location of the output statistics file (*.txt)
+
 !INSTRUCTIONS
 .ALGORITHM:modeler:subbasin_lc
 .PARAMETERS:{"NUMBER_RASTERRES": 0}
 .MODE:Normal
-.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head><meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:7.5pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:11pt; font-weight:600;">Report area statistics for wetland map within user defined region</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:11pt; font-weight:600;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">This tool calculates the land cover areas (km2) found within a region specified by the input zone layer.</span><span style=" font-family:'Arial'; font-size:8pt;"> </span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:8pt;"><br /></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; text-decoration: underline;">SETTINGS:</span><span style=" font-family:'Arial'; font-size:8pt; text-decoration: underline;"> </span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Under input classification select the input land cover classification to report on.</span><span style=" font-family:'Arial'; font-size:8pt;"> </span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Select the input Zone layer. If the zone layer includes several regions (e.g. sub-catcements) make sure to select the zone of interest from the QGIS canvas.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Specify the raster resolution. This value should be the same as the input classification file.</span><span style=" font-family:'Arial'; font-size:8pt;"> </span><span style=" font-family:'Arial'; font-size:9pt;">Specify name and output location for the output report file (*.html).</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; font-weight:600;">Important note</span><span style=" font-family:'Arial'; font-size:9pt;">: Make sure that the raster layer (input classification) and vector layer (Zone layer) do have the same reference system to avoid unexpected behavior or results.</span></p></body></html>
+.INSTRUCTIONS:# Report area statistics within user defined region
+
+This step calculates the area (in km2) present in each of the categories of a user-selected land cover map and within a region specified by the input zone layer.
+
+## Settings
+
+**Input classification**:Sselect the input land cover classification to report on
+
+**Zone layer**: Select the input Zone layer (*.shp). If the zone layer includes several regions (e.g. sub-catcements) make sure to select the zone of interest from the QGIS canvas.
+
+**raster res**: Specify the raster resolution. This value should be the same as the input classification file.
+
+**Output report file**: Specify name and output location for the output report file (*.html)
+
+## Notes
+Make sure that the raster layer (input classification) and vector layer (Zone layer) do have the same reference system to avoid unexpected behavior or results.
 !INSTRUCTIONS

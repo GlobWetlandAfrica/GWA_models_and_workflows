@@ -1,5 +1,5 @@
 .NAME:2 - Mangrove characterisation
-.GROUP:PG#6: Mangrove Mapping
+.GROUP:PG#6:Mangrove Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -42,7 +42,7 @@ The first step combines all input imagery used for the classification into 1 sin
 **Merged**: Define the output directory and image name. The output image name should be called *01_Stack_[‘enter name’].tif*
 !INSTRUCTIONS
 .ALGORITHM:r:randomforestclass
-.PARAMETERS:{"Number_of_Cores_for_Processing ": 2, "Class_ID_Field": "", "Number_of_Trees ": 150}
+.PARAMETERS:{"Number_of_Trees": 150, "Class_ID_Field": "", "Number_of_Cores_for_Processing": 2}
 .MODE:Normal
 .INSTRUCTIONS:# Classify mangrove types
 

@@ -1,28 +1,59 @@
 .NAME:Wetland fragmentation
 .GROUP:Wetland Indicators
-.ALGORITHM:modeler:wi_fragmentation
+.ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
-.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head><meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:7.5pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:11pt; font-weight:600;">Report Wetland Fragmentation</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:11pt; font-weight:600;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">This tool calculates fragmentation classes based on density and connectivity information. The main input for the fragmentation analysis is the binary classification of the Wetland Inventory product based on the probabilistic wetland classification.</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:8pt;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">More detailed information can be found at:</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:8pt;">SAGA Tool Documentation<br/>http://www.saga-gis.org/saga_tool_doc/2.2.4/grid_analysis_15.html</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:8pt;">Riitters et al., 2000<br/>https://www.ecologyandsociety.org/vol4/iss2/art3/</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:9pt;"><br /></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; text-decoration: underline;">SETTINGS:</span><span style=" font-family:'Arial'; font-size:8pt; text-decoration: underline;"> </span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Input raster: Please select the WWPI classification product as a basis for the fragmentation analysis.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Output products:</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Connectivity: Specify name and location of output raster containing information on connectivity of wetland areas.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Density: Specify name and location of output raster containing the WWPI (wetland probability) in percent from 0 to 1.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Fragmentation classification: Specify name and location of output raster containing fragmentation classes.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">Fragmentation Summary: Specify name and location of output summary file (CSV) of fragmentation classification.</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; text-decoration: underline;">Additional Information:</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt;">The resulting fragmentation classification contains the following classes:</span></p>
-<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:9pt;">(1) Core area<br />(2) Interior<br />(3) Undetermined<br />(4) Perforated<br />(5) Edge<br />(6) Transitional<br />(7) Patch<br />(8) None</span></p>
+.INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
+<br>
+# Wetland Fragmentation
+<br><br>
+
+
+## Objective of the workflow
+
+The steps in this workflow can be used to perform Spatial Pattern Analysis at both landscape and patch-level.
+Such analysis is important for assessing and monitoring the ecological integrity and functioning of wetlands.
+
+## Theoretical background
+
+In many applications, the primary interest is in the pattern (i.e., composition and configuration) of the entire landscape mosaic. A good example is in the study of wildlife communities where it has been noted that that wildlife diversity is greater in more diverse and spatially heterogenous landscapes. Thus, the quantification of landscape diversity and heterogeneity has assumed a preeminent role in landscape ecology.
+
+Patch-level statistics are defined for individual patches, and characterize the spatial character and context of patches. For example, many vertebrates require suitable habitat patches larger than some minimum size so it would be useful to know the size of each patch in the landscape. Similarly, some species are adversely affected by edges and are more closely associated with patch interiors so it would be useful to know about patch edges. The probability of occupancy and persistence of an organism in a patch may be related to patch insularity so it would be useful to know about the connectivity of patches. The utility of the patch characteristic information will ultimately depend on the objectives of the investigation.
+
+
+## References and futher reading
+* FRAGSTATS: [http://www.umass.edu/landeco/research/fragstats/fragstats.html](http://www.umass.edu/landeco/research/fragstats/fragstats.html)
+!INSTRUCTIONS
+.ALGORITHM:lecos:landscapewidestatistics
+.PARAMETERS:{"METRIC": 0}
+.MODE:Normal
+.INSTRUCTIONS:# Landscape wide statistics
+
+This step can be used to quantify landscape patterns throug the calculation of various Landscape-level metrics such as mean patch size and Shannon Diversity Index.
+
+## Settings
+
+**Landscape Grid**: Select your input wetland classification map
+
+**What to calculate**: Select the Landscape metric to be calculated
+
+**Output file**: Specify the name and location of the outputfile (*.csv)
+
+!INSTRUCTIONS
+.ALGORITHM:lecos:patchstatistics
+.PARAMETERS:{"LC_CLASS": 1, "METRIC": 0}
+.MODE:Normal
+.INSTRUCTIONS:# Patch statistics
+
+This step can be used to calculate patch-level statistics such metrics such as number and size of patches, patch and edge density as well as patch cohesion index (i.e. connectivity).
+
+## Settings
+
+**Landscape Grid**: Select your input wetland classification map
+
+**Choose Landscape Class**: Specify the raster value of the wetland class to analyse
+
+**What to calculate**: Select the patch metric to be calculated
+
+**Output file**: Specify the name and location of the outputfile (*.csv)
 !INSTRUCTIONS
