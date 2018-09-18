@@ -130,12 +130,12 @@ This step calculates 6 spectral indices useful for  Wetland Habitat Mapping and 
 ## Notes
 The 6 indices that are calculated are:
 
-Band 1: NDVI
-Band 2: NDWI
-Band 3: DVW
-Band 4: Tasselled Cap Brightness
-Band 5: Tasselled Cap Greenness
-Band 6: Tasselled Cap Wetness
+Band 1: NDVI <br>
+Band 2: NDWI <br>
+Band 3: DVW <br>
+Band 4: Tasselled Cap Brightness <br>
+Band 5: Tasselled Cap Greenness <br>
+Band 6: Tasselled Cap Wetness <br>
 !INSTRUCTIONS
 .ALGORITHM:script:waterandwetnessindices
 .PARAMETERS:{"end_date": "", "AOI_type": 0, "extent_coordinates": null, "calculate_wetness_indices": 0, "tile_ID": "", "sensor": 0, "start_date": ""}
@@ -166,7 +166,7 @@ Manually draw the extent in the canvas using the field "User defined extent".
 Specify the path to the shapefile which contains an AOI within which the classification should be performed.
 
 3.Joint extent of all scenes
-The AOI is defined by the are that is covered by all input scenes. This option only works if all scenes share a common extent. 
+The AOI is defined by the are that is covered by all input scenes. This option only works if all scenes share a common extent.
 
 **Output directory**: Specify the path to the directory in which the results should be saved. In this directory a new folder will be created called "step4_indices" in which all spectral indices will be stored and a folder called "step4_VRTfiles" in which one vrt file for each scene will be stored.
 
