@@ -117,25 +117,24 @@ If you do not have a vector layer outlining your study region you can create one
 .ALGORITHM:script:vegetationandwaterindiceswhm
 .PARAMETERS:{"sat": 1}
 .MODE:Normal
-.INSTRUCTIONS:# Index calculation #1
-
-This step calculates 6 spectral indices useful for  Wetland Habitat Mapping and Mangrove Characterization
-
-## Settings
-
-**Input Reflectance Stack**: Input the Landsat image stack.
-
-**Folder to save the stack of Indices**: Use the ... button to navigate to the folder where you want to save the indices.
-
-## Notes
-The 6 indices that are calculated are:
-
-Band 1: NDVI <br>
-Band 2: NDWI <br>
-Band 3: DVW <br>
-Band 4: Tasselled Cap Brightness <br>
-Band 5: Tasselled Cap Greenness <br>
-Band 6: Tasselled Cap Wetness <br>
+.INSTRUCTIONS:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">This step calculates 7 spectral indices which are useful for land cover classification.</span><span style=" font-size:8pt;"> </span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">The 8 indices that are calculated are:</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 1: NDVI</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 2: NDWI 1</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 3: NDWI 2</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 4: DVW</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 5: Tasselled Cap Brightness</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 6: Tasselled Cap Greenness</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Band 7: Tasselled Cap Wetness</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Input Reflectance Stack: Input the Landsat image stack.</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Folder to save the stack of Indices: Use the ... button to navigate to the folder where you want to save the indices.</span></p></body></html>
 !INSTRUCTIONS
 .ALGORITHM:script:waterandwetnessindices
 .PARAMETERS:{"end_date": "", "AOI_type": 0, "extent_coordinates": null, "calculate_wetness_indices": 0, "tile_ID": "", "sensor": 0, "start_date": ""}
@@ -177,4 +176,3 @@ The AOI is defined by the are that is covered by all input scenes. This option o
 **Start and end date**: If a start and end date are given, only scenes within this time period will be processed. If left empty, all scenes will be processed. The dates must be given in the format YYYYMMDD.
 
 **Spectral indices for ...**: Specify for which module the spectral indices should be calculated. The indices for the Inundation Regime are  included in the indices for the Wetland Inventory.
-!INSTRUCTIONS
