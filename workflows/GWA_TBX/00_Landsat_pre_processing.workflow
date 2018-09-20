@@ -114,28 +114,28 @@ This tool clips the imagery to a region of interst that covers your study area.
 ## Notes
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
 !INSTRUCTIONS
-.ALGORITHM:script:vegetationandwaterindiceswhm
-.PARAMETERS:{"sat": 1}
+.ALGORITHM:script:vegetationandwaterindices
+.PARAMETERS:{"sensor": 1}
 .MODE:Normal
-.INSTRUCTIONS:# Index calculation #1
+.INSTRUCTIONS:# Calculate vegetation and water indices
 
-This step calculates 6 spectral indices useful for  Wetland Habitat Mapping and Mangrove Characterization
+This tool calculates 6 spectral indices which are useful for wetland habitat mapping using Landsat imagery.
+
+* Layer 1: NDVI using Landsat bands 4 and 3
+* Layer 2: mNDWI using Landsat bands 2 and 5
+* Layer 3: DVW (NDVI-NDWI) using Landsat bands 4 and 3 as well as 2 and 4
+* Layer 4: Tasseled Cap Brightness index
+* Layer 5: Tasseled Cap Greenness index
+* Layer 6: Tasseled Cap Wetness index
 
 ## Settings
 
-**Input Reflectance Stack**: Input the Landsat image stack.
+**Direory containing imagery**: Select the folder that contains pre-processed Landsat images.
 
-**Folder to save the stack of Indices**: Use the ... button to navigate to the folder where you want to save the indices.
+**Sensor**: Select Landsat.
 
-## Notes
-The 6 indices that are calculated are:
-
-Band 1: NDVI <br>
-Band 2: NDWI <br>
-Band 3: DVW <br>
-Band 4: Tasselled Cap Brightness <br>
-Band 5: Tasselled Cap Greenness <br>
-Band 6: Tasselled Cap Wetness <br>
+**Output directory**: Use the ... button to navigate to the folder where you want to save the output.
+Subfolder named by index will be automatically created for each index.
 !INSTRUCTIONS
 .ALGORITHM:script:waterandwetnessindices
 .PARAMETERS:{"end_date": "", "AOI_type": 0, "extent_coordinates": null, "calculate_wetness_indices": 0, "tile_ID": "", "sensor": 0, "start_date": ""}
@@ -177,4 +177,3 @@ The AOI is defined by the are that is covered by all input scenes. This option o
 **Start and end date**: If a start and end date are given, only scenes within this time period will be processed. If left empty, all scenes will be processed. The dates must be given in the format YYYYMMDD.
 
 **Spectral indices for ...**: Specify for which module the spectral indices should be calculated. The indices for the Inundation Regime are  included in the indices for the Wetland Inventory.
-!INSTRUCTIONS
