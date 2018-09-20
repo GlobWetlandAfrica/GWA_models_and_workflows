@@ -1,0 +1,273 @@
+{
+    "values": {
+        "inputs": {
+            "pitremovedelevationgrid": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 60.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "pitremovedelevationgrid", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Pit filled elevation"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "outflowpoints": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 55.0, 
+                            "x": 676.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "outflowpoints", 
+                            "shapetype": [
+                                0
+                            ], 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Outlet points"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "flowdirection": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 62.0, 
+                            "x": 390.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "flowdirection", 
+                            "showSublayersDialog": true, 
+                            "default": null, 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Flow direction"
+                        }, 
+                        "class": "processing.core.parameters.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "minimumcontributionthresholdforwatershedseparation": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 88.0, 
+                            "x": 955.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "minimumcontributionthresholdforwatershedseparation", 
+                            "min": 1, 
+                            "default": 10000, 
+                            "max": null, 
+                            "value": 10000, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "optional": false, 
+                            "description": "Minimum contribution threshold for watershed separation"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Budyko", 
+        "name": "Extract watersheds and reach", 
+        "algs": {
+            "TAUDEMSTREAMREACHANDWATERSHED_1": {
+                "values": {
+                    "name": "TAUDEMSTREAMREACHANDWATERSHED_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "-w": {
+                            "values": {
+                                "description": "Watershed grid", 
+                                "pos": {
+                                    "values": {
+                                        "y": 568.0, 
+                                        "x": 818.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }, 
+                        "-net": {
+                            "values": {
+                                "description": "Stream reach vector", 
+                                "pos": {
+                                    "values": {
+                                        "y": 690.0, 
+                                        "x": 789.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 559.0, 
+                            "x": 441.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-sw": false, 
+                        "-o": {
+                            "values": {
+                                "name": "outflowpoints"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-src": {
+                            "values": {
+                                "alg": "TAUDEMSTREAMDEFINITIONBYTHRESHOLD_1", 
+                                "output": "-src"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "-p": {
+                            "values": {
+                                "name": "flowdirection"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-fel": {
+                            "values": {
+                                "name": "pitremovedelevationgrid"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-ad8": {
+                            "values": {
+                                "alg": "TAUDEMD8CONTRIBUTINGAREA_1", 
+                                "output": "-ad8"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "taudem:streamreachandwatershed", 
+                    "description": "Stream Reach and Watershed"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "TAUDEMSTREAMDEFINITIONBYTHRESHOLD_1": {
+                "values": {
+                    "name": "TAUDEMSTREAMDEFINITIONBYTHRESHOLD_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 396.0, 
+                            "x": 732.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-ssa": {
+                            "values": {
+                                "alg": "TAUDEMD8CONTRIBUTINGAREA_1", 
+                                "output": "-ad8"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "-mask": null, 
+                        "-thresh": {
+                            "values": {
+                                "name": "minimumcontributionthresholdforwatershedseparation"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "taudem:streamdefinitionbythreshold", 
+                    "description": "Stream Definition By Threshold"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "TAUDEMD8CONTRIBUTINGAREA_1": {
+                "values": {
+                    "name": "TAUDEMD8CONTRIBUTINGAREA_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 250.0, 
+                            "x": 454.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "-o": {
+                            "values": {
+                                "name": "outflowpoints"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "-nc": true, 
+                        "-wg": null, 
+                        "-p": {
+                            "values": {
+                                "name": "flowdirection"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "taudem:d8contributingarea", 
+                    "description": "D8 Contributing Area"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
