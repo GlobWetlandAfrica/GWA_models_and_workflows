@@ -1,5 +1,5 @@
 .NAME:Inundation Regime
-.GROUP:PG#3:Inundation Regime
+.GROUP:PG#3: Inundation Regime
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
