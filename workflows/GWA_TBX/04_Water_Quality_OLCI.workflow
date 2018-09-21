@@ -1,5 +1,5 @@
 .NAME:Lake water products for recent years (OLCI)
-.GROUP:PG#4:Water Quality
+.GROUP:PG#4: Water Quality
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

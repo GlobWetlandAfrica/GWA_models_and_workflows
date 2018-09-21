@@ -1,5 +1,5 @@
 .NAME:Time series preparation for MERIS temporal averages
-.GROUP:PG#4:Water Quality
+.GROUP:PG#4: Water Quality
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

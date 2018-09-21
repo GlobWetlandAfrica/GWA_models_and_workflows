@@ -1,5 +1,5 @@
 .NAME:2 - Mangrove characterisation
-.GROUP:PG#6:Mangrove Mapping
+.GROUP:PG#6: Mangrove Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

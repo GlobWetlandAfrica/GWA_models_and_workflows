@@ -1,5 +1,5 @@
 .NAME:Wetland Inventory
-.GROUP:PG#1:Wetland Inventory
+.GROUP:PG#1: Wetland Inventory
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

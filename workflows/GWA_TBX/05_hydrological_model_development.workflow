@@ -1,5 +1,5 @@
 .NAME:Budyko model set-up
-.GROUP:Budyko
+.GROUP:PG#5: River Basin Hydrology
 .ALGORITHM:script:mergereprojectandsubset
 .PARAMETERS:{"resolution": 0, "extent": ""}
 .MODE:Normal

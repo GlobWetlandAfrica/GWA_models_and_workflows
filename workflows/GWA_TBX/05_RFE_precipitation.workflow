@@ -1,5 +1,5 @@
 .NAME:Historic and Real-time precipitation
-.GROUP:PG#5:River Basin Hydrology
+.GROUP:PG#5: River Basin Hydrology
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

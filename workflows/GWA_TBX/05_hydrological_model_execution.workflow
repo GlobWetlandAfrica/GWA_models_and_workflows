@@ -1,5 +1,5 @@
 .NAME:Budyko model execution
-.GROUP:Budyko
+.GROUP:PG#5: River Basin Hydrology
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
