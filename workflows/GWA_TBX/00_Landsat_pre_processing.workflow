@@ -66,7 +66,7 @@ Other parameters can be used to fine-tune the cloud mask, but without expert kno
 .MODE:Normal
 .INSTRUCTIONS:# Stack input bands
 
-In  this step we build a virtual raster to combine all input bands into a single image stack - One file containing all relevant bands.
+In this step we build a virtual raster to combine all input bands into a single image stack - One file containing all relevant bands.
 
 Navigate to the folder that you unpacked the Landsat bands to and load the specific bands into QGIS.
 
@@ -85,7 +85,7 @@ Make sure **Layer stack** is selected
 **Virtual**: Specify name and location of out file (*.vrt)
 
 ## Notes
-The order of the bands is very important. You must arrange the bands in the correct order from top to bottom in the QGIS Layers Panel.
+The order of the bands is very important. You must arrange the bands in the correct order from top to bottom in the QGIS Layers Panel. Alternatively, you can reorder the bands in the *Multiple selection* dialog by dragging and dropping.
 
 For example using Landsat 8:
 
@@ -177,3 +177,4 @@ The AOI is defined by the are that is covered by all input scenes. This option o
 **Start and end date**: If a start and end date are given, only scenes within this time period will be processed. If left empty, all scenes will be processed. The dates must be given in the format YYYYMMDD.
 
 **Spectral indices for ...**: Specify for which module the spectral indices should be calculated. The indices for the Inundation Regime are  included in the indices for the Wetland Inventory.
+!INSTRUCTIONS
