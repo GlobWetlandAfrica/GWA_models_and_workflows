@@ -15,7 +15,7 @@ The Mangrove extent workflow provides a basic classification of mangrove forests
 ## Theoretical background
 The extraction of maps for mangrove extent is a result of combining information from radar imagery and optical data. The methodology is based on a supervised classification using the LibSVM method to classify stacks of combined radar and optical data. 
 
-Depending on the region of interest, the Sentinel-1 radar imagery is available at dense (<14 days) or less dense time intervals. However, in general it is sufficient to use observations covering different stages of the intra-annual precipitation cycle. To reduce the noise inherent to radar data, averaging over several backscatter images within a particular season helps to improve the overall classification quality. 
+Depending on the region of interest, the Sentinel-1 radar imagery is available at dense (12-day repeat cycle) or less dense time intervals. However, in general it is sufficient to use observations covering different stages of the intra-annual precipitation cycle. To reduce the noise inherent to radar data, averaging over several backscatter images within a particular season helps to improve the overall classification quality. 
 
 For the optical part of the classification procedure, Sentinel-2 imagery is used. Due to the fact that many mangrove-prone areas lie within the tropics, where the degree of cloudiness is often high, images of the dry season with no or low cloud cover are used. From images of the dry season the NDWI (Normalized difference water index) or moisture index is derived, using the NIR and SWIR bands of Sentinel-2. 
 
@@ -42,7 +42,7 @@ If more Sentinel-1 images per season are available, the average backscatter for 
 
 ## Settings
 
-**Input layer**: single scenes of one season (up to 4, but can be less)
+**Input layer**: single scenes of one season (up to 3)
  
 **Radar image - band 1**: output of the averaged first band (VH)
 
@@ -56,23 +56,25 @@ ATTENTION: Repeat this step for radar images of different seasons!
 .MODE:Normal
 .INSTRUCTIONS:# Sentinel-2: Moisture index / NDII
 
-The **moisture index** is calculated from two bands of the Sentinel-2 satellite, the NIR (near infrared, B8A) and the SWIR (short wavelength infrared, B11), and is a NDII (Normalized Difference Infrared Index). The expression which is used in this calculation is: (B8A – B11) / (B8A + B11). 
+The **moisture index** is calculated from two bands of the Sentinel-2 satellite, the NIR (near infrared, B8A) and the SWIR (short wavelength infrared, B11), and is a **NDII (Normalized Difference Infrared Index)**. The expression which is used in this calculation is: (B8A – B11) / (B8A + B11). 
   
-Before this step Sentinel-2 data has to be procured, e.g download via the the tool 'Search & Download Sentinel Data' or via other download facilities like the Sentinels Scientific Data Hub (https://scihub.copernicus.eu/dhus/#/home) or the USGS Earth Explorer (https://earthexplorer.usgs.gov/).
-It is better to use images from the dry season, because cloud cover is reduced. The Sentinel-2 images can also be pre-processed using the tool 'Sentinel-2 Pre-Processing'.
+Before this step Sentinel-2 data has to be downloaded via the the tool **Search & Download Sentinel Data** and pre-processed with the tool **Sentinel-2 Pre-processing**. In the last pre-processing step, the index calculation, the NDII is stored as band 7. 
+
+It is better to use images from the dry season, due to less cloud cover, which reduces the number of necessary images. 
 
 ## Settings
 
-**Band 8A**: Band 8A of the Sentinel-2 tile 
+**Sentinel-2 indices**: Raster which contains all Sentinel-2 indices (NDII should be band 7)
 
-**Band 11**: Band 11 of the Sentinel-2 tile 
-
-**AOI**: Shapefile of the Area of Interest in the same reference system
-
-**Output Image**: Define the output directory and layer name
+**Sentinel-2 NDII**: Define the output directory and layer name of the extracted NDII layer. All NDII layer need to be stored in the same folder.
 
 ## Notes
-ATTENTION: Repeat this step for every Sentinel-2 scene!
+
+Repeat this step for every Sentinel-2 scene! All extracted NDII layer need to be stored in the same folder.
+
+If in the Sentinel-2 index layer (after pre-processing) the NDII is not band 7 it has to be extracted with the raster calculator.
+
+
 !INSTRUCTIONS
 .ALGORITHM:modeler:mm_s2_ndii_combination
 .PARAMETERS:{}
@@ -146,11 +148,11 @@ This step performs a **libSVM classification** relating the input imagery to ass
 
 ## Settings
 
+**DEM mask**: This is the DEM mask created in the previous step. 
+
 **Data to be classified**: This is the image stack created in step 4 ('Create layer stack'). 
 
 **Training data**: This is the vector training data used to classify the imagery. This should be a vector polygon or point shapefile file (.shp) and the projection of this file must be identical to the 'Data to be classified'. The class value must be stored in an attribute field named "class". 
-
-**DEM mask**: This is the DEM mask created in the previous step. 
 
 **Output classification**: Define the output directory and classification name (or save as temporary file).
 !INSTRUCTIONS
