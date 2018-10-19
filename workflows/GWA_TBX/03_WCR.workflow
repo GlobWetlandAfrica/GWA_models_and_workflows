@@ -9,8 +9,8 @@
 <br /><br />
 
 
-## Objective of the workflow The inundation regime (IR) product will contain a detailed mapping of the annual variations of the surface water extent (minimum and maximum water extent) inside and around a wetland site.
-
+## Objective of the workflow
+The inundation regime (IR) product will contain a detailed mapping of the annual variations of the surface water extent (minimum and maximum water extent) inside and around a wetland site.
 
 ## Theoretical background
 The derivation of the inundation regime is based on a multi-temporal classification approach using optical and radar data (optional, if available in sufficient quantity). Water and wetness frequency parameters will be derived separately for both datasets and fused in the end to give a comprehensive representation of the inundation regime. 
@@ -30,7 +30,6 @@ Radar imagery of Sentinel-1 can be in raw format, as the pre-processing doese ta
 
 Additionally you need a Digital Elevation Model (DEM) covering the AOI.
 
-## References and futher reading
 !INSTRUCTIONS
 .ALGORITHM:script:fmasklandsat
 .PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
