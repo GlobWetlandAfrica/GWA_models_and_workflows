@@ -1,5 +1,5 @@
-<Composer title="Composer 6" visible="1">
- <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{3add97b3-1e26-4e7e-91e6-98694270356d}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+<Composer title="Composer 1" visible="1">
+ <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{3a67e76a-e439-415d-977e-a26f220df45d}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
   <symbol alpha="1" clip_to_extent="1" type="fill" name="">
    <layer pass="0" class="SimpleFill" locked="0">
     <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -35,13 +35,18 @@
    </styles>
    <layer-tree-group expanded="1" checked="Qt::Checked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="merged_water_Probability20180517134430960" source="D:/GPSDD_DataForWeb/GeoVillePrototypes/merged_water_Probability.tif" name="merged_water_Probability">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="" name="(?)">
      <customproperties>
       <property key="legend/title-label" value="Wetland class"/>
      </customproperties>
     </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="" name="(?)">
+     <customproperties>
+      <property key="legend/title-label" value=""/>
+     </customproperties>
+    </layer-tree-layer>
    </layer-tree-group>
-   <ComposerItem pagey="150.45" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="168.085" y="150.45" visibility="1" zValue="5" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="67.3" outlineWidth="0.3" excludeFromExports="0" uuid="{9ada392d-db81-40ce-9c7f-64c851a49db4}" height="41.7" itemRotation="0" frame="false" pagex="168.085">
+   <ComposerItem pagey="150.45" page="1" id="atlas_legend" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="208.085" y="150.45" visibility="1" zValue="5" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="29.2" outlineWidth="0.3" excludeFromExports="0" uuid="{9fe19ccb-e01e-4933-a686-bae3fc7debfd}" height="13.7" itemRotation="0" frame="false" pagex="208.085">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
     <customproperties/>
@@ -50,7 +55,7 @@
   <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Region: %REGION_NAME%&#xa;Reference period: %REF_PERIOD%&#xa;Reporting period: %TARGET_PERIOD%" htmlState="0" halign="1">
    <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="35.0872" page="1" id="description_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="208.395" y="35.0872" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="78.189" outlineWidth="0.3" excludeFromExports="0" uuid="{b91f30c2-9762-4a48-aadb-0e8078e3e585}" height="43.4383" itemRotation="0" frame="false" pagex="208.395">
+   <ComposerItem pagey="35.0872" page="1" id="description_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="208.395" y="35.0872" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="78.189" outlineWidth="0.3" excludeFromExports="0" uuid="{d9d31f60-dffa-417a-80c0-8022580c8cec}" height="43.4383" itemRotation="0" frame="false" pagex="208.395">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
     <customproperties/>
@@ -59,7 +64,7 @@
   <ComposerLabel valign="128" marginX="1" marginY="1" labelText="Wetland change statistics for %REGION_NAME%" htmlState="0" halign="4">
    <LabelFont description="MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0" style=""/>
    <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="7.3511" page="1" id="title_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="28.0678" y="7.3511" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="113.831" outlineWidth="0.3" excludeFromExports="0" uuid="{7c85f2db-cac3-4856-80fd-6d40e32f51aa}" height="14.925" itemRotation="0" frame="false" pagex="28.0678">
+   <ComposerItem pagey="7.3511" page="1" id="title_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="28.0678" y="7.3511" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="113.831" outlineWidth="0.3" excludeFromExports="0" uuid="{0a79fa0b-6ac1-46d9-b42e-54e915f8ccde}" height="14.925" itemRotation="0" frame="false" pagex="28.0678">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
     <customproperties/>
@@ -128,7 +133,7 @@
     <annotationFontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
    </ComposerMapGrid>
    <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-   <ComposerItem pagey="39" page="1" id="atlas_map" lastValidViewScaleFactor="1.9111" positionMode="0" positionLock="false" x="11" y="39" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="150" outlineWidth="0.3" excludeFromExports="0" uuid="{3add97b3-1e26-4e7e-91e6-98694270356d}" height="152" itemRotation="0" frame="true" pagex="11">
+   <ComposerItem pagey="39" page="1" id="atlas_map" lastValidViewScaleFactor="1.84457" positionMode="0" positionLock="false" x="11" y="39" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="150" outlineWidth="0.3" excludeFromExports="0" uuid="{3a67e76a-e439-415d-977e-a26f220df45d}" height="152" itemRotation="0" frame="true" pagex="11">
     <FrameColor alpha="255" red="0" blue="0" green="0"/>
     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
     <customproperties/>
@@ -136,7 +141,7 @@
   </ComposerMap>
   <ComposerHtml maxBreakDistance="10" contentMode="0" resizeMode="0" url="" useSmartBreaks="true" evaluateExpressions="true" html="" stylesheetEnabled="false" stylesheet="">
    <ComposerFrame sectionWidth="82.199" sectionHeight="96.2324" hideBackgroundIfEmpty="0" hidePageIfEmpty="0" sectionX="0" sectionY="0">
-    <ComposerItem pagey="66.8524" page="1" id="stats_table" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="207.935" y="66.8524" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="82.199" outlineWidth="0.3" excludeFromExports="0" uuid="{ea8f2ce0-6ac1-4ecc-918b-801d83062b00}" height="96.2324" itemRotation="0" frame="false" pagex="207.935">
+    <ComposerItem pagey="66.8524" page="1" id="stats_table" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="207.935" y="66.8524" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="82.199" outlineWidth="0.3" excludeFromExports="0" uuid="{d860d98e-b877-4377-8f71-d60c0f8d03bc}" height="96.2324" itemRotation="0" frame="false" pagex="207.935">
      <FrameColor alpha="255" red="0" blue="0" green="0"/>
      <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
      <customproperties/>
