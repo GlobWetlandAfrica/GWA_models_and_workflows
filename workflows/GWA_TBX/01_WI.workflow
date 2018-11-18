@@ -144,8 +144,9 @@ This module performs the water and wetness detection based on the spectral indic
 .PARAMETERS:{"water": true, "wetness": true}
 .MODE:Normal
 .INSTRUCTIONS:# Filter SAR water and wetness frequencies
+(optional)
 
-It is possible to include pre-processed SAR data into the classification, but these must be ordered and processed externally. Therefore, this step is not mandatory.
+It is possible to include pre-processed SAR data into the classification, but these must be ordered and processed externally. **Therefore, this step is not mandatory and can be skipped if no SAR data is available.**
 
 This module applies an additional filter to the pre-processed SAR water and wetness frequencies.
 
@@ -165,8 +166,9 @@ At least one of the following parameters must be activated:
 .PARAMETERS:{"wetness_fusion": true, "start_date": "", "end_date": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Optical-SAR Water and Wetness Fusion
-
-Using this module, the water or wetness frequency layer derived from SAR imagery can be fused with one or several optical water and wetness masks. For wetness, only the wetness masks for bare soil and sparse vegetation will be fused with the SAR data.
+(optional)
+  
+Using this optional module (**only if SAR data is available**), the water or wetness frequency layer derived from SAR imagery can be fused with one or several optical water and wetness masks. For wetness, only the wetness masks for bare soil and sparse vegetation will be fused with the SAR data.
 
 ## Settings
 
