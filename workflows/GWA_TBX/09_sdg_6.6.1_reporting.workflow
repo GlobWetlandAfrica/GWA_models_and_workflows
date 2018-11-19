@@ -39,7 +39,7 @@ The administrative regions vector needs to have attribute table fields called *a
 
 **Input layer**: Vector layer containing polygons with administrative regions.
 
-**Fields mapping**: In this table you can rename the field which holds the regions' name to *aoi_name* and the filed which holds the regions' id number to *aoi_id*.
+**Fields mapping**: In this table you can rename the field which holds the regions' name to *aoi_name* and the field which holds the regions' id number to *aoi_id*.
 
 **Refactored**: Output filename for the refactored vector layer.
 
@@ -134,10 +134,10 @@ For each region in the vector file a PDF report will be created, following a spe
 The report template should contain the following elements:
 
 * A map with an id *atlas_map*
-
 * A label with an id *title_label* which can contian *%REGION_NAMES%* tag which will be replaced by the actual region name.
 * A label with an id *description_label* which can contain *%REGION_NAMES%*, *%REF_PERIOD%* and *%TARGET_PERIOD%* tags which will be replaced by the actual values.
 * An HTML frame with an id *stats_table* which will hold the table with the statistics.
+* A legend item with an id *atlas_legend*.
 
 The JSON file, CSV files and PDF files can be uploaded to the web server for online visualization and download if required.
 
