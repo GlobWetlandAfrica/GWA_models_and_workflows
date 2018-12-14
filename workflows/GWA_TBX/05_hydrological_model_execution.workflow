@@ -1,9 +1,14 @@
 .NAME:Budyko model execution
 .GROUP:PG#5: River Basin Hydrology
-.ALGORITHM:workflowtools:workflowinstructions
-.PARAMETERS:{}
+.ALGORITHM:script:downloadfewsrfedata
+.PARAMETERS:{"subset_extent": "0,1,0,1", "start_date": "20130101", "end_date": "20130101"}
 .MODE:Normal
-.INSTRUCTIONS:Placeholder for downloading climate data
+.INSTRUCTIONS:Download rainfall data
+!INSTRUCTIONS
+.ALGORITHM:script:downloadecmwfdata
+.PARAMETERS:{"subset_extent": "-20,55,-40,40", "token": "", "start_date": "20130101", "end_date": "20130601", "email": ""}
+.MODE:Normal
+.INSTRUCTIONS:Download temperature data
 !INSTRUCTIONS
 .ALGORITHM:script:preparebudykomodelclimatefiles
 .PARAMETERS:{"subcatchmap_res": 0.01}
