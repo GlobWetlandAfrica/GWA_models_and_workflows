@@ -38,7 +38,7 @@ The first step combines all input imagery used to create the digital elevation m
 
 **Metric coordinate system**: Select the appropriate UTM region.
 
-**Spatial extent**: Select area of interest. Make sure not to crop too closely to your area of interest.
+**Spatial resolution**: Select spatial resolution. Leave at 0 for for no change.
 
 **Output image**: Define the output directory and name for your catchment DEM. 
 
