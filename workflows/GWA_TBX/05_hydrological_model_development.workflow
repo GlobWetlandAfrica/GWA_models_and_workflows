@@ -18,9 +18,8 @@ This workflow allows users to setup a hydrological model for a catchment of inte
 
 ## Theoretical background
 Changes in catchment hydrology may impact downstream wetland services. Pertubations include climate change and human activity, including hydraulic constructions such as dams. A hydrological model allows users to simulate important components of the land water balance, and assess these impacts at key points in the catchment. The model used is the lumped conceptual model developed by Zhang et al. (2008) based on Budyko's concept of limits. Details can be found in Zhang et al. (2008) and Kittel et al. (2018). The following graph illustrates the model workflow:
-<center><img src="images/budyko_model.png" alt="mangroves_timeseries_evolution"></center>
-
-** Before running this workflow, you should complete a watershed delineation of your region of interest.**
+<center><img src="images/budyko_model.png" alt="mangroves_timeseries_evolution", height ="450", with="450"></center>
+*Image from Kittel et al. (2018)*
 
 ## References and further reading
 * Kittel, C. M. M., Nielsen, K., Tøttrup, C., Bauer-Gottwein, P. (2018): Informing a hydrological model of the Ogooué with multi-mission remote sensing data, Hydrol. Earth Syst. Sci., 22, 1453-1472 [10.5194/hess-22-1453-2018]
@@ -39,7 +38,7 @@ The first step combines all input imagery used to create the digital elevation m
 
 **Metric coordinate system**: Select the appropriate UTM region.
 
-**Spatial extent**: Select area of interest. Make sure not to crop too closely to your area of interest.
+**Spatial resolution**: Select spatial resolution. Leave at 0 for for no change.
 
 **Output image**: Define the output directory and name for your catchment DEM. 
 
