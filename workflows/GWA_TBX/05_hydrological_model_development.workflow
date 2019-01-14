@@ -21,8 +21,6 @@ Changes in catchment hydrology may impact downstream wetland services. Pertubati
 <center><img src="images/budyko_model.png" alt="mangroves_timeseries_evolution", height ="450", with="450"></center>
 *Image from Kittel et al. (2018)*
 
-** Before running this workflow, you should complete a watershed delineation of your region of interest.**
-
 ## References and further reading
 * Kittel, C. M. M., Nielsen, K., Tøttrup, C., Bauer-Gottwein, P. (2018): Informing a hydrological model of the Ogooué with multi-mission remote sensing data, Hydrol. Earth Syst. Sci., 22, 1453-1472 [10.5194/hess-22-1453-2018]
 * Zhang, L., Potter, N., Hickel, K., Zhang, Y., and Shao, Q. (2008): Water balance modeling over variable time scales based on the Budyko framework – Model development and testing, J. Hydrol., 360, 117–131 [https://doi.org/10.1016/j.jhydrol.2008.07.021]
