@@ -12,7 +12,7 @@
 ## Objective of the workflow
 This regional product will allow to assess the water conditions at a river basin level, through the direct observation of important components of the water cycle budget within a river catchment such as surface water extent and soil moisture, and through the modelling of the water balance and the underlying hydrological mechanisms. These regional products produced at catchment level will allow to assess the impact of human activity (such as water pumping for irrigated crop lands or urban settlements) or the adverse effects of climate changes on wetland areas, in particular in water-limited environments such as in the African drylands.
 
-This workflow allows users to setup a hydrological model for a catchment of interest. The key outputs are simulated river discharge time series at various locations in the basins. The product can be used to establish baseline conditions for poorly gauged and ungauged basins as well as to quantify impacts on hydrological regimes due to climate change, hydraulic infrastructure projects, irrigation diversions etc. The hydrological models are set up using a lumped conceptual rainfall-runoff model developed by Zhang et al. (2008), coupled with a linear cascade of reservoirs, simulating tributary processes (optional), a deep groundwater aquifer (optional), and a Muskingum routing scheme. 
+This workflow allows users to setup a hydrological model for a catchment of interest. The key outputs are simulated river discharge time series at various locations in the basins. The product can be used to establish baseline conditions for poorly gauged and ungauged basins as well as to quantify impacts on hydrological regimes due to climate change, hydraulic infrastructure projects, irrigation diversions etc. The hydrological models are set up using a lumped conceptual rainfall-runoff model developed by Zhang et al. (2008), coupled with a linear cascade of reservoirs, simulating tributary processes (optional), a deep groundwater aquifer (optional), and a Muskingum routing scheme.
 
 **The focus of this workflow is on setting up a Budyko rainfall-runoff model for a catchment of interest.**
 
@@ -38,9 +38,11 @@ The first step combines all input imagery used to create the digital elevation m
 
 **Metric coordinate system**: Select the appropriate UTM region.
 
-**Spatial resolution**: Select spatial resolution. Leave at 0 for for no change.
+**Spatial extent**: Select area of interest. Make sure not to crop too closely to your area of interest.
 
-**Output image**: Define the output directory and name for your catchment DEM. 
+**Spatial resolution in target coordinate system**: TauDEM may run very slow for high resolution DEM files covering very large areas. 
+
+**Output image**: Define the output directory and name for your catchment DEM.
 
 
 !INSTRUCTIONS
@@ -55,11 +57,11 @@ In this step, the DEM is processed to delineate the flow direction and contribut
 
 **Input DEM**: Select DEM from previous step.
 
-**DEM with pits filled**: Define the output directory and name for the pit-filled DEM. 
+**DEM with pits filled**: Define the output directory and name for the pit-filled DEM.
 
 **Flow direction**: Define the output directory and name for the flow direction file. This raster will contain the direction of flow from each pixel in the pit-filled DEM.
 
-**Outlet contributing areas**: Define the output directory and name for the contributing areas file. This file contains the number of pixels flowing into each individual pixel of the pit-filled DEM. 
+**Outlet contributing areas**: Define the output directory and name for the contributing areas file. This file contains the number of pixels flowing into each individual pixel of the pit-filled DEM.
 
 After this step, create a shapefile containing outlets of interest. The outlets must be snapped to the flow paths, i.e. aligned on top of the flow paths.
 !INSTRUCTIONS
@@ -72,15 +74,15 @@ In this step, the pit-filled DEM, flow direction and outlet points file are proc
 
 ##Settings
 
-**Pit-filled elevation**: Select pit-filled DEM created in previous step. 
+**Pit-filled elevation**: Select pit-filled DEM created in previous step.
 
-**Flow direction**: Select flow direction file created in previous step. 
+**Flow direction**: Select flow direction file created in previous step.
 
-**Outlet points**: Select shapefile with outlet points of interest. Make sure the points are aligned on top of the flow paths, or they will be ignored by the algorithm. 
+**Outlet points**: Select shapefile with outlet points of interest. Make sure the points are aligned on top of the flow paths, or they will be ignored by the algorithm.
 
-**Stream reach vector**:  Define the output directory and name for the stream reach vector file. This line shapefile contains the river network including upstream and downstream links for each individual river reach. 
- 
-**Watershed vector**:  Define the output directory and name for the watershed vector file. This area shapefile contains all the catchment subbasins. 
+**Stream reach vector**:  Define the output directory and name for the stream reach vector file. This line shapefile contains the river network including upstream and downstream links for each individual river reach.
+
+**Watershed vector**:  Define the output directory and name for the watershed vector file. This area shapefile contains all the catchment subbasins.
 
 !INSTRUCTIONS
 .ALGORITHM:modeler:05_process_catchment_layers
@@ -99,7 +101,7 @@ In this step, the DEM, catchment layer and stream layer are processed to produce
 **Stream layer**: Select stream reach vector file from previous step.
 
 **Catchment centroids**:  Define the output directory and name for the catchment centroids. The centroids will add as virtual climate stations to force the model.
- 
+
 **Catchment layer with mean DEM and area**: Define the output directory and name for the updated catchment layer with mean elevation from the DEM and area.
 !INSTRUCTIONS
 .ALGORITHM:script:generatebudykomodelfiles
@@ -118,13 +120,13 @@ In this step, files necessary to run the Budyko model are generated. The files c
 **Starting date of the model**: Select starting date - if earlier than first climate observations, the time series will be filled with the daily average. It is advised to add at least one year of warm-up for the model to stabilize. The date must be given in year followed by day of year, e.g. 2001001 is equivalent to 1/1/2001..
 
 **Model sub-basin polygon file**:  Select the updated catchment layer with mean elevation from the DEM and area from the previous step.
- 
+
 **Storage location for model cliamte station file**: Select directory for model climate station file. Be careful if moving this file, to check the paths saved in the file. This file will contain all information about the precipitation and temperature stations needed by the model.
 
 **Model sub-basin centroid file**:  Select the catchment centroid layer from the previous step.
 
 ##Advanced settings
-**Check advanced settings to ensure your catchment shapefile attribute table column names match the default names provided** 
+**Check advanced settings to ensure your catchment shapefile attribute table column names match the default names provided**
 
 
 !INSTRUCTIONS
@@ -141,7 +143,7 @@ In this step, FEWS-RFE precipitation observations are downloaded.
 
 **Start date**: First date of observation. FEWS-RFE records start in 2001.
 
-**Start date**: Last date of observation. FEWS-RFE usually only has a few days of delay before data is available. Be aware, that data is downloaded in bulks of one year. 
+**Start date**: Last date of observation. FEWS-RFE usually only has a few days of delay before data is available. Be aware, that data is downloaded in bulks of one year.
 
 ## Advaced parameters
 **Subset to download**: Default downloads global dataset (African continent).
@@ -191,8 +193,72 @@ In this step, the climate files are processed using zonal statistics to produce 
 
 **Resolution of subcatchment map in degrees**: Resolution of subcatchment map used to calculate zonal statistics. If there are very small subbasins, this value may need to be decreased.
 !INSTRUCTIONS
-.ALGORITHM:workflowtools:workflowinstructions
-.PARAMETERS:{}
+.ALGORITHM:script:budykohydrologicalmodelcalibration
+.PARAMETERS:{"STARTDATE": "2000001", "ENDDATE": "2010365", "CALIBRATION_TYPE_ID": 2, "REP": 100000, "AREA_TO_M": 1, "N_CLASSES": 20, "Z_CH": 2, "ACC_INT": 0.1}
 .MODE:Normal
-.INSTRUCTIONS:Placeholder for model calibration
+.INSTRUCTIONS:#Budyko Hydrological Model Calibration
+In this step, the model is calibrated using the Shuffled Complex Evolution algoirthm included in the Python package, Spotpy (Houska et al., 2015). See Kittel et al. (2018) for more details. The calibrated parameters are saved in the model folder as:
+* a .csv file containing all tested parameter sets 
+* a .txt file containing the best parameter set for each subbasin
+
+##Settings
+
+**Geometry setup**: This .csv file must be created by the user and should contain the following columns:
+
+<ol>
+<li><i>Subbasins</i>: each catchment subbasin must have a line with this column containing the subbasin ID</li>
+<li><i>Subbasins</i>: the number of subreaches to divided the subbasin river reach in. Ideally the length of each subreach should not exceed 20 km to ensure stability of the routing module.</li>
+<li><i>Length</i>:total length of the reach within each subbasin</li>
+<li><i>Width</i>: average width of the reach in each subbasin</li>
+<li><i>Slope</i>: average slope of the reach in each subbasin</li>
+<li><i>Depth</i>: average depth of the reach in each subbasin - this can be estimated using average width and the method from Andreadis et al. (2013) (</li>
+</ol>
+
+
+**Model setup**: Select the model file created in previous steps.
+
+**Observed-discharge file**: This text file should contain the following columns, separated by semi-columns. The plugin can read GRDC .day and .mon files aswell as different types of observation files:
+<ol>
+<li><i>Origin</i> Data origin, e.g. GRDC</li>
+<li><i>Station</i>: Station name - must match file name without extension</li>
+<li><i>ReachNo</i>: Subbasin ID of outlet at discharge station location</li>
+<li><i>time_resolution</i>:daily or monthly</li>
+</ol>
+
+**Config file (JSON) for calibration**: An example is provided in the Budyko_model python plugin example folder. This JSON file allows the user to change the default calibration settings:
+<ol>
+<li><i>Calibration zones downstream</i>: Most downstream station of each zone to calibrated OR list of subbasins within each calibration zone </li>
+<li><i>params</i>: Parameter range for each calibration parameter group</li>
+<li><i>GRACE configuration</i>: Confiugration if using GRACE data for calibration (observation and uncertainty text files containing time series of observations for each GRACE calibration zone, start and end dates for calibration period, reference date, weight of objective function and calibration zones)</li>
+<li><i>Altimeter configuration</i>: Configuration if using altimetry data for calibration (file with list of altimetry stations, start and end of calibration period, standard error and calibration type). </li>
+</ol>
+
+**Startdate**: Remember to account for at least a one-year warm-up period - example 2001001 for 01/01/2001.
+
+**Enddate**: It is recommended to only use full years for calibration in order to avoid seasonal bias in the climatology and/or FDC.
+
+**Calibration type**: Select calibration type: hydrograph (obs: if the time of observation and time of simulation do not match, the time series are overlayed with different x-axis), FDC (flow duration curve) or climatology (daily average discharge). The calibration type determines the objective function used in the calibration. In addition, GRACE or altimetry data can be provided through the configuration file if available.
+
+
+## Advanced parameters:
+**Number of repetitions in optimization**: Maximum number of model runs allowed.
+
+**Number of volume classes for FDC**: Number of comparison points between observed and simulated FDC (Westerberg et al., 2011).
+
+**Parameter acc_int**: Accepted error in FDC (0.1 is equivalent to 10% deviation from the observed FDC on average).
+
+**Parameter z_ch**: Opening parameter for trapezoid shape of river channel.
+
+**Factor to convert area to meters**: If area is not given in meter, input conversion factor.
+
+
+
+
+
+##References
+* Houska, T., Kraft, P., Chamorro-Chavez, A., and Breuer, L. (2015): SPOTting model parameters using a ready-made python package, *PLoS ONE*, 10, 1–22, doi:10.1371/journal.pone.0145180
+
+* Kittel, C. M. M., Nielsen, K., Tøttrup, C., Bauer-Gottwein, P. (2018): Informing a hydrological model of the Ogooué with multi-mission remote sensing data, Hydrol. Earth Syst. Sci., 22, 1453-1472 [10.5194/hess-22-1453-2018]
+
+* Westerberg, I. K., Guerrero, J.-L., Younger, P. M., Beven, K. J., Seiberg, J., Halldin, S., Freer, J. E., Xu, C.-Y. (2011): Calibration of hydrological models using flow-duration curves, *Hydrol. Earth Syst. Sci.*, 15, 2205-2227, doi:10.5194/hess-15-2205-2011
 !INSTRUCTIONS
