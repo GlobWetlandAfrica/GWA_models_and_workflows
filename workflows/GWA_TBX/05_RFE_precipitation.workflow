@@ -26,8 +26,8 @@ After running this module, the precipitation folder will contain data for the re
 ## References and futher reading
 * Xie, P. and P. A. Arkin, 1997. A 17-year monthly analysis based on gauge observations, satellite estimates, and numerical model outputs. Bulletin of the American Meteorological Society 78(11): 2539-58
 !INSTRUCTIONS
-.ALGORITHM:wg9hm:12getfewsrfedataosfwf
-.PARAMETERS:{"START_DATE": "20160101", "EXTENT": "0,1,0,1", "END_DATE": "20160630"}
+.ALGORITHM:script:downloadfewsrfedata
+.PARAMETERS:{"start_date": "20160101", "subset_extent": "0,1,0,1", "end_date": "20160630"}
 .MODE:Normal
 .INSTRUCTIONS:# Download precipitation data
 
@@ -39,7 +39,7 @@ Download daily, pan-African FEWS-RFE precipitation data
 
 **Start date and End date**: Rainfall data will be downloaded for period between the start and end dates. For dates before the current year, the whole year of data will be downloaded.
 
-**Subset to extent (Advanced parameters)**:
+**Subset to download (Advanced parameters)**:
 If this field is set, the images will be automatically subsetted to the given extent after downloading. By default the extent cover the entire African continent.
 !INSTRUCTIONS
 .ALGORITHM:script:grassrseriesforwholedirectory

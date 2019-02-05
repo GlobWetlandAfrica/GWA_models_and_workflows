@@ -92,8 +92,8 @@ If you do not have a vector layer outlining your study region you can create one
 
 Note: This tool can also be used in "Batch" mode. Change the bottom dropdown menu from "Normal" to "Batch" for use in batch mode.
 !INSTRUCTIONS
-.ALGORITHM:dhigras:atmosphericcorrection
-.PARAMETERS:{"PWV": 0, "SATELLITE": 7, "ATMOSPHERIC_PROFILE": 0, "TILE_SIZE_PIXELS": 0, "OZONE": 0, "PANCHROMATIC": false, "AOT": 0, "METHOD": 0}
+.ALGORITHM:script:sentinel2atmosphericcorrection
+.PARAMETERS:{"method": 0}
 .MODE:Normal
 .INSTRUCTIONS:# Atmospheric Correction
 
@@ -101,17 +101,14 @@ This step performs atmospheric correction to the imagery using Dark Object Subtr
 
 ## Settings:
 
-**Satellite**: Select Sentinel-2A 10m.
+**Input File**: A band-stacked raster containing Sentinel-2 bands.
 
-**DN file**: Select the clipped image from the previous step - ["enter name"]_Clip.tif. If you did not clip the image using step 3, select the exported data from step 2.
+**Sentinel-2 metadata file**: Choose the .xml file that is placed in the original .SAFE folder for the Sentinel 2 data.
 
-**Metafile**: Choose the .xml file that is placed in the original .SAFE folder for the Sentinel 2 data
-
-**Correction methods**: Choose DOS.
+**Output type**: Choose DOS.
 
 **Output file**: Use the ... button to navigate to the directory where you will save the atmospherically corrected data and give it a suitable name - ["enter name"]_DOS.tif
 
-Leave all other parameters at the default values.
 !INSTRUCTIONS
 .ALGORITHM:script:sentinel2indices
 .PARAMETERS:{}
