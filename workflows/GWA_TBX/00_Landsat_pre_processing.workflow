@@ -1,4 +1,4 @@
-.NAME:Landsat Pre-processing (beta)
+.NAME:Landsat Pre-processing
 .GROUP:I/O
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
@@ -113,68 +113,4 @@ This tool clips the imagery to a region of interst that covers your study area.
 
 ## Notes
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
-!INSTRUCTIONS
-.ALGORITHM:script:vegetationandwaterindices
-.PARAMETERS:{"sensor": 1}
-.MODE:Normal
-.INSTRUCTIONS:# Calculate vegetation and water indices
-
-This tool calculates 6 spectral indices which are useful for wetland habitat mapping using Landsat imagery.
-
-* Layer 1: NDVI using Landsat bands 4 and 3
-* Layer 2: mNDWI using Landsat bands 2 and 5
-* Layer 3: DVW (NDVI-NDWI) using Landsat bands 4 and 3 as well as 2 and 4
-* Layer 4: Tasseled Cap Brightness index
-* Layer 5: Tasseled Cap Greenness index
-* Layer 6: Tasseled Cap Wetness index
-
-## Settings
-
-**Direory containing imagery**: Select the folder that contains pre-processed Landsat images.
-
-**Sensor**: Select Landsat.
-
-**Output directory**: Use the ... button to navigate to the folder where you want to save the output.
-Subfolder named by index will be automatically created for each index.
-!INSTRUCTIONS
-.ALGORITHM:script:waterandwetnessindices
-.PARAMETERS:{"end_date": "", "AOI_type": 0, "extent_coordinates": null, "calculate_wetness_indices": 0, "tile_ID": "", "sensor": 0, "start_date": ""}
-.MODE:Normal
-.INSTRUCTIONS:# Index calculation #2
-
-This module calculates the spectral indices necessary for water detection of each scene i.e. in support of Wetland Inventory and Inundation regime.
-
-## Settings
-
-**Directory containing imagery**: Specify the path to the directory in which the imagery is stored. To avoid problems, the scenes shoud be stored in separate zip compressed folders.
-
-**Sensor**: Choose Landsat imagery as input.
-
-**Type of AOI (Area Of Interest)**:
-Specify how the AOI should is defined. There are three options:
-
-1.Shapefile
-Specify the path to the shapefile in the field "Shapefile containing AOI".
-
---> Shapefile containing AOI (optional)
-Specify the path to the shapefile which contains an AOI within which the classification should be performed.
-
-2.User defined extent
-Manually draw the extent in the canvas using the field "User defined extent".
-
---> User defined extent (optional)
-Specify the path to the shapefile which contains an AOI within which the classification should be performed.
-
-3.Joint extent of all scenes
-The AOI is defined by the are that is covered by all input scenes. This option only works if all scenes share a common extent.
-
-**Output directory**: Specify the path to the directory in which the results should be saved. In this directory a new folder will be created called "step4_indices" in which all spectral indices will be stored and a folder called "step4_VRTfiles" in which one vrt file for each scene will be stored.
-
-## Advanced parameters (optional)
-
-**Tile ID / Path Row**: If this parameter is set, only scenes of this Path/Row (Landsat, format: PPPRRR e.g. 200205) will be processed.
-
-**Start and end date**: If a start and end date are given, only scenes within this time period will be processed. If left empty, all scenes will be processed. The dates must be given in the format YYYYMMDD.
-
-**Spectral indices for ...**: Specify for which module the spectral indices should be calculated. The indices for the Inundation Regime are  included in the indices for the Wetland Inventory.
 !INSTRUCTIONS

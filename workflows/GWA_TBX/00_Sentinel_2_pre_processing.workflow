@@ -110,27 +110,3 @@ This step performs atmospheric correction to the imagery using Dark Object Subtr
 **Output file**: Use the ... button to navigate to the directory where you will save the atmospherically corrected data and give it a suitable name - ["enter name"]_DOS.tif
 
 !INSTRUCTIONS
-.ALGORITHM:script:sentinel2indices
-.PARAMETERS:{}
-.MODE:Normal
-.INSTRUCTIONS:# Index calculation #1
-
-This step calculates 8 spectral indices which are useful for Mangrove Characterization
-
-## Settings
-
-**Input Reflectance Stack**: Input the atmospherically corrected data created in the previous step -  ["enter name"]_DOS.tif
-
-**Folder to save the stack of Indices**: Use the ... button to navigate to the folder where you want to save the indices.
-
-## Notes
-The 8 indices that are calculated are: <br>
-Band 1: NDVI using S2 bands 8 and 4 <br>
-Band 2: NDVI using S2 bands 8a and 4 <br>
-Band 3: Red Edge NDI using S2 bands 8a and 5 <br>
-Band 4: Red Edge NDI using S2 bands 8a and 6 <br>
-Band 5: Red Edge NDI using S2 bands 6 and 5 <br>
-Band 6: Red Edge NDI using S2 bands 7 and 5 <br>
-Band 7: NDII using S2 bands 8a and 11 <br>
-Band 8: NDWI using S2 bands 8a and 12 <br>
-!INSTRUCTIONS
