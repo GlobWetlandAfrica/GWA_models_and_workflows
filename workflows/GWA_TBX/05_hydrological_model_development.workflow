@@ -1,4 +1,4 @@
-.NAME:Budyko model set-up
+.NAME:1 - Budyko model set-up
 .GROUP:PG#5: River Basin Hydrology
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
@@ -40,7 +40,7 @@ The first step combines all input imagery used to create the digital elevation m
 
 **Spatial extent**: Select area of interest. Make sure not to crop too closely to your area of interest.
 
-**Spatial resolution in target coordinate system**: TauDEM may run very slow for high resolution DEM files covering very large areas. 
+**Spatial resolution in target coordinate system**: TauDEM may run very slow for high resolution DEM files covering very large areas.
 
 **Output image**: Define the output directory and name for your catchment DEM.
 
@@ -66,7 +66,7 @@ In this step, the DEM is processed to delineate the flow direction and contribut
 After this step, create a shapefile containing outlets of interest. The outlets must be snapped to the flow paths, i.e. aligned on top of the flow paths.
 !INSTRUCTIONS
 .ALGORITHM:modeler:05_extract_watersheds
-.PARAMETERS:{}
+.PARAMETERS:{"minimumcontributionthresholdforwatershedseparation": 10000}
 .MODE:Normal
 .INSTRUCTIONS:#Extract watersheds and stream reach
 
@@ -198,7 +198,7 @@ In this step, the climate files are processed using zonal statistics to produce 
 .MODE:Normal
 .INSTRUCTIONS:#Budyko Hydrological Model Calibration
 In this step, the model is calibrated using the Shuffled Complex Evolution algoirthm included in the Python package, Spotpy (Houska et al., 2015). See Kittel et al. (2018) for more details. The calibrated parameters are saved in the model folder as:
-* a .csv file containing all tested parameter sets 
+* a .csv file containing all tested parameter sets
 * a .txt file containing the best parameter set for each subbasin
 
 ##Settings

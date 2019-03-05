@@ -1,4 +1,4 @@
-.NAME:Budyko model execution
+.NAME:2 - Budyko model execution
 .GROUP:PG#5: River Basin Hydrology
 .ALGORITHM:script:downloadfewsrfedata
 .PARAMETERS:{"subset_extent": "0,1,0,1", "start_date": "20130101", "end_date": "20130101"}
@@ -64,7 +64,7 @@ In this step, the climate files are processed using zonal statistics to produce 
 **Resolution of subcatchment map in degrees**: Resolution of subcatchment map used to calculate zonal statistics. If there are very small subbasins, this value may need to be decreased.
 !INSTRUCTIONS
 .ALGORITHM:script:budykohydrologicalmodel
-.PARAMETERS:{"STARTDATE": "", "REACH_NUMBER": 0, "TITLE": "", "N_CLASSES": 20, "OUTPUT_TYPE": 0, "TIME_STAMP": 0}
+.PARAMETERS:{"STARTDATE": "", "REACH_NUMBER": 0, "AREA_TO_M": 1, "TIME_RESOLUTION_ID": 0, "N_CLASSES": 20, "FIGURE_TITLE": "", "MODEL_TYPE_ID": 0}
 .MODE:Normal
 .INSTRUCTIONS:#Budyko Hydrological Model
 
@@ -82,11 +82,11 @@ In this step, the hydrological model is run.
 <li><i>Slope</i>: average slope of the reach in each subbasin</li>
 <li><i>Depth</i>: average depth of the reach in each subbasin - this can be estimated using average width and the method from Andreadis et al. (2013) (</li>
 </ol>
- 
+
 
 **Model setup**: Select the model file created in previous steps.
 
-**Observed-discharge file**: This text file should contain the following columns, separated by semi-columns. The plugin can read GRDC .day and .mon files aswell as different types of observation files: 
+**Observed-discharge file**: This text file should contain the following columns, separated by semi-columns. The plugin can read GRDC .day and .mon files aswell as different types of observation files:
 <ol>
 <li><i>Origin</i> Data origin, e.g. GRDC</li>
 <li><i>Station</i>: Station name - must match file name without extension</li>
@@ -115,5 +115,5 @@ In this step, the hydrological model is run.
 
 
 ##References
-* Andreadis, K. M., Schumann, G. J.-P., Pavelsky, T. (2013): A simple global river bankfull width and depth database, *Water Resour. Res.*, 49, 7164-7168, doi:10.1002/wrcr.2044. 
+* Andreadis, K. M., Schumann, G. J.-P., Pavelsky, T. (2013): A simple global river bankfull width and depth database, *Water Resour. Res.*, 49, 7164-7168, doi:10.1002/wrcr.2044.
 !INSTRUCTIONS
