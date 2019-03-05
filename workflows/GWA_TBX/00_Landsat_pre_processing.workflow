@@ -114,3 +114,24 @@ This tool clips the imagery to a region of interst that covers your study area.
 ## Notes
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
 !INSTRUCTIONS
+.ALGORITHM:script:burncloudmask
+.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": false, "maskCloud": true, "maskNull": true}
+.MODE:Normal
+.INSTRUCTIONS:# Apply cloud mask (optional)
+
+In this step you can apply (burn) the cloud mask produced by FMask to the Landsat stack.
+
+## Settings
+
+**An image file to burn the cloud mask into**:
+Specify the path to the Landsat band-stacked file.
+
+**Cloud mask from FMask**: Specify the path to the corresponding FMask output file.
+
+**Masked output image**:
+Use the ... button to navigate to the folder where you will save the output data, and give is a suitable image name: ["enter name"]_Masked.tif
+
+## Notes
+
+In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
+!INSTRUCTIONS

@@ -34,25 +34,6 @@ The first step is to Unzip the Sentinel 2 data.
 **Directory to unzip data to**:  Use the ... button to navigate to the folder where you will save the unzipped data.
 
 !INSTRUCTIONS
-.ALGORITHM:script:exportsentinel2data
-.PARAMETERS:{"out_res": 0, "allVISNIR": false, "B10": false, "bands_param": "", "B11": true, "B4": true, "B5": true, "B6": true, "B7": true, "B12": true, "B1": false, "B2": true, "B3": true, "B8A": true, "B8": true, "B9": false, "granules": ""}
-.MODE:Normal
-.INSTRUCTIONS:# Export data
-
-This step exports a selection of Sentinel 2 data to a new file for further processing.
-
-## Settings
-
-**Sentinel-2 product folder (.SAFE)**: Use the ... button to navigate to the unzipped .SAFE folder created in the previous step.
-
-**Choose the bands you want to export**. For wetland characterizations  Bands 2-8, 8a, 11, and 12 are the most useful. Choose these 10 bands.
-
-**Output resolution**: Define the resolution of the output imagery. Choose 10 meter.
-
-**Granule selection**: Choose the specific granule(s) that correspond to you study area.
-
-**Directory to save the exported data in**: Use the ... button to navigate to the folder where you will save the output imagery.
-!INSTRUCTIONS
 .ALGORITHM:script:fmasksentinel2
 .PARAMETERS:{"cloudbufferdistance": 150, "verbose": true, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "greensnowthreshold": 0.1, "mincloudsize": 0, "cloudprobthreshold": 20}
 .MODE:Normal
@@ -71,6 +52,25 @@ Notes
 
 ## Notes
 Other parameters can be used to fine-tune the cloud mask, but without expert knowledge it is recommended to keep the default values.
+!INSTRUCTIONS
+.ALGORITHM:script:exportsentinel2data
+.PARAMETERS:{"out_res": 0, "allVISNIR": false, "B10": false, "bands_param": "", "B11": true, "B4": true, "B5": true, "B6": true, "B7": true, "B12": true, "B1": false, "B2": true, "B3": true, "B8A": true, "B8": true, "B9": false, "granules": ""}
+.MODE:Normal
+.INSTRUCTIONS:# Export data
+
+This step exports a selection of Sentinel 2 data to a new file for further processing.
+
+## Settings
+
+**Sentinel-2 product folder (.SAFE)**: Use the ... button to navigate to the unzipped .SAFE folder created in the previous step.
+
+**Choose the bands you want to export**. For wetland characterizations  Bands 2-8, 8a, 11, and 12 are the most useful. Choose these 10 bands.
+
+**Output resolution**: Define the resolution of the output imagery. Choose 10 meter.
+
+**Granule selection**: Choose the specific granule(s) that correspond to you study area.
+
+**Directory to save the exported data in**: Use the ... button to navigate to the folder where you will save the output imagery.
 !INSTRUCTIONS
 .ALGORITHM:gdalogr:cliprasterbyextent
 .PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "699960.0,809760.0,8190220.0,8300020.0", "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
@@ -109,4 +109,25 @@ This step performs atmospheric correction to the imagery using Dark Object Subtr
 
 **Output file**: Use the ... button to navigate to the directory where you will save the atmospherically corrected data and give it a suitable name - ["enter name"]_DOS.tif
 
+!INSTRUCTIONS
+.ALGORITHM:script:burncloudmask
+.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": true, "maskCloud": true, "maskNull": true}
+.MODE:Normal
+.INSTRUCTIONS:# Apply cloud mask (optional)
+
+In this step you can apply (burn) the cloud mask produced by FMask to the Landsat stack.
+
+## Settings
+
+**An image file to burn the cloud mask into**:
+Specify the path to the Landsat band-stacked file.
+
+**Cloud mask from FMask**: Specify the path to the corresponding FMask output file.
+
+**Masked output image**:
+Use the ... button to navigate to the folder where you will save the output data, and give is a suitable image name: ["enter name"]_Masked.tif
+
+## Notes
+
+In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
 !INSTRUCTIONS
