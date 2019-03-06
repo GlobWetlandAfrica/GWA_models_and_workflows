@@ -115,12 +115,12 @@ This step performs atmospheric correction to the imagery using Dark Object Subtr
 .MODE:Normal
 .INSTRUCTIONS:# Apply cloud mask (optional)
 
-In this step you can apply (burn) the cloud mask produced by FMask to the Landsat stack.
+In this step you can apply (burn) the cloud mask produced by FMask to the Sentinel-2 stack.
 
 ## Settings
 
 **An image file to burn the cloud mask into**:
-Specify the path to the Landsat band-stacked file.
+Specify the path to the Sentinel-2 band-stacked file.
 
 **Cloud mask from FMask**: Specify the path to the corresponding FMask output file.
 
