@@ -38,14 +38,14 @@ The first step is to untar (unpack) the Landsat data.
 
 **tar.gz file**: Use the ... button to navigate to the downloaded Landsat data, and select the tar.gz you want to unpack.
 
-**Directory to untar data to**: Use the ... button to navigate to the folder you want to unpack the the Landsat data
+**Directory to untar data to**: Use the ... button to navigate to the folder where you want to unpack the Landsat data.
 !INSTRUCTIONS
 .ALGORITHM:script:fmasklandsat
 .PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
 .MODE:Normal
 .INSTRUCTIONS:# Cloud masking
 
-In this step a cloud masks is produced for a Landsat scene.
+In this step a cloud mask is produced for a Landsat scene.
 
 ## Settings
 
@@ -107,7 +107,7 @@ This tool clips the imagery to a region of interst that covers your study area.
 
 **Input layer**: Select the Landsat stack you wish to clip.
 
-**Clipping Extent**: The clipping extent can be defined using a vector layer which outlines your study area. This layer must have the same projection as the input imagery. Although you can also define the clipping extent using the QGIS layer canvas, this is not recommended as other data sets may need to be clipped to the exact same extent in later processes. Using the vector layer will make this job easy.
+**Clipping Extent**: The clipping extent can be defined using a vector layer which outlines your study area. This layer must have the same projection as the input imagery. Although you can also define the clipping extent using the QGIS layer canvas, this is not recommended as other data sets may need to be clipped to the exact same extent in later processes. Using the vector layer will make this job easier.
 
 **Clipped (extent)**: Use the ... button to navigate to the folder where you will save the output data, and give is a suitable image name: ["enter name"]_Clip.tif
 
@@ -115,7 +115,7 @@ This tool clips the imagery to a region of interst that covers your study area.
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
 !INSTRUCTIONS
 .ALGORITHM:script:burncloudmask
-.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": false, "maskCloud": true, "maskNull": true}
+.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": true, "maskCloud": true, "maskNull": true}
 .MODE:Normal
 .INSTRUCTIONS:# Apply cloud mask (optional)
 

@@ -44,7 +44,7 @@ In this step a cloud masks is produced for a Sentinel-2 scene.
 ## Settings
 
 **Directory of target Sentinel-2 image directory**:
-Specify the path to the Sentinel-2 "SAFE" directory. The processed cloud mask will be located in the folder "IMG_DATA" in the directory of the target granule. Please note, if you use Sentinel-2 images that contains several subtiles, you have to navigate to the particular subtile directory
+Specify the path to the Sentinel-2 "SAFE" directory. The processed cloud mask will be located in the folder "IMG_DATA" in the directory of the target granule. Please note, if you are using Sentinel-2 images that contain several subtiles, you have to navigate to the particular subtile directory
 
 
 **Output cloud mask**: Specify the path to the output file. Store the cloud mask in the S2 export directory (cf. previous step). Choose an output file name that ends with "_fmask.tif".

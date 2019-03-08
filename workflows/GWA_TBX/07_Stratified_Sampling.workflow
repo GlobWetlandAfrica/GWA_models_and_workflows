@@ -5,18 +5,18 @@
 .MODE:Normal
 .INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
 <br>
-# Generat Stratified Sample
+# Generate Stratified Sample
 <br><br>
 
 
 ## Objective of the workflow
-This workflow can be used to generate a Stratified Random Sample from raster data that can be used to validate land cover\use classifications. The output will the a points shapefile.
+This workflow can be used to generate a Stratified Random Sample from raster data that can be used to validate land cover\use classifications. The output will be a points shapefile.
 
 
 ## Theoretical background
 A variety of probability sampling designs are applicable to accuracy assessment with the most commonly used designs being simple random, stratified random, and systematic (Stehman, 2009). No single sampling design can serve as a universally appropriate design; however, stratified random sampling is a practical and cost-efficient design that satisfies the basic accuracy assessment objectives and most of the desirable design criteria. Stratified random sampling affords the option to increase the sample size in classes and/or regions that occupy a small proportion of area to reduce the standard errors of the class/region-specific accuracy estimates for these rare occurrences.
 
-## References and futher reading
+## References and further reading
 * Stehman, S. V. (2009). Sampling designs for accuracy assessment of land cover. International Journal of Remote Sensing, 30, 5243–5272.
 !INSTRUCTIONS
 .ALGORITHM:r:rasterstratsamp
@@ -38,7 +38,7 @@ The input raster should be a classified raster (e.g. land cover map). Each class
 
 **Optional Attribute name 1 & 2**: If you would like any additional fields in the attribute table (e.g. comments for each sample) and them here.
 
-**Sample_Points**: Define the output directory for the resulting stratified sample.
+**Sample Points**: Define the output directory for the resulting stratified sample.
 
 ## Notes
 No Data values are not treated as strata, but zero (0) values are. If zero values are not land cover class, all zero values should be reclassed as No Data.
@@ -76,7 +76,7 @@ This step generates a sample unit outline (i.e. a polygon) for each validation s
 
 **Raster To Base Grid On**: This is the raster layer with the spatial grid you want to base sample polygons on. For every sample point that overlaps with a pixel, a polygon outlining the pixel boundaries will be made.
 
-**Make 3x3 Grid**: Decide wether to extent the sample unit to a 3x3 pixel Grid (Yes). Choosing "No" means the sample outline will 1x1 pixel.
+**Make 3x3 Grid**: Decide whether to extent the sample unit to a 3x3 pixel Grid (Yes). Choosing "No" means the sample outline will 1x1 pixel.
 
 **Sample Outline**: Define the output directory for the sample outlines. This should be the same as the input file but with “_unit” added to the end of the filename.
 
