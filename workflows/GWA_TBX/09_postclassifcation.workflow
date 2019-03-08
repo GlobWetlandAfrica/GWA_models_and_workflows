@@ -5,13 +5,13 @@
 .MODE:Normal
 .INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
 <br>
-# Wetland changes (post-classification comparion)
+# Wetland changes (post-classification comparison)
 <br><br>
 
 ## Objective of the workflow
 This workflow can be used to compile a detailed tabulation of changes between two land cover classifications.
 
-The workflow have two steps. The first step returns the change statistics for a full image, while the second step should be used if the change statistics should be constrained to a defined region.
+The workflow has two steps. The first step returns the change statistics for a full image, while the second step should be used if the change statistics should be constrained to a defined region.
 
 ## Theoretical background
 The analysis focuses primarily on the initial state classification changes; that is, for each initial state class, the analysis identifies the classes into which those pixels changed in the final state image.
@@ -29,7 +29,7 @@ The input images need to have the same reference system and exact same pixel siz
 .MODE:Normal
 .INSTRUCTIONS:# Change statistics for full image
 
-This step return the detailed tabulation of changes between two land cover classifications.
+This step returns the detailed tabulation of changes between two land cover classifications.
 
 ## Settings
 
@@ -49,7 +49,7 @@ Note that in the report the initial state is listed as MAP2 and the final state 
 .MODE:Normal
 .INSTRUCTIONS:# Change statistics for user defined region
 
-This step return the detailed tabulation of changes between two land cover classifications within a region specified by the input zone layer.
+This step returns the detailed tabulation of changes between two land cover classifications within a region specified by the input zone layer.
 
 ## Settings
 
@@ -57,7 +57,7 @@ This step return the detailed tabulation of changes between two land cover class
 
 **Select Classification of "final state"**
 
-**Zone layer**: Select the input Zone layer (*.shp). If the zone layer includes several regions (e.g. sub-catcements) make sure to select the zone of interest from the QGIS canvas.
+**Zone layer**: Select the input zone layer (*.shp). If the zone layer includes several regions (e.g. sub-catchments) make sure to select the zone of interest from the QGIS canvas.
 
 **raster res**: Specify the raster resolution. This value should be the same as the input classification file.
 

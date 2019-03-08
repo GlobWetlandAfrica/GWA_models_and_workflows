@@ -34,7 +34,7 @@ Select wether you want to search for S1, S2, S3 or all data from the Sentinel fa
 Define the start and end time of the period of interest. You can use relative times like NOW-30DAYS or YYYYMMDD-formatted dates.
 
 **Area of interest extent**:
-Provide here the extent of the you region of interest.
+Provide the extent of the you region of interest.
 
 **Maximum cloud cover in percent**: restrict your search by specifying a maximum cloud cover threshold (Sentinel-2 and Sentinel-3 only).
 
