@@ -193,6 +193,23 @@ In this step, the climate files are processed using zonal statistics to produce 
 
 **Resolution of subcatchment map in degrees**: Resolution of subcatchment map used to calculate zonal statistics. If there are very small subbasins, this value may need to be decreased.
 !INSTRUCTIONS
+.ALGORITHM:script:preparesubreachesgeometryfile
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:# Preparation of subreaches' geometry file
+In this step a CSV file is created which contains the description of geometry of reaches of each of the model's subbasins. The geometry contains information such as:
+<ul>
+<li>total length</li>
+<li>average width</li>
+<li>average slope</li>
+<li>average depth</li>
+</ul>
+
+##Settings
+**Model setup file**: Select the model file created in previous steps.
+
+**Output file**: Path to CSV file in which the geometry will be saved.
+!INSTRUCTIONS
 .ALGORITHM:script:budykohydrologicalmodelcalibration
 .PARAMETERS:{"STARTDATE": "2000001", "ENDDATE": "2010365", "CALIBRATION_TYPE_ID": 2, "REP": 100000, "AREA_TO_M": 1, "N_CLASSES": 20, "Z_CH": 2, "ACC_INT": 0.1}
 .MODE:Normal
@@ -203,16 +220,7 @@ In this step, the model is calibrated using the Shuffled Complex Evolution algoi
 
 ##Settings
 
-**Geometry setup**: This .csv file must be created by the user and should contain the following columns:
-
-<ol>
-<li><i>Subbasins</i>: each catchment subbasin must have a line with this column containing the subbasin ID</li>
-<li><i>Subbasins</i>: the number of subreaches to divided the subbasin river reach in. Ideally the length of each subreach should not exceed 20 km to ensure stability of the routing module.</li>
-<li><i>Length</i>:total length of the reach within each subbasin</li>
-<li><i>Width</i>: average width of the reach in each subbasin</li>
-<li><i>Slope</i>: average slope of the reach in each subbasin</li>
-<li><i>Depth</i>: average depth of the reach in each subbasin - this can be estimated using average width and the method from Andreadis et al. (2013) (</li>
-</ol>
+**Geometry setup**: Select the geometry .csv file created in previous step.
 
 
 **Model setup**: Select the model file created in previous steps.
