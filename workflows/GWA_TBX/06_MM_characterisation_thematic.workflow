@@ -1,18 +1,18 @@
-.NAME:2 - Mangrove characterisation
+.NAME:2 - Characterisation (thematic)
 .GROUP:PG#6: Mangrove Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
 .INSTRUCTIONS:<img src="images/GlobWetland_Africa.png" alt="GWA_logo" width=250 align="right">
 <br>
-# Mangrove Mapping
+# Mangrove Characterisation using thematic classification
 <br><br>
 
 
 ## Objective of the workflow
 Recent advancements in remote sensing technology and image processing methods have enabled a shift in focus from mapping broad land cover types to mapping specific attributes or characteristics of vegetation. This movement towards more detailed land cover mapping should greatly benefit a broad array of natural resource management plans and conservation initiatives. Many coastal wetland management strategies are now recognising the growing importance of accurate maps that characterise mangrove species and/or structure. For example, mapping mangrove species can feed into biodiversity monitoring systems and help prioritise conservation efforts. Similarly, mapping structural attributes related to mangrove height and density can contribute to better understanding of a number of important themes, e.g. ecosystems resilience against storm surges or climate change, or more reliable estimates of wetland habitat biomass.
 
-**The focus of this workflow is on the use optical datasets provided by ESA’s Sentinel 2 satellites to characterize mangroves.**
+**The focus of this workflow is on the use optical datasets provided by ESA’s Sentinel 2 satellites or NASA's Landsat satellites to characterize mangroves using machine learning classificaiton.**
 
 ## Theoretical background
 Considerable change occurs in mangrove phenology throughout the year, especially as the dry season progresses. Seasonal changes in optical spectra may improve the identification of different species and/or structural types. A second aspect that may have an influence on mangrove characterisation is the difference between high and low tide. At high tide, the background signal of water is expected to have a greater influence on the overall spectral response compared to low tide conditions, especially so for lower elevation or less dense areas of mangrove. Therefore, **best results are obtained when including imagery in the analysis that captured both seasonal and tidal differences**.
