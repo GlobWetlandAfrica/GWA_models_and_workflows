@@ -1,4 +1,4 @@
-.NAME:Sentinel-2 Pre-processing
+.NAME:Sentinel-2 Pre-processing update
 .GROUP:I/O
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
@@ -130,4 +130,25 @@ Use the ... button to navigate to the folder where you will save the output data
 ## Notes
 
 In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
+!INSTRUCTIONS
+.ALGORITHM:script:sentinel2indices
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:# Calculate Sentinel-2 spectral indices
+
+This step calculates 8 spectral indices which are useful for land cover classification.
+
+The 8 indices that are calculated are:
+Band 1: NDVI using S2 bands 8 and 4
+Band 2: NDVI using S2 bands 8a and 4
+Band 3: Red Edge NDI using S2 bands 8a and 5
+Band 4: Red Edge NDI using S2 bands 8a and 6
+Band 5: Red Edge NDI using S2 bands 6 and 5
+Band 6: Red Edge NDI using S2 bands 7 and 5
+Band 7: NDII using S2 bands 8a and 11
+Band 8: NDWI using S2 bands 8a and 12
+
+Input Reflectance Stack: Input the atmospherically corrected data created in the previous steps -  ["enter name"]_DOS.tif
+
+Folder to save the stack of Indices: Use the ... button to navigate to the folder where you want to save the indices.
 !INSTRUCTIONS
