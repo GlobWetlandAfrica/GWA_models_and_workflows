@@ -32,20 +32,20 @@ This workflow should be run prior to intergating Landsat imagery into any of the
 .MODE:Normal
 .INSTRUCTIONS:# Untar imagery
 
-The first step is to untar (unpack) the Landsat data.
+The first step is to untar (unpack) the Landsat data. Relevant Landsat bands are loaded into QGIS after they have been unpacked.
 
 ## Settings
 
 **tar.gz file**: Use the ... button to navigate to the downloaded Landsat data, and select the tar.gz you want to unpack.
 
-**Directory to untar data to**: Use the ... button to navigate to the folder where you want to unpack the Landsat data.
+**Folder to unpack the data to**: Use the ... button to navigate to the folder where you want to unpack the Landsat data.
 !INSTRUCTIONS
 .ALGORITHM:script:fmasklandsat
 .PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
 .MODE:Normal
 .INSTRUCTIONS:# Cloud masking
 
-In this step a cloud mask is produced for a Landsat scene.
+In this step a cloud mask is produced for a Landsat scene. If you do not need a cloud mask, skip this step.
 
 ## Settings
 
@@ -119,7 +119,7 @@ If you do not have a vector layer outlining your study region you can create one
 .MODE:Normal
 .INSTRUCTIONS:# Apply cloud mask (optional)
 
-In this step you can apply (burn) the cloud mask produced by FMask to the Landsat stack.
+In this step you can apply (burn) the cloud mask produced by FMask to the Landsat stack. If you have not made a cloud mask, skip this step.
 
 ## Settings
 
@@ -134,4 +134,21 @@ Use the ... button to navigate to the folder where you will save the output data
 ## Notes
 
 In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
+!INSTRUCTIONS
+.ALGORITHM:script:landsatindices
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:# Calculate Landsat Indices
+
+This tool calculates 4 spectral indices which are useful for mapping using Landsat imagery.
+
+The 4 indices that are calculated are:
+Band 1: NDVI
+Band 2: NDMI
+Band 3: NBR
+Band 4: NBR2
+
+**Input Reflectance Stack**: Input pre-processed image
+
+**Folder to save the stack of Indices**: Use the ... button to navigate to the **folder** where you want to save the indices.
 !INSTRUCTIONS
