@@ -69,7 +69,7 @@ Because area statistics will be calculated in the subsequent steps, it is import
 If the layers are already in the same metric projection then this step can be skipped.
 
 !INSTRUCTIONS
-.ALGORITHM:model:land_cover_area_statstics
+.ALGORITHM:model:Land cover area statistics
 .PARAMETERS:{}
 .MODE:Batch
 .INSTRUCTIONS:# Calculate land cover area statistics
