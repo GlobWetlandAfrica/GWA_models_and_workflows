@@ -19,7 +19,7 @@ A variety of probability sampling designs are applicable to accuracy assessment 
 ## References and further reading
 * Stehman, S. V. (2009). Sampling designs for accuracy assessment of land cover. International Journal of Remote Sensing, 30, 5243–5272.
 !INSTRUCTIONS
-.ALGORITHM:r:rasterstratsamp
+.ALGORITHM:r:rasterStratSamp
 .PARAMETERS:{"Optional_Attribute_name_1": "", "Optional_Attribute_name_2": "", "Attribute_name": "class_id", "Samples_per_strata": 50}
 .MODE:Normal
 .INSTRUCTIONS:# Generate sample
@@ -43,7 +43,7 @@ The input raster should be a classified raster (e.g. land cover map). Each class
 ## Notes
 No Data values are not treated as strata, but zero (0) values are. If zero values are not land cover class, all zero values should be reclassed as No Data.
 !INSTRUCTIONS
-.ALGORITHM:r:vectokml
+.ALGORITHM:r:vecToKml
 .PARAMETERS:{"ID_Field_from_Shapefile_Attributes": "number", "KML_Filename": "enter_file_name_here.kml"}
 .MODE:Normal
 .INSTRUCTIONS:# Convert to KML (point)
@@ -63,7 +63,7 @@ When interpreting samples using imagery is can be very useful to have a copy of 
 ## Notes
 Skip this step if you do not plan to use Google Earth for sample interpretation.
 !INSTRUCTIONS
-.ALGORITHM:r:pointtogrid
+.ALGORITHM:r:pointToGrid
 .PARAMETERS:{"Make_3x3_Grid____Yes_or_No": "Yes"}
 .MODE:Normal
 .INSTRUCTIONS:# Generate sample unit outline
@@ -81,7 +81,7 @@ This step generates a sample unit outline (i.e. a polygon) for each validation s
 **Sample Outline**: Define the output directory for the sample outlines. This should be the same as the input file but with “_unit” added to the end of the filename.
 
 !INSTRUCTIONS
-.ALGORITHM:r:vectokml
+.ALGORITHM:r:vecToKml
 .PARAMETERS:{"ID_Field_from_Shapefile_Attributes": "number", "KML_Filename": "enter_file_name_here.kml"}
 .MODE:Normal
 .INSTRUCTIONS:# Convert to KML (polygon)

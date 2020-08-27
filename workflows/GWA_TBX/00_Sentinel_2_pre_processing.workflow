@@ -72,7 +72,7 @@ This step exports a selection of Sentinel 2 data to a new file for further proce
 
 **Directory to save the exported data in**: Use the ... button to navigate to the folder where you will save the output imagery.
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:cliprasterbyextent
+.ALGORITHM:gdal:cliprasterbyextent
 .PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "699960.0,809760.0,8190220.0,8300020.0", "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Subset image

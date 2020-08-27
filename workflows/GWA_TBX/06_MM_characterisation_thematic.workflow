@@ -26,7 +26,7 @@ Before running this workflow you should use the **__Sentinel-2 Pre-processing wo
 ## References and further reading
 * Breiman, L. Machine Learning (2001) 45: 5. [https://doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324)
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:merge
+.ALGORITHM:gdal:merge
 .PARAMETERS:{"RTYPE": 1, "NODATA": -9999, "PCT": false, "SEPARATE": true}
 .MODE:Normal
 .INSTRUCTIONS:#Combine input images
@@ -41,7 +41,7 @@ The first step combines all input imagery used for the classification into 1 sin
 
 **Merged**: Define the output directory and image name. The output image name should be called *01_Stack_[‘enter name’].tif*
 !INSTRUCTIONS
-.ALGORITHM:r:randomforestclass
+.ALGORITHM:r:RandomForestClass
 .PARAMETERS:{"Number_of_Trees": 150, "Class_ID_Field": "", "Number_of_Cores_for_Processing": 2}
 .MODE:Normal
 .INSTRUCTIONS:# Classify mangrove types
@@ -66,7 +66,7 @@ A Shapefile (.shp) with vector polygon or point training data for each class is 
 
 **Output Raster**: Define the output directory and image name. The output image name should be called 02_RFC_[‘enter name’].tif
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:sieve
+.ALGORITHM:gdal:sieve
 .PARAMETERS:{"THRESHOLD": 4, "CONNECTIONS": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Post-processing

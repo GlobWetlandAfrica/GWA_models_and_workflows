@@ -26,7 +26,7 @@ Before running this workflow you should use the **Sentinel-2 Pre-processing work
 ## References and futher reading
 * Breiman, L. Machine Learning (2001) 45: 5. [https://doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324)
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:merge
+.ALGORITHM:gdal:merge
 .PARAMETERS:{"RTYPE": 1, "NODATA": -9999, "PCT": false, "SEPARATE": true}
 .MODE:Normal
 .INSTRUCTIONS:# Combine input images
@@ -44,7 +44,7 @@ The first step combines all input imagery (either all Sentinel-2 or Landsat) whi
 ## Notes
 Data have to be loaded in QGIS before they can be listed and selected in the window.
 !INSTRUCTIONS
-.ALGORITHM:r:randomforestclass
+.ALGORITHM:r:RandomForestClass
 .PARAMETERS:{"Number_of_Trees": 500, "Class_ID_Field": "", "Number_of_Cores_for_Processing": 2}
 .MODE:Normal
 .INSTRUCTIONS:# Classify land cover and land use including wetland types
@@ -69,7 +69,7 @@ A Shapefile (.shp) with vector polygon or point training data for each class is 
 
 **Output Raster**: Define the output directory and map name. The output map name can be called *02_RFC_[‘enter name’].tif*
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:sieve
+.ALGORITHM:gdal:sieve
 .PARAMETERS:{"THRESHOLD": 10, "CONNECTIONS": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Post-processing

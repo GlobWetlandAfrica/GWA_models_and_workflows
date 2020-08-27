@@ -20,7 +20,7 @@ The concept of accuracy is central to all geographic data, and validation is now
 ## References and further reading
 * P. Olofsson, G.M. Foody, S.V. Stehman, C.E. Woodcock: Making better use of accuracy data in land change studies: Estimating accuracy and area and quantifying uncertainty using stratified estimation. Remote Sensing of Environment, 129 (2013), pp. 122-131
 !INSTRUCTIONS
-.ALGORITHM:r:weightedaccuracy
+.ALGORITHM:r:weighted_accuracy
 .PARAMETERS:{}
 .MODE:Normal
 .INSTRUCTIONS:# Accuracy assessment

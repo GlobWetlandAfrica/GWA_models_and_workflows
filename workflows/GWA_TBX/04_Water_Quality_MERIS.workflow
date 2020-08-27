@@ -170,7 +170,7 @@ This step defines the parameters for an optical water type classification.
 * It is recommended to keep the default settings.
 * The information about the optical water class is only available in the Level-2 products (intermediate products after step 8).
 !INSTRUCTIONS
-.ALGORITHM:script:pg04waterqualityparameterscrsselect
+.ALGORITHM:script:pg04waterqualityparameters04olcicrsselect
 .PARAMETERS:{}
 .MODE:Normal
 .INSTRUCTIONS:# Step 7: Set Projection Parameters

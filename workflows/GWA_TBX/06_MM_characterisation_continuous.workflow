@@ -20,7 +20,7 @@ This workflow uses Support Vector Regression to characterise mangroves on a cont
 ## Data preparation
 Before running this workflow you should use the **__Sentinel-2 Pre-processing workflow__** (located in the *I/O* group) for each image you want to include in the analysis. You should have a vector point shapefile (.shp) with the **training data**. It should contain training samples covering the full range of the continuous variable to be mapped. The projection of this training data file must be identical to that of the satellite imagery used.
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:merge
+.ALGORITHM:gdal:merge
 .PARAMETERS:{"RTYPE": 5, "NODATA": -9999, "PCT": false, "SEPARATE": false}
 .MODE:Normal
 .INSTRUCTIONS:#Combine input images
@@ -35,7 +35,7 @@ The first step combines all input imagery used for the regression into 1 single 
 
 **Merged**: Define the output directory and image name. The output image name should be called *01_Stack_[‘enter name’].tif*
 !INSTRUCTIONS
-.ALGORITHM:r:supportvectorregression
+.ALGORITHM:r:SupportVectorRegression
 .PARAMETERS:{"Cost_for_Radial_Kernel": 10, "Number_of_Cores_for_Processing": 2, "Gamma_for_Radial_Kernel": 0, "Variable_Name": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Predict continuos variable

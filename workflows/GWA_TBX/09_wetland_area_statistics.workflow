@@ -15,7 +15,7 @@ The workflow have two steps. The first step returns the area statistics for a fu
 
 <center><img src="images/AreaStat.jpg" alt="Area Statistics - Example"></center>
 !INSTRUCTIONS
-.ALGORITHM:grass:r.report
+.ALGORITHM:grass7:r.report
 .PARAMETERS:{"-e": true, "-f": true, "-n": true, "-h": true, "GRASS_REGION_PARAMETER": null, "-N": true, "units": 1, "null": "*", "nsteps": 255}
 .MODE:Normal
 .INSTRUCTIONS:# Area statistics for full image
@@ -48,7 +48,7 @@ p: percent cover
 **Report (raw output)**: Specify the name and location of the output statistics file (*.txt)
 
 !INSTRUCTIONS
-.ALGORITHM:modeler:subbasin_lc
+.ALGORITHM:model:Subbasin land cover
 .PARAMETERS:{"NUMBER_RASTERRES": 0}
 .MODE:Normal
 .INSTRUCTIONS:# Report area statistics within user defined region

@@ -44,7 +44,7 @@ Make sure **Wide report** is checked
 ## Notes
 Note that in the report the initial state is listed as MAP2 and the final state as MAP1.
 !INSTRUCTIONS
-.ALGORITHM:modeler:subbasin_lc_change
+.ALGORITHM:model:Subbasin land cover change
 .PARAMETERS:{"NUMBER_RASTERRESOLUTION": 0}
 .MODE:Normal
 .INSTRUCTIONS:# Change statistics for user defined region
