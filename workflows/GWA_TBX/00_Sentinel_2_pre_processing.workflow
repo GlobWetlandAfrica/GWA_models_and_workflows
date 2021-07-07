@@ -1,5 +1,5 @@
-.NAME:Sentinel-2 Pre-processing update
-.GROUP:I/O
+.NAME:Sentinel-2 Pre-processing
+.GROUP:1. Pre-processing
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -19,6 +19,7 @@ This workflow should be run prior to starting the Wetland Inventory and Mangrove
 
 ### Note
 *If multiple images need to be processed users may take note of the individual processing steps and run them in batch mode separately and in sequence.*
+
 !INSTRUCTIONS
 .ALGORITHM:script:unzipsentinel2data
 .PARAMETERS:{}
@@ -33,9 +34,10 @@ The first step is to Unzip the Sentinel 2 data.
 
 **Directory to unzip data to**:  Use the ... button to navigate to the folder where you will save the unzipped data.
 
+
 !INSTRUCTIONS
 .ALGORITHM:script:fmasksentinel2
-.PARAMETERS:{"cloudbufferdistance": 150, "verbose": true, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "greensnowthreshold": 0.1, "mincloudsize": 0, "cloudprobthreshold": 20}
+.PARAMETERS:{"verbose": true, "mincloudsize": 0, "cloudbufferdistance": 150, "shadowbufferdistance": 300, "cloudprobthreshold": 20, "nirsnowthreshold": 0.11, "greensnowthreshold": 0.1}
 .MODE:Normal
 .INSTRUCTIONS:# Cloud masking
 
@@ -52,9 +54,10 @@ Notes
 
 ## Notes
 Other parameters can be used to fine-tune the cloud mask, but without expert knowledge it is recommended to keep the default values.
+
 !INSTRUCTIONS
 .ALGORITHM:script:exportsentinel2data
-.PARAMETERS:{"out_res": 0, "allVISNIR": false, "B10": false, "bands_param": "", "B11": true, "B4": true, "B5": true, "B6": true, "B7": true, "B12": true, "B1": false, "B2": true, "B3": true, "B8A": true, "B8": true, "B9": false, "granules": ""}
+.PARAMETERS:{"B1": false, "B2": true, "B3": true, "B4": true, "B5": true, "B6": true, "B7": true, "B8": true, "B8A": true, "B9": false, "B10": false, "B11": true, "B12": true, "allVISNIR": false, "bands_param": "", "out_res": 0, "granules": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Export data
 
@@ -71,9 +74,10 @@ This step exports a selection of Sentinel 2 data to a new file for further proce
 **Granule selection**: Choose the specific granule(s) that correspond to you study area.
 
 **Directory to save the exported data in**: Use the ... button to navigate to the folder where you will save the output imagery.
+
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:cliprasterbyextent
-.PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "699960.0,809760.0,8190220.0,8300020.0", "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
+.ALGORITHM:gdal:cliprasterbyextent
+.PARAMETERS:{"PROJWIN": "699960.000000000,809760.000000000,8190220.000000000,8300020.000000000 [EPSG:4326]", "OVERCRS": false, "NODATA": null, "OPTIONS": "", "DATA_TYPE": 0, "EXTRA": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Subset image
 
@@ -91,6 +95,7 @@ This tool clips the imagery to a region of interst that covers your study area.
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
 
 Note: This tool can also be used in "Batch" mode. Change the bottom dropdown menu from "Normal" to "Batch" for use in batch mode.
+
 !INSTRUCTIONS
 .ALGORITHM:script:sentinel2atmosphericcorrection
 .PARAMETERS:{"method": 0}
@@ -109,9 +114,10 @@ This step performs atmospheric correction to the imagery using Dark Object Subtr
 
 **Output file**: Use the ... button to navigate to the directory where you will save the atmospherically corrected data and give it a suitable name - ["enter name"]_DOS.tif
 
+
 !INSTRUCTIONS
 .ALGORITHM:script:burncloudmask
-.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": true, "maskCloud": true, "maskNull": true}
+.PARAMETERS:{"maskNull": true, "maskCloud": true, "maskShadow": true, "maskSnow": true, "maskWater": false, "maskLand": false}
 .MODE:Normal
 .INSTRUCTIONS:# Apply cloud mask (optional)
 
@@ -130,6 +136,7 @@ Use the ... button to navigate to the folder where you will save the output data
 ## Notes
 
 In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
+
 !INSTRUCTIONS
 .ALGORITHM:script:sentinel2indices
 .PARAMETERS:{}
@@ -151,4 +158,5 @@ Band 8: NDWI using S2 bands 8a and 12
 Input Reflectance Stack: Input the atmospherically corrected data created in the previous steps -  ["enter name"]_DOS.tif
 
 Folder to save the stack of Indices: Use the ... button to navigate to the folder where you want to save the indices.
+
 !INSTRUCTIONS

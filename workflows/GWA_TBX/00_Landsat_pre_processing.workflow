@@ -1,5 +1,5 @@
 .NAME:Landsat Pre-processing
-.GROUP:I/O
+.GROUP:1. Pre-processing
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -61,7 +61,7 @@ Specify the path to the output file. Store the cloud mask in the directory of th
 
 Other parameters can be used to fine-tune the cloud mask, but without expert knowledge it is recommended to keep the default values.
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:buildvirtualraster
+.ALGORITHM:gdal:buildvirtualraster
 .PARAMETERS:{"PROJ_DIFFERENCE": false, "RESOLUTION": 0, "SEPARATE": true}
 .MODE:Normal
 .INSTRUCTIONS:# Stack input bands
@@ -96,7 +96,7 @@ LC81950212017071LGN00_B5
 LC81950212017071LGN00_B6
 LC81950212017071LGN00_B7
 !INSTRUCTIONS
-.ALGORITHM:gdalogr:cliprasterbyextent
+.ALGORITHM:gdal:cliprasterbyextent
 .PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "556485.0,791715.0,6079785.0,6318315.0", "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Subset image

@@ -1,5 +1,5 @@
 .NAME:Sentinel-1 Pre-processing
-.GROUP:I/O
+.GROUP:1. Pre-processing
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -20,7 +20,7 @@ This workflow should be run prior to intergating Sentinel-1 imagery into any of 
 ### Note
 *If multiple images need to be processed users may take note of the individual processing steps and run them in batch mode separately and in sequence.*
 !INSTRUCTIONS
-.ALGORITHM:snap:subset
+.ALGORITHM:esa_snap:SNAP_Subset
 .PARAMETERS:{"sourceBands": "", "copyMetadata": true, "subSamplingY": 1, "geoRegion": null, "subSamplingX": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Subset image
@@ -54,7 +54,7 @@ Outputname example: "subset_S1A_IW_GRDH_1SSV_20141130T233100.tif"
 
 **Open output file after running algorithm**: YES
 !INSTRUCTIONS
-.ALGORITHM:snap:applyorbitfile
+.ALGORITHM:esa_snap:s1tbx_Apply-Orbit-File
 .PARAMETERS:{"polyDegree": 3, "orbitType": 0, "continueOnFail": false}
 .MODE:Normal
 .INSTRUCTIONS:# Apply Orbit File
@@ -73,7 +73,7 @@ But if you want to review the intermediate results save the file as GeoTiff.
 Naming tips: prefix "orb_"
 Outputname example: "orb_subset_S1A_IW_GRDH_1SSV_20141130T233100.tif"
 !INSTRUCTIONS
-.ALGORITHM:snap:calibration
+.ALGORITHM:esa_snap:s1tbx_Calibration
 .PARAMETERS:{"outputImageInComplex": false, "createBetaBand": false, "selectedPolarisations": "", "sourceBands": "", "outputBetaBand": false, "outputSigmaBand": true, "auxFile": 1, "outputGammaBand": false, "createGammaBand": false, "outputImageScaleInDb": true}
 .MODE:Normal
 .INSTRUCTIONS:# Calibration
@@ -97,7 +97,7 @@ Leave the default values.
 **Create Beta band(Advanced)** and **Create Gamma band(Advanced)**:
 If you want to produce the Beta or Gamma band information, please enter the output file path here.
 !INSTRUCTIONS
-.ALGORITHM:snap:lineartofromdb
+.ALGORITHM:esa_snap:s1tbx_LinearToFromdB
 .PARAMETERS:{"sourceBands": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Linear to/from dB
@@ -116,7 +116,7 @@ But if you want to review the intermediate results save the file as GeoTiff.
 Naming tips: prefix "dB_"
 Outputname example: "dB_cal_orb_subset_S1A_IW_GRDH_1SSV_20141130T233100.tif"
 !INSTRUCTIONS
-.ALGORITHM:snap:terraincorrection
+.ALGORITHM:esa_snap:s1tbx_Terrain-Correction
 .PARAMETERS:{"applyRadiometricNormalization": false, "saveSigmaNought": false, "sourceBands": "", "saveLocalIncidenceAngle": false, "saveGammaNought": false, "outputComplex": false, "saveIncidenceAngleFromEllipsoid": false, "saveProjectedLocalIncidenceAngle": false, "externalDEMNoDataValue": -32768, "auxFile": 1, "saveDEM": false, "pixelSpacingInDegree": 8.9e-05, "incidenceAngleForSigma0": 1, "demResamplingMethod": 1, "saveLatLon": false, "saveSelectedSourceBand": true, "nodataValueAtSea": false, "demName": 2, "pixelSpacingInMeter": 10, "incidenceAngleForGamma0": 1, "externalDEMApplyEGM": false, "saveBetaNought": false, "imgResamplingMethod": 1}
 .MODE:Normal
 .INSTRUCTIONS:# Terrain correction

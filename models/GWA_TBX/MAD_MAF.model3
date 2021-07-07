@@ -1,0 +1,223 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="otb:DimensionalityReduction_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="otb:DimensionalityReduction"/>
+      <Option name="component_description" type="QString" value="DimensionalityReduction"/>
+      <Option name="component_pos_x" type="double" value="408.8000000000001"/>
+      <Option name="component_pos_y" type="double" value="325.59999999999997"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="otb:DimensionalityReduction_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="bv" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="0"/>
+          </Option>
+        </Option>
+        <Option name="in" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="otb:MultivariateAlterationDetector_1"/>
+            <Option name="output_name" type="QString" value="out"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="method" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value="maf"/>
+          </Option>
+        </Option>
+        <Option name="method.ica.g" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value="tanh"/>
+          </Option>
+        </Option>
+        <Option name="method.ica.iter" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="20"/>
+          </Option>
+        </Option>
+        <Option name="method.ica.mu" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="1"/>
+          </Option>
+        </Option>
+        <Option name="method.napca.radiusx" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="method.napca.radiusy" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="method.pca.whiten" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="true"/>
+          </Option>
+        </Option>
+        <Option name="nbcomp" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="normalize" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="false"/>
+          </Option>
+        </Option>
+        <Option name="rescale" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value="no"/>
+          </Option>
+        </Option>
+        <Option name="rescale.minmax.outmax" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="255"/>
+          </Option>
+        </Option>
+        <Option name="rescale.minmax.outmin" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="otb:MultivariateAlterationDetector_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="otb:MultivariateAlterationDetector"/>
+      <Option name="component_description" type="QString" value="MultivariateAlterationDetector"/>
+      <Option name="component_pos_x" type="double" value="271.20000000000005"/>
+      <Option name="component_pos_y" type="double" value="222.4"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="otb:MultivariateAlterationDetector_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="in1" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="InputImage1"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="in2" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="InputImage2"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="outputpixeltype" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="5"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="otb:SplitImage_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="otb:SplitImage"/>
+      <Option name="component_description" type="QString" value="SplitImage"/>
+      <Option name="component_pos_x" type="double" value="628.8000000000002"/>
+      <Option name="component_pos_y" type="double" value="425.59999999999997"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="otb:SplitImage_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="Change Map" type="Map">
+          <Option name="child_id" type="QString" value="otb:SplitImage_1"/>
+          <Option name="component_description" type="QString" value="Change Map"/>
+          <Option name="component_pos_x" type="double" value="828.8000000000002"/>
+          <Option name="component_pos_y" type="double" value="470.59999999999997"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="Change Map"/>
+          <Option name="output_name" type="QString" value="out"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="in" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="otb:DimensionalityReduction_1"/>
+            <Option name="output_name" type="QString" value="out"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="outputpixeltype" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="5"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="help"/>
+  <Option name="modelVariables"/>
+  <Option name="model_group" type="QString" value="Wetland Habitat Mapping"/>
+  <Option name="model_name" type="QString" value="MAD/MAF"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="InputImage1" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="description" type="QString" value="Input Image 1"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="InputImage1"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="InputImage2" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="description" type="QString" value="Input Image 2"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="InputImage2"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="otb:SplitImage_1:Change Map" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="default" type="invalid"/>
+      <Option name="description" type="QString" value="Change Map"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="otb:SplitImage_1:Change Map"/>
+      <Option name="parameter_type" type="QString" value="rasterDestination"/>
+      <Option name="supports_non_file_outputs" type="bool" value="false"/>
+    </Option>
+  </Option>
+  <Option name="parameters" type="Map">
+    <Option name="InputImage1" type="Map">
+      <Option name="component_description" type="QString" value="InputImage1"/>
+      <Option name="component_pos_x" type="double" value="120.79999999999993"/>
+      <Option name="component_pos_y" type="double" value="119.19999999999999"/>
+      <Option name="name" type="QString" value="InputImage1"/>
+    </Option>
+    <Option name="InputImage2" type="Map">
+      <Option name="component_description" type="QString" value="InputImage2"/>
+      <Option name="component_pos_x" type="double" value="120"/>
+      <Option name="component_pos_y" type="double" value="60"/>
+      <Option name="name" type="QString" value="InputImage2"/>
+    </Option>
+  </Option>
+</Option>

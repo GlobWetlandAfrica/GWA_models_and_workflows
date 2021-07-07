@@ -1,5 +1,5 @@
 .NAME:Wetland fragmentation
-.GROUP:Wetland Indicators
+.GROUP:5. Wetland Indicators
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -24,7 +24,7 @@ Patch-level statistics are defined for individual patches and characterize the s
 ## References and further reading
 * FRAGSTATS: [http://www.umass.edu/landeco/research/fragstats/fragstats.html](http://www.umass.edu/landeco/research/fragstats/fragstats.html)
 !INSTRUCTIONS
-.ALGORITHM:lecos:landscapewidestatistics
+.ALGORITHM:lecos:landscapestat
 .PARAMETERS:{"METRIC": 0}
 .MODE:Normal
 .INSTRUCTIONS:# Landscape wide statistics
@@ -40,7 +40,7 @@ This step can be used to quantify landscape patterns through the calculation of 
 **Output file**: Specify the name and location of the output file (*.csv)
 
 !INSTRUCTIONS
-.ALGORITHM:lecos:patchstatistics
+.ALGORITHM:lecos:patchstat
 .PARAMETERS:{"LC_CLASS": 1, "METRIC": 0}
 .MODE:Normal
 .INSTRUCTIONS:# Patch statistics
