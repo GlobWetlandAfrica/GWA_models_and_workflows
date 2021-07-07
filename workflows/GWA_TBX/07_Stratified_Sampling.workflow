@@ -1,5 +1,5 @@
 .NAME:1 - Generate Stratified Sample
-.GROUP:Validation Tools
+.GROUP:4. Validation Tools
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

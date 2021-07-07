@@ -1,5 +1,5 @@
-.NAME:2 - Status mapping (general)
-.GROUP:PG#2: Wetland Habitat Mapping
+.NAME:1 - Status mapping (wetland extent and type)
+.GROUP:2. Wetland (Habitat) Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

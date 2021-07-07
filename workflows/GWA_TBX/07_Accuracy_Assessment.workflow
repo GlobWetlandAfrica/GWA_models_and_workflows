@@ -1,5 +1,5 @@
 .NAME:2 - Accuracy Assessment
-.GROUP:Validation Tools
+.GROUP:4. Validation Tools
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

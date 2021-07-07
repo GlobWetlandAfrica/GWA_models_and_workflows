@@ -1,5 +1,5 @@
 .NAME:Sentinel-1 Pre-processing
-.GROUP:I/O
+.GROUP:1. Pre-processing
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

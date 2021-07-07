@@ -1,5 +1,5 @@
 .NAME:Segmentation for Manual Editing
-.GROUP:Post-processing
+.GROUP:3. Post-processing
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
@@ -72,8 +72,8 @@ The classification raster should be an integer file having the values: 1,2,3 etc
 
 **Output Stack for Segmentation**: Define the output directory and vrt file name. The output image should be called 03_PostClass_['enter name'].tif
 !INSTRUCTIONS
-.ALGORITHM:otb:segmentationmeanshift
-.PARAMETERS:{"-mode.vector.startlabel": 1, "-mode.vector.simplify": 0.1, "-mode.vector.outmode": 0, "-mode": 0, "-filter.meanshift.thres": 0.1, "-mode.vector.layername": "layer", "-mode.vector.ogroptions": "", "-mode.vector.fieldname": "DN", "-filter.meanshift.maxiter": 100, "-filter.meanshift.spatialr": 1, "-filter.meanshift.minsize": 100, "-filter.meanshift.ranger": 100, "-mode.vector.minsize": 1, "-mode.vector.stitch": true, "-mode.vector.neighbor": true, "-filter": 0, "-mode.vector.tilesize": 1024}
+.ALGORITHM:otb:LargeScaleMeanShift
+.PARAMETERS:{"spatialr": 5, "ranger": 15.0, "minsize": 50, "tilesizex": 500, "tilesizey": 500, "cleanup": true, "outputpixeltype": 5}
 .MODE:Normal
 .INSTRUCTIONS:# Perform segmentation
 

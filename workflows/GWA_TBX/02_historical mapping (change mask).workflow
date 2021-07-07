@@ -1,5 +1,5 @@
-.NAME:4 - Historical mapping (with change mask)
-.GROUP:PG#2: Wetland Habitat Mapping
+.NAME:2 - Historical mapping (with change mask)
+.GROUP:2. Wetland (Habitat) Mapping
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

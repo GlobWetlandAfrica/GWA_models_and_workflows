@@ -1,5 +1,5 @@
 .NAME:Wetland change (post-classification comparison)
-.GROUP:Wetland Indicators
+.GROUP:5. Wetland Indicators
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal

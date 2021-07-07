@@ -1,5 +1,5 @@
 .NAME:Wetland area statistics
-.GROUP:Wetland Indicators
+.GROUP:5. Wetland Indicators
 .ALGORITHM:workflowtools:workflowinstructions
 .PARAMETERS:{}
 .MODE:Normal
