@@ -2,290 +2,372 @@
 <Option type="Map">
   <Option name="children" type="Map">
     <Option name="grass7:r.report_1" type="Map">
-      <Option name="active" type="bool" value="true"/>
+      <Option name="active" value="true" type="bool"/>
       <Option name="alg_config"/>
-      <Option name="alg_id" type="QString" value="grass7:r.report"/>
-      <Option name="component_description" type="QString" value="r.report"/>
-      <Option name="component_pos_x" type="double" value="340"/>
-      <Option name="component_pos_y" type="double" value="260"/>
+      <Option name="alg_id" value="grass7:r.report" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="30" type="double"/>
+        <Option name="component_pos_x" value="540" type="double"/>
+        <Option name="component_pos_y" value="215" type="double"/>
+        <Option name="component_width" value="200" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="r.report" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="340" type="double"/>
+      <Option name="component_pos_y" value="260" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
       <Option name="dependencies"/>
-      <Option name="id" type="QString" value="grass7:r.report_1"/>
+      <Option name="id" value="grass7:r.report_1" type="QString"/>
       <Option name="outputs" type="Map">
         <Option name="Output statistics file" type="Map">
-          <Option name="child_id" type="QString" value="grass7:r.report_1"/>
-          <Option name="component_description" type="QString" value="Output statistics file"/>
-          <Option name="component_pos_x" type="double" value="540"/>
-          <Option name="component_pos_y" type="double" value="305"/>
+          <Option name="child_id" value="grass7:r.report_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="30" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="200" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Output statistics file" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="540" type="double"/>
+          <Option name="component_pos_y" value="305" type="double"/>
+          <Option name="component_width" value="200" type="double"/>
           <Option name="default_value" type="invalid"/>
-          <Option name="mandatory" type="bool" value="false"/>
-          <Option name="name" type="QString" value="Output statistics file"/>
-          <Option name="output_name" type="QString" value="output"/>
+          <Option name="mandatory" value="false" type="bool"/>
+          <Option name="name" value="Output statistics file" type="QString"/>
+          <Option name="output_name" value="output" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
         </Option>
       </Option>
-      <Option name="outputs_collapsed" type="bool" value="true"/>
-      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
       <Option name="params" type="Map">
         <Option name="-a" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="false"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
           </Option>
         </Option>
         <Option name="-c" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="false"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
           </Option>
         </Option>
         <Option name="-e" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="true"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
           </Option>
         </Option>
         <Option name="-f" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="true"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
           </Option>
         </Option>
         <Option name="-h" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="true"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
           </Option>
         </Option>
         <Option name="-i" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="false"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
           </Option>
         </Option>
         <Option name="-n" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="bool" value="false"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
           </Option>
         </Option>
         <Option name="GRASS_REGION_CELLSIZE_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="double" value="0"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="double"/>
           </Option>
         </Option>
         <Option name="GRASS_REGION_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
+            <Option name="source" value="2" type="int"/>
             <Option name="static_value" type="invalid"/>
           </Option>
         </Option>
         <Option name="map" type="List">
           <Option type="Map">
-            <Option name="child_id" type="QString" value="grass7:v.to.rast_1"/>
-            <Option name="output_name" type="QString" value="output"/>
-            <Option name="source" type="int" value="1"/>
+            <Option name="child_id" value="grass7:v.to.rast_1" type="QString"/>
+            <Option name="output_name" value="output" type="QString"/>
+            <Option name="source" value="1" type="int"/>
           </Option>
           <Option type="Map">
-            <Option name="parameter_name" type="QString" value="Classificationmap"/>
-            <Option name="source" type="int" value="0"/>
+            <Option name="parameter_name" value="Classificationmap" type="QString"/>
+            <Option name="source" value="0" type="int"/>
           </Option>
         </Option>
         <Option name="nsteps" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="255"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="255" type="int"/>
           </Option>
         </Option>
         <Option name="null_value" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value="*"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="*" type="QString"/>
           </Option>
         </Option>
         <Option name="page_length" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="0"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
           </Option>
         </Option>
         <Option name="page_width" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="79"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
           </Option>
         </Option>
         <Option name="sort" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="0"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
           </Option>
         </Option>
         <Option name="units" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="1"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
           </Option>
         </Option>
       </Option>
     </Option>
     <Option name="grass7:v.to.rast_1" type="Map">
-      <Option name="active" type="bool" value="true"/>
+      <Option name="active" value="true" type="bool"/>
       <Option name="alg_config"/>
-      <Option name="alg_id" type="QString" value="grass7:v.to.rast"/>
-      <Option name="component_description" type="QString" value="v.to.rast.attribute - Converts (rasterize) a vector layer into a raster layer."/>
-      <Option name="component_pos_x" type="double" value="120"/>
-      <Option name="component_pos_y" type="double" value="160"/>
+      <Option name="alg_id" value="grass7:v.to.rast" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="30" type="double"/>
+        <Option name="component_pos_x" value="320" type="double"/>
+        <Option name="component_pos_y" value="115" type="double"/>
+        <Option name="component_width" value="200" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="v.to.rast.attribute - Converts (rasterize) a vector layer into a raster layer." type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="120" type="double"/>
+      <Option name="component_pos_y" value="160" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
       <Option name="dependencies"/>
-      <Option name="id" type="QString" value="grass7:v.to.rast_1"/>
+      <Option name="id" value="grass7:v.to.rast_1" type="QString"/>
       <Option name="outputs"/>
-      <Option name="outputs_collapsed" type="bool" value="true"/>
-      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
       <Option name="params" type="Map">
         <Option name="GRASS_MIN_AREA_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="double" value="0.0001"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0.0001" type="double"/>
           </Option>
         </Option>
         <Option name="GRASS_RASTER_FORMAT_META" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value=""/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="" type="QString"/>
           </Option>
         </Option>
         <Option name="GRASS_RASTER_FORMAT_OPT" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value=""/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="" type="QString"/>
           </Option>
         </Option>
         <Option name="GRASS_REGION_CELLSIZE_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="double" value="20"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="20" type="double"/>
           </Option>
         </Option>
         <Option name="GRASS_REGION_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
+            <Option name="source" value="2" type="int"/>
             <Option name="static_value" type="invalid"/>
           </Option>
         </Option>
         <Option name="GRASS_SNAP_TOLERANCE_PARAMETER" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="double" value="-1"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="-1" type="double"/>
           </Option>
         </Option>
         <Option name="attribute_column" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value="aoi_id"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="aoi_id" type="QString"/>
           </Option>
         </Option>
         <Option name="input" type="List">
           <Option type="Map">
-            <Option name="parameter_name" type="QString" value="regionpolygons"/>
-            <Option name="source" type="int" value="0"/>
+            <Option name="parameter_name" value="regionpolygons" type="QString"/>
+            <Option name="source" value="0" type="int"/>
           </Option>
         </Option>
         <Option name="label_column" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value=""/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="" type="QString"/>
           </Option>
         </Option>
         <Option name="memory" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="300"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="300" type="int"/>
           </Option>
         </Option>
         <Option name="rgb_column" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value=""/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="" type="QString"/>
           </Option>
         </Option>
         <Option name="type" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
+            <Option name="source" value="2" type="int"/>
             <Option name="static_value" type="List">
-              <Option type="int" value="0"/>
-              <Option type="int" value="1"/>
-              <Option type="int" value="3"/>
+              <Option value="0" type="int"/>
+              <Option value="1" type="int"/>
+              <Option value="3" type="int"/>
             </Option>
           </Option>
         </Option>
         <Option name="use" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="int" value="0"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
           </Option>
         </Option>
         <Option name="value" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="double" value="1"/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="1" type="double"/>
           </Option>
         </Option>
         <Option name="where" type="List">
           <Option type="Map">
-            <Option name="source" type="int" value="2"/>
-            <Option name="static_value" type="QString" value=""/>
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="" type="QString"/>
           </Option>
         </Option>
       </Option>
     </Option>
   </Option>
+  <Option name="designerParameterValues" type="Map">
+    <Option name="VERBOSE_LOG" value="true" type="bool"/>
+  </Option>
+  <Option name="groupBoxes"/>
   <Option name="help"/>
   <Option name="modelVariables"/>
-  <Option name="model_group" type="QString" value="SDG 6.6.1 reporting"/>
-  <Option name="model_name" type="QString" value="Land cover area statistics"/>
+  <Option name="model_group" value="SDG 6.6.1 reporting" type="QString"/>
+  <Option name="model_name" value="Land cover area statistics" type="QString"/>
   <Option name="parameterDefinitions" type="Map">
     <Option name="Classificationmap" type="Map">
       <Option name="default" type="invalid"/>
-      <Option name="description" type="QString" value="Classification map"/>
-      <Option name="flags" type="int" value="0"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Classification map" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
       <Option name="metadata"/>
-      <Option name="name" type="QString" value="Classificationmap"/>
-      <Option name="parameter_type" type="QString" value="raster"/>
+      <Option name="name" value="Classificationmap" type="QString"/>
+      <Option name="parameter_type" value="raster" type="QString"/>
     </Option>
     <Option name="grass7:r.report_1:Output statistics file" type="Map">
-      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="create_by_default" value="true" type="bool"/>
       <Option name="default" type="invalid"/>
-      <Option name="description" type="QString" value="Output statistics file"/>
-      <Option name="file_filter" type="QString" value="Txt files (*.txt)"/>
-      <Option name="flags" type="int" value="8"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Output statistics file" type="QString"/>
+      <Option name="file_filter" value="Txt files (*.txt)" type="QString"/>
+      <Option name="flags" value="8" type="int"/>
+      <Option name="help" value="" type="QString"/>
       <Option name="metadata"/>
-      <Option name="name" type="QString" value="grass7:r.report_1:Output statistics file"/>
-      <Option name="parameter_type" type="QString" value="fileDestination"/>
-      <Option name="supports_non_file_outputs" type="bool" value="false"/>
+      <Option name="name" value="grass7:r.report_1:Output statistics file" type="QString"/>
+      <Option name="parameter_type" value="fileDestination" type="QString"/>
+      <Option name="supports_non_file_outputs" value="false" type="bool"/>
     </Option>
     <Option name="regionpolygons" type="Map">
       <Option name="data_types" type="List">
-        <Option type="int" value="2"/>
+        <Option value="2" type="int"/>
       </Option>
       <Option name="default" type="invalid"/>
-      <Option name="description" type="QString" value="Region polygons"/>
-      <Option name="flags" type="int" value="0"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Region polygons" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
       <Option name="metadata"/>
-      <Option name="name" type="QString" value="regionpolygons"/>
-      <Option name="parameter_type" type="QString" value="vector"/>
+      <Option name="name" value="regionpolygons" type="QString"/>
+      <Option name="parameter_type" value="vector" type="QString"/>
     </Option>
   </Option>
+  <Option name="parameterOrder"/>
   <Option name="parameters" type="Map">
     <Option name="Classificationmap" type="Map">
-      <Option name="component_description" type="QString" value="Classificationmap"/>
-      <Option name="component_pos_x" type="double" value="339.99999999999994"/>
-      <Option name="component_pos_y" type="double" value="60.800000000000004"/>
-      <Option name="name" type="QString" value="Classificationmap"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="30" type="double"/>
+        <Option name="component_pos_x" value="0" type="double"/>
+        <Option name="component_pos_y" value="0" type="double"/>
+        <Option name="component_width" value="200" type="double"/>
+        <Option name="outputs_collapsed" value="false" type="bool"/>
+        <Option name="parameters_collapsed" value="false" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Classificationmap" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="339.99999999999994" type="double"/>
+      <Option name="component_pos_y" value="60.800000000000004" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="name" value="Classificationmap" type="QString"/>
+      <Option name="outputs_collapsed" value="false" type="bool"/>
+      <Option name="parameters_collapsed" value="false" type="bool"/>
     </Option>
     <Option name="regionpolygons" type="Map">
-      <Option name="component_description" type="QString" value="regionpolygons"/>
-      <Option name="component_pos_x" type="double" value="120"/>
-      <Option name="component_pos_y" type="double" value="60"/>
-      <Option name="name" type="QString" value="regionpolygons"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="30" type="double"/>
+        <Option name="component_pos_x" value="0" type="double"/>
+        <Option name="component_pos_y" value="0" type="double"/>
+        <Option name="component_width" value="200" type="double"/>
+        <Option name="outputs_collapsed" value="false" type="bool"/>
+        <Option name="parameters_collapsed" value="false" type="bool"/>
+      </Option>
+      <Option name="component_description" value="regionpolygons" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="120" type="double"/>
+      <Option name="component_pos_y" value="60" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="name" value="regionpolygons" type="QString"/>
+      <Option name="outputs_collapsed" value="false" type="bool"/>
+      <Option name="parameters_collapsed" value="false" type="bool"/>
     </Option>
   </Option>
 </Option>
