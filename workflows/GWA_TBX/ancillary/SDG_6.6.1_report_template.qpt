@@ -1,154 +1,288 @@
-<Composer title="Composer 1" visible="1">
- <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{3a67e76a-e439-415d-977e-a26f220df45d}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
-  <symbol alpha="1" clip_to_extent="1" type="fill" name="">
-   <layer pass="0" class="SimpleFill" locked="0">
-    <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+<Layout name="Layout 2" worldFileMap="{7345b1c3-98f4-49b6-9523-00b5d3d14227}" printResolution="300" units="mm">
+ <Snapper snapToGrid="0" snapToGuides="1" snapToItems="1" tolerance="5"/>
+ <Grid offsetUnits="mm" offsetX="0" resUnits="mm" offsetY="0" resolution="10"/>
+ <PageCollection>
+  <symbol name="" force_rhr="0" alpha="1" type="fill" clip_to_extent="1">
+   <layer enabled="1" pass="0" locked="0" class="SimpleFill">
+    <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
     <prop k="color" v="255,255,255,255"/>
     <prop k="joinstyle" v="miter"/>
     <prop k="offset" v="0,0"/>
-    <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+    <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
     <prop k="offset_unit" v="MM"/>
-    <prop k="outline_color" v="0,0,0,255"/>
+    <prop k="outline_color" v="35,35,35,255"/>
     <prop k="outline_style" v="no"/>
     <prop k="outline_width" v="0.26"/>
     <prop k="outline_width_unit" v="MM"/>
     <prop k="style" v="solid"/>
+    <data_defined_properties>
+     <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+     </Option>
+    </data_defined_properties>
    </layer>
   </symbol>
-  <ComposerLegend symbolWidth="7" title="" rasterBorderWidth="0" titleAlignment="1" map="0" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" legendFilterByAtlas="0" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
-   <styles>
-    <style marginBottom="2" name="title">
-     <styleFont description="MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0" style=""/>
-    </style>
-    <style marginTop="2" name="group">
-     <styleFont description="MS Shell Dlg 2,14,-1,5,50,0,0,0,0,0" style=""/>
-    </style>
-    <style marginTop="2" name="subgroup">
-     <styleFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0" style=""/>
-    </style>
-    <style marginTop="2" name="symbol">
-     <styleFont description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
-    </style>
-    <style marginTop="2" marginLeft="2" name="symbolLabel">
-     <styleFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0" style=""/>
-    </style>
-   </styles>
-   <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+  <LayoutItem position="0,0,mm" positionOnPage="0,0,mm" templateUuid="{b61cb202-d393-4463-a807-6837505d86bd}" referencePoint="0" groupUuid="" uuid="{b61cb202-d393-4463-a807-6837505d86bd}" visibility="1" frame="false" zValue="0" opacity="1" outlineWidthM="0.3,mm" background="true" excludeFromExports="0" type="65638" itemRotation="0" positionLock="false" blendMode="0" size="297,210,mm" id="" frameJoinStyle="miter">
+   <FrameColor blue="0" alpha="255" red="0" green="0"/>
+   <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+     </Option>
+    </dataDefinedProperties>
     <customproperties/>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="" name="(?)">
-     <customproperties>
-      <property key="legend/title-label" value="Wetland class"/>
-     </customproperties>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="" name="(?)">
-     <customproperties>
-      <property key="legend/title-label" value=""/>
-     </customproperties>
-    </layer-tree-layer>
-   </layer-tree-group>
-   <ComposerItem pagey="150.45" page="1" id="atlas_legend" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="208.085" y="150.45" visibility="1" zValue="5" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="29.2" outlineWidth="0.3" excludeFromExports="0" uuid="{9fe19ccb-e01e-4933-a686-bae3fc7debfd}" height="13.7" itemRotation="0" frame="false" pagex="208.085">
-    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-    <customproperties/>
-   </ComposerItem>
-  </ComposerLegend>
-  <ComposerLabel valign="32" marginX="1" marginY="1" labelText="Region: %REGION_NAME%&#xa;Reference period: %REF_PERIOD%&#xa;Reporting period: %TARGET_PERIOD%" htmlState="0" halign="1">
-   <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-   <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="35.0872" page="1" id="description_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="208.395" y="35.0872" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="78.189" outlineWidth="0.3" excludeFromExports="0" uuid="{d9d31f60-dffa-417a-80c0-8022580c8cec}" height="43.4383" itemRotation="0" frame="false" pagex="208.395">
-    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-    <customproperties/>
-   </ComposerItem>
-  </ComposerLabel>
-  <ComposerLabel valign="128" marginX="1" marginY="1" labelText="Wetland change statistics for %REGION_NAME%" htmlState="0" halign="4">
-   <LabelFont description="MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0" style=""/>
-   <FontColor red="0" blue="0" green="0"/>
-   <ComposerItem pagey="7.3511" page="1" id="title_label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="28.0678" y="7.3511" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="113.831" outlineWidth="0.3" excludeFromExports="0" uuid="{0a79fa0b-6ac1-46d9-b42e-54e915f8ccde}" height="14.925" itemRotation="0" frame="false" pagex="28.0678">
-    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-    <customproperties/>
-   </ComposerItem>
-  </ComposerLabel>
-  <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-   <Extent ymin="33228.64497519028373063" xmin="401785.849539281334728" ymax="342702.7677311907755211" xmax="707187.94436428183689713"/>
-   <LayerSet/>
-   <Grid/>
-   <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="1" bottomAnnotationPosition="1" annotationPrecision="1" showAnnotation="1" topFrameDivisions="0" uuid="{04962611-48b4-4278-9c28-de0bd28628c8}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="3" annotationFontColor="0,0,0,255" intervalX="1" gridFrameSideFlags="15" intervalY="1" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.29999999999999999" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="3" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
-    <lineStyle>
-     <symbol alpha="1" clip_to_extent="1" type="line" name="">
-      <layer pass="0" class="SimpleLine" locked="0">
-       <prop k="capstyle" v="flat"/>
-       <prop k="customdash" v="5;2"/>
-       <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-       <prop k="customdash_unit" v="MM"/>
-       <prop k="draw_inside_polygon" v="0"/>
-       <prop k="joinstyle" v="bevel"/>
-       <prop k="line_color" v="0,0,0,255"/>
-       <prop k="line_style" v="solid"/>
-       <prop k="line_width" v="0.3"/>
-       <prop k="line_width_unit" v="MM"/>
-       <prop k="offset" v="0"/>
-       <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-       <prop k="offset_unit" v="MM"/>
-       <prop k="use_custom_dash" v="0"/>
-       <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-      </layer>
-     </symbol>
-    </lineStyle>
-    <markerStyle>
-     <symbol alpha="1" clip_to_extent="1" type="marker" name="">
-      <layer pass="0" class="SimpleMarker" locked="0">
-       <prop k="angle" v="0"/>
-       <prop k="color" v="0,0,0,255"/>
-       <prop k="horizontal_anchor_point" v="1"/>
-       <prop k="joinstyle" v="bevel"/>
-       <prop k="name" v="circle"/>
-       <prop k="offset" v="0,0"/>
-       <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-       <prop k="offset_unit" v="MM"/>
-       <prop k="outline_color" v="0,0,0,255"/>
-       <prop k="outline_style" v="solid"/>
-       <prop k="outline_width" v="0"/>
-       <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-       <prop k="outline_width_unit" v="MM"/>
-       <prop k="scale_method" v="diameter"/>
-       <prop k="size" v="2"/>
-       <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-       <prop k="size_unit" v="MM"/>
-       <prop k="vertical_anchor_point" v="1"/>
-      </layer>
-     </symbol>
-    </markerStyle>
-    <spatialrefsys>
-     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-     <srsid>3452</srsid>
-     <srid>4326</srid>
-     <authid>EPSG:4326</authid>
-     <description>WGS 84</description>
-     <projectionacronym>longlat</projectionacronym>
-     <ellipsoidacronym>WGS84</ellipsoidacronym>
-     <geographicflag>true</geographicflag>
-    </spatialrefsys>
-    <annotationFontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
-   </ComposerMapGrid>
-   <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-   <ComposerItem pagey="39" page="1" id="atlas_map" lastValidViewScaleFactor="1.84457" positionMode="0" positionLock="false" x="11" y="39" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="150" outlineWidth="0.3" excludeFromExports="0" uuid="{3a67e76a-e439-415d-977e-a26f220df45d}" height="152" itemRotation="0" frame="true" pagex="11">
-    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-    <customproperties/>
-   </ComposerItem>
-  </ComposerMap>
-  <ComposerHtml maxBreakDistance="10" contentMode="0" resizeMode="0" url="" useSmartBreaks="true" evaluateExpressions="true" html="" stylesheetEnabled="false" stylesheet="">
-   <ComposerFrame sectionWidth="82.199" sectionHeight="96.2324" hideBackgroundIfEmpty="0" hidePageIfEmpty="0" sectionX="0" sectionY="0">
-    <ComposerItem pagey="66.8524" page="1" id="stats_table" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="207.935" y="66.8524" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="82.199" outlineWidth="0.3" excludeFromExports="0" uuid="{d860d98e-b877-4377-8f71-d60c0f8d03bc}" height="96.2324" itemRotation="0" frame="false" pagex="207.935">
-     <FrameColor alpha="255" red="0" blue="0" green="0"/>
-     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-     <customproperties/>
-    </ComposerItem>
-   </ComposerFrame>
+   </LayoutObject>
+   <symbol name="" force_rhr="0" alpha="1" type="fill" clip_to_extent="1">
+    <layer enabled="1" pass="0" locked="0" class="SimpleFill">
+     <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="color" v="255,255,255,255"/>
+     <prop k="joinstyle" v="miter"/>
+     <prop k="offset" v="0,0"/>
+     <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="outline_color" v="35,35,35,255"/>
+     <prop k="outline_style" v="no"/>
+     <prop k="outline_width" v="0.26"/>
+     <prop k="outline_width_unit" v="MM"/>
+     <prop k="style" v="solid"/>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option value="" name="name" type="QString"/>
+       <Option name="properties"/>
+       <Option value="collection" name="type" type="QString"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <GuideCollection visible="1"/>
+ </PageCollection>
+ <LayoutItem position="208.395,56.8064,mm" positionOnPage="208.395,56.8064,mm" templateUuid="{7f88ad10-b9de-4d38-b5a9-50938333b213}" referencePoint="0" groupUuid="" uuid="{7f88ad10-b9de-4d38-b5a9-50938333b213}" visibility="1" frame="false" zValue="9" opacity="1" htmlState="1" outlineWidthM="0.3,mm" background="false" excludeFromExports="0" type="65641" itemRotation="0" positionLock="false" marginY="0" blendMode="0" labelText="" size="80.451,96.4218,mm" halign="8" marginX="0" valign="32" id="stats_table" frameJoinStyle="miter">
+  <FrameColor blue="0" alpha="255" red="0" green="0"/>
+  <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" name="name" type="QString"/>
+     <Option name="properties"/>
+     <Option value="collection" name="type" type="QString"/>
+    </Option>
+   </dataDefinedProperties>
    <customproperties/>
-  </ComposerHtml>
-  <customproperties/>
- </Composition>
-</Composer>
+  </LayoutObject>
+  <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+  <FontColor blue="0" alpha="255" red="0" green="0"/>
+ </LayoutItem>
+ <LayoutItem excludeFromExports="0" title="" id="atlas_legend" map_uuid="{7345b1c3-98f4-49b6-9523-00b5d3d14227}" size="29.4,16.4,mm" referencePoint="0" opacity="1" positionOnPage="208.085,150.45,mm" outlineWidthM="0.3,mm" rasterBorderColor="0,0,0,255" frameJoinStyle="miter" legendFilterByAtlas="0" columnCount="1" templateUuid="{10326101-634a-43c3-9d55-943c754ac1dd}" columnSpace="2" fontColor="#000000" groupUuid="" splitLayer="0" equalColumnWidth="0" wmsLegendWidth="50" background="true" wmsLegendHeight="25" position="208.085,150.45,mm" lineSpacing="1" rasterBorderWidth="0" wrapChar="" symbolHeight="4" positionLock="false" boxSpace="2" minSymbolSize="0" zValue="5" rasterBorder="1" blendMode="0" resizeToContents="1" type="65642" symbolWidth="7" symbolAlignment="1" itemRotation="0" uuid="{10326101-634a-43c3-9d55-943c754ac1dd}" frame="false" titleAlignment="1" visibility="1" maxSymbolSize="0">
+  <FrameColor blue="0" alpha="255" red="0" green="0"/>
+  <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" name="name" type="QString"/>
+     <Option name="properties"/>
+     <Option value="collection" name="type" type="QString"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties/>
+  </LayoutObject>
+  <styles>
+   <style name="title" marginBottom="2" alignment="1">
+    <styleFont style="" description="MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0"/>
+   </style>
+   <style name="group" alignment="1" marginTop="2">
+    <styleFont style="" description="MS Shell Dlg 2,14,-1,5,50,0,0,0,0,0"/>
+   </style>
+   <style name="subgroup" alignment="1" marginTop="2">
+    <styleFont style="" description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"/>
+   </style>
+   <style name="symbol" alignment="1" marginTop="2">
+    <styleFont style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
+   </style>
+   <style name="symbolLabel" alignment="1" marginTop="2" marginLeft="2">
+    <styleFont style="" description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"/>
+   </style>
+  </styles>
+  <layer-tree-group>
+   <customproperties/>
+   <layer-tree-layer legend_split_behavior="0" name="(?)" id="" expanded="1" patch_size="0,0" legend_exp="" checked="Qt::Checked">
+    <customproperties>
+     <property value="Wetland class" key="cached_name"/>
+     <property value="Wetland class" key="legend/title-label"/>
+    </customproperties>
+   </layer-tree-layer>
+   <layer-tree-layer legend_split_behavior="0" name="(?)" id="" expanded="1" patch_size="0,0" legend_exp="" checked="Qt::Checked">
+    <customproperties>
+     <property value=" " key="cached_name"/>
+     <property value=" " key="legend/title-label"/>
+    </customproperties>
+   </layer-tree-layer>
+   <custom-order enabled="0"/>
+  </layer-tree-group>
+ </LayoutItem>
+ <LayoutItem position="208.395,35.0872,mm" positionOnPage="208.395,35.0872,mm" templateUuid="{23a1c1ab-2806-4747-b39e-8c0252b9cc7c}" referencePoint="0" groupUuid="" uuid="{23a1c1ab-2806-4747-b39e-8c0252b9cc7c}" visibility="1" frame="false" zValue="4" opacity="1" htmlState="0" outlineWidthM="0.3,mm" background="false" excludeFromExports="0" type="65641" itemRotation="0" positionLock="false" marginY="1" blendMode="0" labelText="Region: %REGION_NAME%&#xa;Reference period: %REF_PERIOD%&#xa;Reporting period: %TARGET_PERIOD%" size="78.189,43.4383,mm" halign="1" marginX="1" valign="32" id="description_label" frameJoinStyle="miter">
+  <FrameColor blue="0" alpha="255" red="0" green="0"/>
+  <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" name="name" type="QString"/>
+     <Option name="properties"/>
+     <Option value="collection" name="type" type="QString"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties/>
+  </LayoutObject>
+  <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+  <FontColor blue="0" alpha="255" red="0" green="0"/>
+ </LayoutItem>
+ <LayoutItem position="28.0678,7.3511,mm" positionOnPage="28.0678,7.3511,mm" templateUuid="{690db614-2f27-4796-aa2a-bcf0505b28b0}" referencePoint="0" groupUuid="" uuid="{690db614-2f27-4796-aa2a-bcf0505b28b0}" visibility="1" frame="false" zValue="3" opacity="1" htmlState="0" outlineWidthM="0.3,mm" background="false" excludeFromExports="0" type="65641" itemRotation="0" positionLock="false" marginY="1" blendMode="0" labelText="Wetland change statistics for %REGION_NAME%" size="113.831,14.925,mm" halign="4" marginX="1" valign="128" id="title_label" frameJoinStyle="miter">
+  <FrameColor blue="0" alpha="255" red="0" green="0"/>
+  <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" name="name" type="QString"/>
+     <Option name="properties"/>
+     <Option value="collection" name="type" type="QString"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties/>
+  </LayoutObject>
+  <LabelFont style="" description="MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"/>
+  <FontColor blue="0" alpha="255" red="0" green="0"/>
+ </LayoutItem>
+ <LayoutItem position="11,39,mm" positionOnPage="11,39,mm" templateUuid="{7345b1c3-98f4-49b6-9523-00b5d3d14227}" referencePoint="0" groupUuid="" uuid="{7345b1c3-98f4-49b6-9523-00b5d3d14227}" followPreset="false" visibility="1" frame="true" zValue="1" opacity="1" mapRotation="0" outlineWidthM="0.3,mm" background="true" excludeFromExports="0" isTemporal="0" type="65639" itemRotation="0" positionLock="false" mapFlags="0" blendMode="0" size="150,152,mm" keepLayerSet="false" drawCanvasItems="true" id="atlas_map" labelMargin="0,mm" followPresetName="" frameJoinStyle="miter">
+  <FrameColor blue="0" alpha="255" red="0" green="0"/>
+  <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option value="" name="name" type="QString"/>
+     <Option name="properties"/>
+     <Option value="collection" name="type" type="QString"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties/>
+  </LayoutObject>
+  <Extent ymax="342702.7677311907755211" xmin="401785.849539281334728" xmax="707187.94436428183689713" ymin="33228.64497519028373063"/>
+  <LayerSet/>
+  <ComposerMapGrid leftAnnotationDirection="0" showAnnotation="1" crossLength="3" offsetY="0" bottomAnnotationPosition="1" leftAnnotationPosition="1" name="Grid 1" intervalX="1" leftFrameDivisions="0" annotationFormat="0" rotatedAnnotationsMarginToCorner="0" maximumIntervalWidth="100" rotatedAnnotationsMinimumAngle="0" rotatedAnnotationsLengthMode="0" rightAnnotationPosition="1" minimumIntervalWidth="50" gridFramePenColor="0,0,0,255" annotationPrecision="1" topAnnotationDisplay="0" rotatedTicksMarginToCorner="0" bottomAnnotationDirection="0" rotatedTicksLengthMode="0" rightAnnotationDisplay="0" leftAnnotationDisplay="0" offsetX="0" rotatedTicksMinimumAngle="0" topFrameDivisions="0" rightAnnotationDirection="0" position="3" gridFrameSideFlags="15" topAnnotationDirection="0" gridFramePenThickness="0.29999999999999999" show="1" unit="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" blendMode="0" bottomAnnotationDisplay="0" frameFillColor2="0,0,0,255" rotatedTicksEnabled="0" topAnnotationPosition="1" intervalY="1" bottomFrameDivisions="0" gridFrameMargin="0" rotatedAnnotationsEnabled="0" gridFrameStyle="3" frameAnnotationDistance="1" rightFrameDivisions="0" annotationExpression="" uuid="{04962611-48b4-4278-9c28-de0bd28628c8}" gridStyle="3">
+   <lineStyle>
+    <symbol name="" force_rhr="0" alpha="1" type="line" clip_to_extent="1">
+     <layer enabled="1" pass="0" locked="0" class="SimpleLine">
+      <prop k="align_dash_pattern" v="0"/>
+      <prop k="capstyle" v="flat"/>
+      <prop k="customdash" v="5;2"/>
+      <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="customdash_unit" v="MM"/>
+      <prop k="dash_pattern_offset" v="0"/>
+      <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="dash_pattern_offset_unit" v="MM"/>
+      <prop k="draw_inside_polygon" v="0"/>
+      <prop k="joinstyle" v="bevel"/>
+      <prop k="line_color" v="0,0,0,255"/>
+      <prop k="line_style" v="solid"/>
+      <prop k="line_width" v="0.3"/>
+      <prop k="line_width_unit" v="MM"/>
+      <prop k="offset" v="0"/>
+      <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="offset_unit" v="MM"/>
+      <prop k="ring_filter" v="0"/>
+      <prop k="tweak_dash_pattern_on_corners" v="0"/>
+      <prop k="use_custom_dash" v="0"/>
+      <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <data_defined_properties>
+       <Option type="Map">
+        <Option value="" name="name" type="QString"/>
+        <Option name="properties"/>
+        <Option value="collection" name="type" type="QString"/>
+       </Option>
+      </data_defined_properties>
+     </layer>
+    </symbol>
+   </lineStyle>
+   <markerStyle>
+    <symbol name="" force_rhr="0" alpha="1" type="marker" clip_to_extent="1">
+     <layer enabled="1" pass="0" locked="0" class="SimpleMarker">
+      <prop k="angle" v="0"/>
+      <prop k="color" v="0,0,0,255"/>
+      <prop k="horizontal_anchor_point" v="1"/>
+      <prop k="joinstyle" v="bevel"/>
+      <prop k="name" v="circle"/>
+      <prop k="offset" v="0,0"/>
+      <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="offset_unit" v="MM"/>
+      <prop k="outline_color" v="0,0,0,255"/>
+      <prop k="outline_style" v="solid"/>
+      <prop k="outline_width" v="0"/>
+      <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="outline_width_unit" v="MM"/>
+      <prop k="scale_method" v="diameter"/>
+      <prop k="size" v="2"/>
+      <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+      <prop k="size_unit" v="MM"/>
+      <prop k="vertical_anchor_point" v="1"/>
+      <data_defined_properties>
+       <Option type="Map">
+        <Option value="" name="name" type="QString"/>
+        <Option name="properties"/>
+        <Option value="collection" name="type" type="QString"/>
+       </Option>
+      </data_defined_properties>
+     </layer>
+    </symbol>
+   </markerStyle>
+   <spatialrefsys>
+    <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["unknown"],AREA["World"],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
+    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+    <srsid>3452</srsid>
+    <srid>4326</srid>
+    <authid>EPSG:4326</authid>
+    <description>WGS 84</description>
+    <projectionacronym>longlat</projectionacronym>
+    <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+    <geographicflag>true</geographicflag>
+   </spatialrefsys>
+   <text-style fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontKerning="1" textOrientation="horizontal" textColor="0,0,0,255" fontWordSpacing="0" fontWeight="50" capitalization="0" allowHtml="0" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontItalic="0" blendMode="0" fontStrikeout="0" textOpacity="1" multilineHeight="1" previewBkgrdColor="255,255,255,255" namedStyle="" fontSize="8.25">
+    <text-buffer bufferSizeUnits="MM" bufferColor="255,255,255,255" bufferNoFill="1" bufferOpacity="1" bufferJoinStyle="128" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferDraw="0"/>
+    <text-mask maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSizeUnits="MM" maskJoinStyle="128" maskEnabled="0" maskType="0" maskOpacity="1" maskSize="1.5" maskedSymbolLayers=""/>
+    <background shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeRotationType="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeJoinStyle="64" shapeOpacity="1" shapeBlendMode="0" shapeOffsetUnit="MM" shapeFillColor="255,255,255,255" shapeRadiiUnit="MM" shapeBorderWidthUnit="MM" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeDraw="0" shapeOffsetY="0" shapeSizeType="0" shapeType="0" shapeBorderColor="128,128,128,255" shapeOffsetX="0" shapeRadiiX="0" shapeSizeY="0" shapeRotation="0" shapeRadiiY="0" shapeSizeUnit="MM" shapeSizeX="0" shapeSVGFile=""/>
+    <shadow shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowBlendMode="6" shadowDraw="0" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowRadiusAlphaOnly="0" shadowScale="100" shadowOffsetAngle="135" shadowOffsetGlobal="1" shadowOffsetDist="1" shadowOffsetUnit="MM" shadowUnder="0" shadowOpacity="0.7" shadowRadius="1.5" shadowRadiusUnit="MM" shadowColor="0,0,0,255"/>
+    <dd_properties>
+     <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+     </Option>
+    </dd_properties>
+   </text-style>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties/>
+   </LayoutObject>
+  </ComposerMapGrid>
+  <AtlasMap margin="0.10000000000000001" atlasDriven="0" scalingMode="2"/>
+  <labelBlockingItems/>
+  <atlasClippingSettings restrictLayers="0" clippingType="1" enabled="0" forceLabelsInside="0">
+   <layersToClip/>
+  </atlasClippingSettings>
+  <itemClippingSettings clippingType="1" enabled="0" forceLabelsInside="0" clipSource=""/>
+ </LayoutItem>
+ <customproperties>
+  <property value="png" key="atlasRasterFormat"/>
+  <property value="true" key="singleFile"/>
+ </customproperties>
+ <Atlas hideCoverage="0" enabled="0" pageNameExpression="" sortFeatures="0" filterFeatures="0" filenamePattern="'output_'||@atlas_featurenumber" coverageLayer=""/>
+</Layout>
