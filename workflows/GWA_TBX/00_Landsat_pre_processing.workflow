@@ -15,7 +15,7 @@
 This workflow is used to prepare Landsat data for analysis. Steps include unzipping, cloud masking, stacking, clipping the data to a specific study area and spectral index calculation.
 
 ## Requirements
-The workflow can in principle work on any Landsat data you define as input, but for optimal outcome we recommend to use Level-2 surface reflectance data which can be ordered here:
+The workflow works on Landsat Collection-2 Level-2 surface reflectance data which can be ordered here:
 
 [https://earthexplorer.usgs.gov/](https://earthexplorer.usgs.gov/)
 
@@ -24,6 +24,8 @@ This workflow should be run prior to intergating Landsat imagery into any of the
 
 ### Note
 *If multiple images need to be processed users may take note of the individual processing steps and run them in batch mode separately and in sequence.*
+
+
 
 
 !INSTRUCTIONS
@@ -39,30 +41,11 @@ The first step is to untar (unpack) the Landsat data. Relevant Landsat bands are
 **tar.gz file**: Use the ... button to navigate to the downloaded Landsat data, and select the tar.gz you want to unpack.
 
 **Folder to unpack the data to**: Use the ... button to navigate to the folder where you want to unpack the Landsat data.
-!INSTRUCTIONS
-.ALGORITHM:script:fmasklandsat
-.PARAMETERS:{"cloudbufferdistance": 150, "greensnowthreshold": 0.1, "nirsnowthreshold": 0.11, "shadowbufferdistance": 300, "mincloudsize": 0, "cloudprobthreshold": 20, "landsatkeynr": 2}
-.MODE:Normal
-.INSTRUCTIONS:# Cloud masking
 
-In this step a cloud mask is produced for a Landsat scene. If you do not need a cloud mask, skip this step.
 
-## Settings
-
-**Directory of the Landsat product**:
-Specify the path to the  directory containing the individual Landsat bands as .tif files.
-
-**Landsat sensor**: Specify Landsat mission of the scene.
-
-**Output cloud mask**:
-Specify the path to the output file. Store the cloud mask in the directory of the Landsat product. Choose an output file name that ends with "_fmask.tif".
-
-## Notes
-
-Other parameters can be used to fine-tune the cloud mask, but without expert knowledge it is recommended to keep the default values.
 !INSTRUCTIONS
 .ALGORITHM:gdal:buildvirtualraster
-.PARAMETERS:{"PROJ_DIFFERENCE": false, "RESOLUTION": 0, "SEPARATE": true}
+.PARAMETERS:{"RESOLUTION": 0, "SEPARATE": false, "PROJ_DIFFERENCE": false, "ADD_ALPHA": false, "RESAMPLING": 0, "SRC_NODATA": "", "EXTRA": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Stack input bands
 
@@ -95,9 +78,11 @@ LC81950212017071LGN00_B4
 LC81950212017071LGN00_B5
 LC81950212017071LGN00_B6
 LC81950212017071LGN00_B7
+
+
 !INSTRUCTIONS
 .ALGORITHM:gdal:cliprasterbyextent
-.PARAMETERS:{"ZLEVEL": 6, "PROJWIN": "556485.0,791715.0,6079785.0,6318315.0", "RTYPE": 5, "BIGTIFF": 0, "EXTRA": "", "COMPRESS": 4, "NO_DATA": "", "TILED": false, "JPEGCOMPRESSION": 75, "TFW": false, "PREDICTOR": 1}
+.PARAMETERS:{"PROJWIN": "556485.000000000,791715.000000000,6079785.000000000,6318315.000000000 [EPSG:32637]", "NODATA": null, "OPTIONS": "", "DATA_TYPE": 0, "EXTRA": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Subset image
 
@@ -113,9 +98,27 @@ This tool clips the imagery to a region of interst that covers your study area.
 
 ## Notes
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
+
+
+!INSTRUCTIONS
+.ALGORITHM:script:reclassifylandsatqa
+.PARAMETERS:{}
+.MODE:Normal
+.INSTRUCTIONS:# Reclassify Landsat QA_PIXEL band (optional)
+
+In this step you can reclassify the Landsat Quality Assesment bit mask, which contains a cloud mask, into Fmask cloud mask classes. This step is only required if you would like to burn cloud mask into the image in the next step.
+
+## Settings
+
+**Landsat QA_PIXEL file**:
+Specify the path to the Landsat QA_PIXEL tif file.
+
+**Reclassified output image**:
+Use the ... button to navigate to the folder where you will save the output data, and give is a suitable image name: ["enter name"]_cloudMask.tif
+
 !INSTRUCTIONS
 .ALGORITHM:script:burncloudmask
-.PARAMETERS:{"maskWater": false, "maskLand": false, "maskShadow": true, "maskSnow": true, "maskCloud": true, "maskNull": true}
+.PARAMETERS:{"maskNull": true, "maskCloud": true, "maskShadow": true, "maskSnow": true, "maskWater": false, "maskLand": false}
 .MODE:Normal
 .INSTRUCTIONS:# Apply cloud mask (optional)
 
@@ -134,6 +137,8 @@ Use the ... button to navigate to the folder where you will save the output data
 ## Notes
 
 In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
+
+
 !INSTRUCTIONS
 .ALGORITHM:script:landsatindices
 .PARAMETERS:{}
@@ -151,4 +156,6 @@ Band 4: NBR2
 **Input Reflectance Stack**: Input pre-processed image
 
 **Folder to save the stack of Indices**: Use the ... button to navigate to the **folder** where you want to save the indices.
+
+
 !INSTRUCTIONS
