@@ -28,6 +28,7 @@ This workflow should be run prior to intergating Landsat imagery into any of the
 
 
 
+
 !INSTRUCTIONS
 .ALGORITHM:script:untarimagery
 .PARAMETERS:{}
@@ -43,9 +44,10 @@ The first step is to untar (unpack) the Landsat data. Relevant Landsat bands are
 **Folder to unpack the data to**: Use the ... button to navigate to the folder where you want to unpack the Landsat data.
 
 
+
 !INSTRUCTIONS
 .ALGORITHM:gdal:buildvirtualraster
-.PARAMETERS:{"RESOLUTION": 0, "SEPARATE": false, "PROJ_DIFFERENCE": false, "ADD_ALPHA": false, "RESAMPLING": 0, "SRC_NODATA": "", "EXTRA": ""}
+.PARAMETERS:{"RESOLUTION": 0, "SEPARATE": true, "PROJ_DIFFERENCE": false, "ADD_ALPHA": false, "RESAMPLING": 0, "SRC_NODATA": "", "EXTRA": ""}
 .MODE:Normal
 .INSTRUCTIONS:# Stack input bands
 
@@ -63,7 +65,7 @@ For Landsat 4, 5, and 7 load bands 1,2,3,4,5, and 7.
 
 **Resolution**: Select average
 
-Make sure **Layer stack** is selected
+Make sure **Place each input file into a separate band** is selected
 
 **Virtual**: Specify name and location of out file (*.vrt)
 
@@ -78,6 +80,7 @@ LC81950212017071LGN00_B4
 LC81950212017071LGN00_B5
 LC81950212017071LGN00_B6
 LC81950212017071LGN00_B7
+
 
 
 !INSTRUCTIONS
@@ -100,6 +103,7 @@ This tool clips the imagery to a region of interst that covers your study area.
 If you do not have a vector layer outlining your study region you can create one. In QGIS go to Layer > Create Layer > New Shapefile Layer. Make sure the "Selected CRS" is the same as your input imagery! You can then draw the outline of your study area by editing the shapefile.
 
 
+
 !INSTRUCTIONS
 .ALGORITHM:script:reclassifylandsatqa
 .PARAMETERS:{}
@@ -115,6 +119,7 @@ Specify the path to the Landsat QA_PIXEL tif file.
 
 **Reclassified output image**:
 Use the ... button to navigate to the folder where you will save the output data, and give is a suitable image name: ["enter name"]_cloudMask.tif
+
 
 !INSTRUCTIONS
 .ALGORITHM:script:burncloudmask
@@ -139,6 +144,7 @@ Use the ... button to navigate to the folder where you will save the output data
 In Advanced parameters you can specify which types of FMask classes you would like to be masked. By default the following classes will be masked: null, cloud, shadow, snow.
 
 
+
 !INSTRUCTIONS
 .ALGORITHM:script:landsatindices
 .PARAMETERS:{}
@@ -156,6 +162,7 @@ Band 4: NBR2
 **Input Reflectance Stack**: Input pre-processed image
 
 **Folder to save the stack of Indices**: Use the ... button to navigate to the **folder** where you want to save the indices.
+
 
 
 !INSTRUCTIONS
